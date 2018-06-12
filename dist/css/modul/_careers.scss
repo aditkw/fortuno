@@ -1,0 +1,68 @@
+.careers{
+  .content-careers{
+    padding: 40px 0;
+  }
+  @mixin first-child {
+    padding:15px 0;
+    border-bottom: 1px solid #ededed;
+    p{
+      &:first-child{
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+  .content-careers{
+    .container{
+      .row{
+        &:first-child{
+          margin-bottom: 20px;
+          @include first-child;
+        }
+        &:nth-child(2){
+          .col-lg-3{
+            ul{
+              border: none;
+              li{
+                float: none;
+                &.active > a, &:hover > a{
+                  background-color: #0b806e;
+                }
+                a{
+                  transition: all 0.4s ease;
+                  border-radius: unset;
+                  color: #fff;
+                  border: none;
+                  background-color: #303030;
+                }
+              }
+            }
+          }
+          .col-lg-9{
+            h3{
+              margin-top: 0;
+              margin-bottom: 15px;
+            }
+            .calendar{
+              margin-bottom: 20px;
+              display: flex;
+              padding: 5px 0;
+              border-bottom: 1px solid #ededed;
+              border-top: 1px solid #ededed;
+              .fa.fa-calendar{
+                margin-right: 10px;
+                font-size: 28px;
+                line-height: 40px;
+              }
+              .date{
+                p{
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

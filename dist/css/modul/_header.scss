@@ -1,0 +1,134 @@
+p{
+  font-family: "Segoe Ui";
+}
+header{
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: -9px;
+    height: 9px;
+    background: transparentize(#fff, 0.5);
+    width: 100%;
+    z-index: 20;
+  }
+  .header{
+    .logo-name{
+      padding-top: 5px;
+      .logo{
+        float: left;
+        img{
+          width: 120px;
+        }
+      }
+      .name{
+        float: left;
+        margin-left: 10px;
+        p{
+          margin-bottom: 0px;
+          &:first-child{
+            font-size: 26px;
+            line-height: 32px;
+          }
+          &:last-child{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .menubar{
+      // overflow: hidden;
+      ul{
+        padding: 0;
+        margin: 0;
+        li{
+          position: relative;
+          padding: 25px 15px;
+          display: inline-block;
+          &:hover > ul {
+            display: block;
+          }
+          a{
+            text-decoration: none;
+            color: #333;
+            &.active{
+              color: #0a806e;
+              font-weight: bold;
+            }
+          }
+          ul{
+            position: absolute;
+            display: none;
+            z-index: 25;
+            background: #272727;
+            top: 70px;
+            width: 195px;
+            li{
+              &:hover{
+                background: #0a806e;
+              }
+              padding: 8px 12px;
+              display: block;
+              border-bottom: 1px solid #343434;
+              a{
+                color: #fefefe;
+              }
+            }
+          }
+        }
+      }
+      form{
+        position: absolute;
+        width: 90%;
+        transition: all 0.5s ease;
+        input{
+          width: 100%;
+          padding: 8px 0;
+          border: none;
+          border-bottom: 2px solid #eaeaea;
+        }
+        button{
+          position: absolute;
+          top: 10px;
+          right: 0;
+          border: none;
+          background: #fff;
+        }
+      }
+    }
+    .search-contact{
+      padding-top: 12px;
+      .search{
+        margin-top: 6px;
+        float: left;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        background-color: #0a806e;
+        .fa{
+          transition: all 0.5s ease;
+          color: #fff;
+          padding: 9px 9.5px;
+          &.fa-close{
+            padding: 9px 11px;
+          }
+        }
+      }
+      .contact{
+        float: left;
+        margin-left: 5px;
+        p{
+          margin: 0;
+          &:first-child{
+            font-size: 17px;
+            font-weight: bold;
+            color: #0a806e;
+          }
+          &:last-child{
+
+          }
+        }
+      }
+    }
+  }
+}

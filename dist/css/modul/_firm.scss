@@ -1,0 +1,32 @@
+.firm{
+  .content-firm{
+    padding: 40px 0;
+  }
+  @mixin first-child {
+    padding:15px 0;
+    border-bottom: 1px solid #ededed;
+    p{
+      &:first-child{
+        font-size: 25px;
+        font-weight: bold;
+      }
+    }
+  }
+  .content-firm{
+    .container{
+      .row{
+        &:first-child{
+          @include first-child;
+        }
+        &:nth-child(2){
+          padding: 20px 0;
+          .col-lg-4{
+            img{
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
