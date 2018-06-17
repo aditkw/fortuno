@@ -1,7 +1,19 @@
+$base_url: "http://localhost/fortuno/";
 $tbh: #555; //text_before_hover
 $tah: #000; //text_after_hover
 $alink: #7c82a6; //active_link
+$cwhite: #fff;
+$corange: #fba419;
 
+.cwhite {
+  color: $cwhite;
+}
+.corange {
+  color: $corange;
+}
+div, .row {
+  margin: 0;
+}
 .bold {
   font-weight: bold;
 }
@@ -23,4 +35,37 @@ a:hover {
   @extend .hoverious:hover;
   text-decoration: none;
   color: $alink;
+}
+// blockquote
+blockquote {
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-style: italic;
+    margin: 0.25em 0;
+    padding: 0.35em 40px;
+    line-height: 1.45;
+    position: relative;
+    color: #383838;
+}
+
+blockquote:before {
+    display: block;
+    padding-left: 10px;
+    content: "\201C";
+    font-size: 80px;
+    position: absolute;
+    left: -20px;
+    top: -20px;
+    color: #7a7a7a;
+}
+
+blockquote cite {
+    color: #999999;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote cite:before {
+    content: "\2014 \2009";
 }

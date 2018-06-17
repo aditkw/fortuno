@@ -1,4 +1,4 @@
-<header>
+<header id="beranda">
   <div class="container-fluid header">
     <div class="row">
       <div class="col-md-2"></div>
@@ -20,11 +20,11 @@
     <hr>
     <nav class="row text-center">
       <div class="col-md-2"></div>
-      <div class="col-md-1 nav-list beranda"><a href="#">BERANDA</a></div>
-      <div class="col-md-1 nav-list tentang"><a href="#">TENTANG</a></div>
-      <div class="col-md-1 nav-list jasa"><a href="#">JASA</a></div>
-      <div class="col-md-1 nav-list portofolio"><a href="#">PORTOFOLIO</a></div>
-      <div class="col-md-1 nav-list kontak"><a href="#">KONTAK</a></div>
+      <div class="col-md-1 nav-list homepage"><a href="#homepage">HOME</a></div>
+      <div class="col-md-1 nav-list about"><a href="#about">ABOUT</a></div>
+      <div class="col-md-1 nav-list services"><a href="#services">SERVICES</a></div>
+      <div class="col-md-1 nav-list portfolio"><a href="#portfolio">PORTFOLIO</a></div>
+      <div class="col-md-1 nav-list contact"><a href="#contact">CONTACT</a></div>
       <div class="col-md-3 text-left search-container">
         <div class="form-group search">
           <input type="text" class="form-control" placeholder="Search Here...">

@@ -1,3 +1,12 @@
+.cwhite {
+  color: #fff; }
+
+.corange {
+  color: #fba419; }
+
+div, .row {
+  margin: 0; }
+
 .bold, .hoverious, a {
   font-weight: bold; }
 
@@ -14,6 +23,35 @@ a:hover {
   text-decoration: none;
   color: #7c82a6; }
 
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838; }
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "\201C";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a; }
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px; }
+
+blockquote cite:before {
+  content: "\2014 \2009"; }
+
 header {
   margin-top: 20px; }
   header .header hr {
@@ -27,10 +65,10 @@ header {
     header .header nav .nav-list a {
       display: inline-block;
       width: 100%; }
-  header .header nav .nav-list.portofolio {
+  header .header nav .nav-list.portfolio {
     min-width: 10%;
     text-align: center; }
-  header .header nav .nav-list.kontak {
+  header .header nav .nav-list.contact {
     max-height: 55px;
     margin-top: 0;
     line-height: 3.5; }
@@ -50,5 +88,38 @@ header {
       width: 55px;
       border-radius: 0;
       border: 0; }
+
+section .homepage #slider, section .homepage #about, section .homepage #services, section .homepage #portfolio, section .homepage #contact {
+  min-height: 100vh; }
+section .homepage #slider {
+  min-height: 100vh;
+  background: #cdcdcd; }
+section .homepage #about {
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 12.5%; }
+  section .homepage #about .about-left blockquote {
+    display: inline-block; }
+  section .homepage #about .about-right {
+    position: relative; }
+    section .homepage #about .about-right div.position-absolute {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto; }
+section .homepage #services {
+  background-image: url("http://localhost/fortuno/dist/img/assets/serviceBackground.png");
+  background-size: cover;
+  background-position: left top;
+  -webkit-filter: contrast(1);
+  filter: contrast(1); }
+  section .homepage #services .background-filter-container {
+    background-color: #0009;
+    min-height: 100vh; }
+    section .homepage #services .background-filter-container .services-left {
+      padding-top: 15%; }
+    section .homepage #services .background-filter-container .services-right {
+      padding-top: 12.5%; }
 
 /*# sourceMappingURL=fort.style.css.map */

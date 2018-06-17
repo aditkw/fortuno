@@ -1,109 +1,74 @@
 <section>
-  <div class="homepage">
-    <div id="home-slide" class="owl-carousel">
-      <?php foreach ($slides as $slide): ?>
-        <div class="item">
-          <img class="img-responsive" src="<?=site_url("uploads/img/slide/$slide->image_name")?>" alt="">
-        </div>
-      <?php endforeach; ?>
+  <div class="homepage" id="homepage">
+    <div id="slider">
+      <br><br><br><br><br><br><br><br><br><br><br><br>
+      <p class="text-center h2">Slider</p>
     </div>
-    <div class="member-firm">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-3 left">
-            <p>Member Firm Of</p>
-            <img src="<?=site_url('dist/img/assets/gmn-logo.png')?>" alt="">
-            <p><em>an association of legally independent accounting firms worldwide.</em></p>
-          </div>
-          <div class="col-lg-9 right">
-            <div class="text-firm">
-              <p><?=$text->text_home?></p>
-            </div>
-          </div>
+    <div class="about">
+
+    </div>
+    <div class="row" id="about">
+      <div class="col-md-2"></div>
+      <div class="col-md-4 about-left">
+        <p class="h2 text-center">About Fortuno</p>
+        <div class="text-center">
+          <blockquote class="blockquote text-justify">
+            <p class="mb-0">
+              Sekuat apapun atau seindah apapun bangunan, jika tidak ditunjang dengan suatu System Mekanikal & Elektrikal, maka bangunan tersebut tidak ada fungsinya.
+            </p>
+          </blockquote>
+          <p class="text-justify">
+            Fortuno adalah perusahaan yang bergerak di bidang jasa kontraktor Mekanikal dan Elektrikal (ME) sejak tahun 2010. Sebagai perusahaan jasa kontraktor ME yang telah memiliki sertifikasi AKLI sebagai persyaratan kontraktor Listrik dan Mekanikal Indonesia, Fortuno telah menangani berbagai macam proyek ME di Jakarta maupun kota besar lainnya.
+          </p>
         </div>
       </div>
-      <div class="container partners">
-        <div id="home-partners" class="owl-carousel">
-          <?php foreach($partners as $partner): ?>
-          <div class="item">
-            <img class="img-responsive" src="<?=site_url("uploads/img/partners/$partner->image_name")?>" alt="">
-          </div>
-        <?php endforeach; ?>
+      <div class="col-md-4 about-right position-relative">
+        <div class="position-absolute">
+          <img class="img-fluid" src="<?php echo base_url(); ?>dist/img/assets/aboutLeft2.png" alt="">
         </div>
-        	<button class="am-next"><i class="fa fa-angle-left"></i></button>
-        	<button class="am-prev"><i class="fa fa-angle-right"></i></button>
       </div>
+      <div class="col-md-2"></div>
     </div>
-    <div class="home-service">
-      <div class="container">
+    <div id="services">
+      <div class="background-filter-container">
         <div class="row">
-          <p>Our Services</p>
-          <p><em>We are able to provide solutions in all major trading centres in areas like:</em></p>
-        </div>
-        <div class="row">
-          <?php foreach ($services as $service): ?>
-            <div class="col-lg-4">
-              <div class="box-service-home">
-                <img src="<?=site_url("uploads/img/services/$service->image_name")?>" alt="">
-                <p><?=$service->services_name?></p>
-                <p><?=limitKalimat($service->services_desc, 151)?></p>
-                <a href="<?=site_url("our-service/$service->services_link")?>"><span><i class="fa fa-plus"></i></span></a>
+          <div class="col-md-2"></div>
+          <div class="col-md-4 services-left">
+            <p class="text-center h2"><span class="cwhite"><strong>Our Company</strong></span> <br> <span class="corange"><strong>great Service</strong></span></p>
+            <p class="cwhite">
+              Di dalam Suatu Bangunan gedung terdiri dari 3 komponen penting, yaitu struktur, arsitek dan utilitas atau dikenal dengan istilah ME (Mekanikal dan Elektrikal) gedung
+            </p>
+          </div>
+          <div class="col-md-4 services-right">
+            <div class="row">
+              <div class="col-md-2"><i class="fas fa-cogs cwhite h1"></i> </div>
+              <div class="col-md-10">
+                <p class="h3 corange">Mekanikal</p>
+                <p class="cwhite">
+                  Sistem mekanikal dapat mencakup elemen infrastruktur, mesin, alat dan komponen, pemanasan, ventilasi dan sebagainya.
+                </p>
               </div>
             </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    </div>
-    <div class="benefits-home">
-      <img class="img img-responsive" src="<?=site_url('dist/img/assets/benefits-home.png')?>" alt="">
-      <div class="box-benefits">
-        <p>Benefits for Our Client</p>
-        <p><em>When you entrust your company to our member firm:</em></p>
-        <?=$benefits->info_desc?>
-        <a href="<?=site_url('benefits-for-our-client')?>">Discover more <i class="fa fa-arrow-right"></i></a>
-      </div>
-    </div>
-    <div class="container clients">
-      <div id="home-clients" class="owl-carousel">
-        <?php foreach ($clients as $client): ?>
-          <div class="item">
-            <img class="img-responsive" src="<?=site_url("uploads/img/clients/$client->image_name")?>" alt="">
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-    <div class="home-article">
-      <div class="container">
-        <div class="row">
-          <p>Recent Updates</p>
-          <p><em>Read more Abubakar Usman & Rekan News</em></p>
-        </div>
-        <div class="row">
-          <div id="article-slide" class="owl-carousel">
-            <?php foreach($news as $news):
-            ($news->catnews_id == 1) ? $apa='news' : $apa='event';
-            ?>
-            <a style="text-decoration:none;color:inherit" href="<?=site_url("$apa/$news->news_link")?>">
-              <div class="item box">
-                <div class="date">
-                  <div class="tgl">
-                    <p><?=convertDate($news->news_date, 'tgl')?></p>
-                    <p><?=convertDate($news->news_date, 'bln')?></p>
-                  </div>
-                  <div class="thn">
-                    <p><?=convertDate($news->news_date, 'thn')?></p>
-                  </div>
-                </div>
-                <div class="title-desc">
-                  <p><?=$news->news_title?></p>
-                  <?=limitKalimat($news->news_desc, 110)?>
-                </div>
+            <div class="row">
+              <div class="col-md-2"><i class="fas fa-lightbulb cwhite h1"></i> </div>
+              <div class="col-md-10">
+                <p class="h3 corange">Elektrikal</p>
+                <p class="cwhite">
+                  Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah.
+                </p>
               </div>
-            </a>
-          <?php endforeach; ?>
+            </div>
           </div>
+          <div class="col-md-2"></div>
         </div>
       </div>
+
+    </div>
+    <div id="portfolio">
+      <p class="text-center h2">Portofolio</p>
+    </div>
+    <div id="contact">
+      <p class="text-center h2">Contact</p>
     </div>
   </div>
 </section>
