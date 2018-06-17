@@ -101,7 +101,7 @@ class Image_moo
 	public $new_width = 0;
 	public $new_height = 0;
 
-	function Image_moo()
+	function __construct()
 	//----------------------------------------------------------------------------------------------------------
 	// create stuff here as needed
 	//----------------------------------------------------------------------------------------------------------
@@ -646,7 +646,7 @@ class Image_moo
 			$sy = ($this->height - $calc_height) / 2;
 			$sy2 = $calc_height;
 		}
-		
+
 		//image transparency preserved
 		imagealphablending( $this->temp_image, false );
 		imagesavealpha( $this->temp_image, true );

@@ -1,0 +1,26 @@
+$tbh: #555; //text_before_hover
+$tah: #000; //text_after_hover
+$alink: #7c82a6; //active_link
+
+.bold {
+  font-weight: bold;
+}
+.cursor_pointer {
+  cursor: pointer;
+}
+.hoverious {
+  @extend .cursor_pointer;
+  @extend .bold;
+  color: $tbh;
+}
+.hoverious:hover {
+  color: $tah;
+}
+a {
+  @extend .hoverious;
+}
+a:hover {
+  @extend .hoverious:hover;
+  text-decoration: none;
+  color: $alink;
+}

@@ -6,7 +6,7 @@ class SConfig{
 	var $_host_name 				= "localhost";
 	var $_database_name 		= "db_fortuno";
 	var $_database_user 		= "root";
-	var $_database_password = "aditkw25";
+	var $_database_password = "";
 	var $_table_prefix 			= "fortu_";
 	var $_cms_name 					= "LawaveDesign CMS ver.1.1";
 }

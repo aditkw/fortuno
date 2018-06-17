@@ -1,0 +1,54 @@
+.bold, .hoverious, a {
+  font-weight: bold; }
+
+.cursor_pointer, .hoverious, a {
+  cursor: pointer; }
+
+.hoverious, a {
+  color: #555; }
+
+.hoverious:hover, a:hover {
+  color: #000; }
+
+a:hover {
+  text-decoration: none;
+  color: #7c82a6; }
+
+header {
+  margin-top: 20px; }
+  header .header hr {
+    margin-bottom: 0; }
+  header .header nav .nav-list {
+    border: 0;
+    border-right: 1px solid #ccc;
+    max-height: 20px;
+    line-height: 1;
+    margin-top: 20px; }
+    header .header nav .nav-list a {
+      display: inline-block;
+      width: 100%; }
+  header .header nav .nav-list.portofolio {
+    min-width: 10%;
+    text-align: center; }
+  header .header nav .nav-list.kontak {
+    max-height: 55px;
+    margin-top: 0;
+    line-height: 3.5; }
+  header .header nav .search-container .search {
+    display: inline-block;
+    font-size: 0; }
+    header .header nav .search-container .search input {
+      display: inline-block;
+      width: 75%;
+      height: 55px;
+      border-radius: 0;
+      border: 0; }
+    header .header nav .search-container .search button {
+      margin-bottom: 13px;
+      display: inline-block;
+      height: 55px;
+      width: 55px;
+      border-radius: 0;
+      border: 0; }
+
+/*# sourceMappingURL=fort.style.css.map */
