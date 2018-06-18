@@ -62,6 +62,7 @@
 						<tr>
 							<th width="5%">#</th>
 							<th>Image</th>
+							<th>Category</th>
 							<th>Title</th>
 							<th>Description</th>
 							<th width="15%">Action</th>
@@ -72,6 +73,7 @@
 							<tr>
 								<td><?php echo $no;?></td>
 								<td><img src="<?=site_url('uploads/img/services/thumb-'.$services->image_name)?>" alt=""></td>
+								<td><?php echo ucwords($services->catservices_name_en);?></td>
 								<td><?php echo ucwords($services->services_name);?></td>
 								<td><?php echo limitKalimat($services->services_desc, 151);?></td>
 								<td>
@@ -99,6 +101,7 @@
 						<tr>
 							<th>#</th>
 							<th>Image</th>
+							<th>Category</th>
 							<th>Title</th>
 							<th>Description</th>
 							<th>Action</th>
@@ -123,12 +126,40 @@
 			<?php echo form_open_multipart('admin/services/action/insert');?>
 			<div class="modal-body">
 				<div class="form-group">
-					<label for="services">Title</label>
-					<input type="text" name="name" class="form-control" placeholder="title">
+					<label for="catservices">Category</label>
+					<select class="form-control" name="catservices">
+						<?php foreach ($catservices as $cat): ?>
+							<option value="<?=$cat->catservices_id?>"><?=$cat->catservices_name_en?></option>
+						<?php endforeach; ?>
+					</select>
 				</div>
-				<div class="form-group">
-					<label for="services">Description</label>
-					<textarea name="desc" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+				<div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">ID</a></li>
+						<li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="tab_1">
+							<div class="form-group">
+								<label for="services">Title ID</label>
+								<input type="text" name="name" class="form-control" placeholder="title">
+							</div>
+							<div class="form-group">
+								<label for="services">Description ID</label>
+								<textarea name="desc" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab_2">
+							<div class="form-group">
+								<label for="services">Title ENG</label>
+								<input type="text" name="name_en" class="form-control" placeholder="title">
+							</div>
+							<div class="form-group">
+								<label for="services">Description ENG</label>
+								<textarea name="desc_en" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="row">
 					<div class="col-lg-6">
@@ -137,12 +168,12 @@
 							<input type="file" name="image[]" class="form-control" required>
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<!-- <div class="col-lg-6">
 						<div class="form-group">
 							<label for="product">Image Icon</label>
 							<input type="file" name="image[]" class="form-control" required>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -167,14 +198,43 @@
 			<?php echo form_open_multipart('admin/services/action/update');?>
 			<div class="modal-body">
 				<div class="form-group">
-					<label for="services">Title</label>
-					<input id="id" type="hidden" name="id">
-					<input id="title" type="text" name="name" class="form-control" placeholder="title">
+					<label for="catservices">Category</label>
+					<select class="form-control" name="catservices">
+						<?php foreach ($catservices as $cat): ?>
+							<option value="<?=$cat->catservices_id?>"><?=$cat->catservices_name_en?></option>
+						<?php endforeach; ?>
+					</select>
 				</div>
-				<div class="form-group">
-					<label for="services">Description</label>
-					<textarea id="desc" name="desc" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+				<div class="nav-tabs-custom">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#edit_1" data-toggle="tab" aria-expanded="false">ID</a></li>
+						<li class=""><a href="#edit_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" id="edit_1">
+							<div class="form-group">
+								<label for="services">Title ID</label>
+								<input id="id" type="hidden" name="id">
+								<input id="title" type="text" name="name" class="form-control" placeholder="title">
+							</div>
+							<div class="form-group">
+								<label for="services">Description ID</label>
+								<textarea id="desc" name="desc" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+							</div>
+						</div>
+						<div class="tab-pane" id="edit_2">
+							<div class="form-group">
+								<label for="services">Title ENG</label>
+								<input id="title_en" type="text" name="name_en" class="form-control" placeholder="title">
+							</div>
+							<div class="form-group">
+								<label for="services">Description ENG</label>
+								<textarea id="desc_en" name="desc_en" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+							</div>
+						</div>
+					</div>
 				</div>
+
 				<div class="row">
 					<div class="col-lg-6">
 						<div class="form-group">
@@ -183,14 +243,14 @@
 							<input type="file" name="image[]" class="form-control">
 						</div>
 					</div>
-					<div class="col-lg-6">
+					<!-- <div class="col-lg-6">
 						<div class="form-group">
 							<label for="product">Image Icon</label>
 							<input id="icon" type="hidden" name="id_image_1">
 							<input type="file" name="image[]" class="form-control">
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="modal-footer">
 				<button type="reset" class="btn btn-default btn-flat"><i class="fa fa-refresh"></i> Reset</button>

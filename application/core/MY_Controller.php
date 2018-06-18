@@ -42,13 +42,14 @@ class MY_Controller extends CI_Controller
 				'contact_model',
 				'text_model',
 				'services_model',
+				'catservices_model',
+				'portofolio_model',
 				'banner_model',
 				'slide_model',
 				'login_model',
 				'image_model',
 				'site_model',
 				'seo_model',
-				'info_model'
 			)
 		);
 
@@ -187,7 +188,7 @@ class Backend_Controller extends MY_Controller
 			'profile' => array('about', 'contact' ),
 			'news' => array('news', 'event'),
 			'about' => array('firm', 'category', 'services', 'partners', 'clients', 'benefits', 'international'),
-			'services' => array('category', 'services'),
+			'services' => array('services', 'catservices'),
 			'member' => array('member'),
 			'misscellaneous' => array('slide', 'banner'),
 			'seo' => array('seo', 'site')

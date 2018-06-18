@@ -25,31 +25,29 @@
 								<i class="fa fa-font"></i> <span>Text Website</span>
 							</a>
 						</li>
-						<li class="treeview <?php echo active_perent($uri_2, $menu['about']) ?>">
-							<a href="<?php echo site_url('admin');?>">
+						<li class="treeview <?php echo active_menu($uri_2, 'about') ?>">
+							<a href="<?php echo site_url('admin/about');?>">
 								<i class="fa fa-table"></i> <span> About Us</span>
 							</a>
 						</li>
-						<li class="treeview <?php echo active_perent($uri_2, $menu['news']) ?>">
+						<li class="treeview <?php echo active_perent($uri_2, $menu['services']) ?>">
 							<a href="#">
-								<i class="fa fa-newspaper-o"></i> <span> News & Event</span> <i class="fa fa-angle-left pull-right"></i>
+								<i class="fa fa-asl-interpreting"></i> <span> Services</span>
+								<i class="fa fa-angle-left pull-right"></i>
 							</a>
 							<ul class="treeview-menu">
-								<li class="<?php echo active_menu($uri_2, 'news') ?>">
-									<a href="<?php echo site_url();?>admin/news">
-										<i class="fa fa-circle-o"></i> News
-									</a>
+								<li class="<?php echo active_menu($uri_2, 'catservices') ?>">
+									<a href="<?php echo site_url('admin/catservices');?>"><i class="fa fa-circle-o"></i> Category Service</a>
 								</li>
-								<li class="<?php echo active_menu($uri_2, 'event') ?>">
-									<a href="<?php echo site_url('admin/event');?>"><i class="fa fa-circle-o"></i> Event</a>
+								<li class="<?php echo active_menu($uri_2, 'services') ?>">
+									<a href="<?php echo site_url('admin/services');?>"><i class="fa fa-circle-o"></i> List Service </a>
 								</li>
 							</ul>
 						</li>
-						<li class="treeview <?php echo active_menu($uri_2, 'careers') ?>">
-							<a href="<?php echo site_url('admin/careers');?>"><i class="fa fa-user"></i> Careers</a>
-						</li>
-						<li class="treeview <?php echo active_menu($uri_2, 'links') ?>">
-							<a href="<?php echo site_url('admin/links');?>"><i class="fa fa-link"></i> Links</a>
+						<li class="treeview <?php echo active_menu($uri_2, 'portofolio') ?>">
+							<a href="<?php echo site_url('admin/portofolio');?>">
+								<i class="fa fa-newspaper-o"></i> <span> Portofolio</span>
+							</a>
 						</li>
 						<li class="treeview <?php echo active_perent($uri_2, $menu['misscellaneous']) ?>">
 							<a href="#">

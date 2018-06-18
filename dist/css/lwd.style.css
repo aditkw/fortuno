@@ -526,7 +526,8 @@ header {
   border-bottom: 1px solid #ededed; }
   .benefits .content-benefits .container .row:first-child p:first-child {
     font-size: 25px;
-    font-weight: bold; }
+    font-weight: bold;
+    font-style: italic; }
 .benefits .content-benefits .container .row:nth-child(2) {
   padding: 20px 0; }
 
