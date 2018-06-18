@@ -9,6 +9,7 @@
       &:first-child{
         font-size: 25px;
         font-weight: bold;
+        font-style: italic;
       }
     }
   }
@@ -19,7 +20,7 @@
           @include first-child;
         }
         &:nth-child(2){
-          padding: 20px 0;          
+          padding: 20px 0;
         }
       }
     }

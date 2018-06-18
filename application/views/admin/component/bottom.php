@@ -89,105 +89,6 @@
 					}
 				});
 			});
-			// get service (edit)
-			$('.btn-edit-firm').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/firm/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#title").val(data.title);
-						CKEDITOR.instances['desc'].setData(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
-
-			$('.btn-edit-benefits').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/benefits/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#title").val(data.title);
-						CKEDITOR.instances['desc'].setData(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
-
-			$('.btn-edit-links').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/links/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#title").val(data.title);
-						$("#desc").val(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
-
-			$('.btn-edit-international').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/international/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#title").val(data.title);
-						CKEDITOR.instances['desc'].setData(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
-
-			$('.btn-edit-partners').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/partners/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#desc").val(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
 
 			$('.btn-edit-clients').click(function() {
 				var id = $(this).attr('data-id');
@@ -208,11 +109,11 @@
 				});
 			});
 			// get category (edit)
-			$('.btn-edit-category').click(function() {
+			$('.btn-edit-catservices').click(function() {
 				var id = $(this).attr('data-id');
 				$.ajax({
 					type: "POST",
-					url: "<?php echo site_url('admin/category/update_load');?>",
+					url: "<?php echo site_url('admin/catservices/update_load');?>",
 					data: { dataID: id},
 					timeout : 3000,
 					dataType: "JSON",
@@ -223,8 +124,10 @@
 						$("#id").val(data.id);
 						$("#name").val(data.name);
 						$("#name_en").val(data.name_en);
-						// $("#desc").val(data.desc);
-						// $("#alt").val(data.alt);
+						CKEDITOR.instances['desc'].setData(data.desc);
+						CKEDITOR.instances['desc_en'].setData(data.desc_en);
+						$("#image").val(data.image);
+						$("#icon").val(data.icon);
 						$("#update").modal('show');
 					}
 				});
@@ -244,9 +147,11 @@
 					success: function(data) {
 						$("#id").val(data.id);
 						$("#title").val(data.title);
+						$("#title_en").val(data.title_en);
 						CKEDITOR.instances['desc'].setData(data.desc);
+						CKEDITOR.instances['desc_en'].setData(data.desc_en);
 						$("#image").val(data.image);
-						$("#icon").val(data.icon);
+						// $("#icon").val(data.icon);
 						$("#update").modal('show');
 					}
 				});
@@ -308,44 +213,6 @@
 						$("#title").val(data.title);
 						$("#keyword").val(data.keyword);
 						$("#desc").val(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
-			// get tag (edit)
-			$('.btn-edit-tag').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/tag/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#name").val(data.name);
-						$("#update").modal('show');
-					}
-				});
-			});
-			// get tag (edit)
-			$('.btn-edit-articlecat').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/articlecat/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#name").val(data.name);
 						$("#update").modal('show');
 					}
 				});

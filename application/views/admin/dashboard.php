@@ -28,7 +28,6 @@
 				<div id="content-home">
 					<div class="row">
 						<div class="col-md-12 tengah">
-								<img class="img-responsive" style="margin:auto;" src="http://lawavedesign.com/cmsico/lwd.png" />
 								<h2 class="judul hidden-xs">Content Management System</h2>
 								<h3 class="sub-judul hidden-xs">Versi 0.9.1</h3>
 								<h3 class="judul visible-xs" style="font-size:17px;">CMS Versi 0.9.1</h3>

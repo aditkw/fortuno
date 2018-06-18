@@ -3,12 +3,12 @@
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>
-			Our Services
+			Category Services
 			<small>data</small>
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?php echo site_url('admin');?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-			<li class="active">Our Services</li>
+			<li class="active">Category Services</li>
 		</ol>
 	</section>
 
@@ -62,35 +62,33 @@
 						<tr>
 							<th width="5%">#</th>
 							<th>Image</th>
-							<th>Category</th>
 							<th>Title</th>
 							<th>Description</th>
 							<th width="15%">Action</th>
 						</tr>
 					</thead>
 					<tbody>
-						<?php $no = 1; foreach ($services as $services): ?>
+						<?php $no = 1; foreach ($catservices as $catservices): ?>
 							<tr>
 								<td><?php echo $no;?></td>
-								<td><img src="<?=site_url('uploads/img/services/thumb-'.$services->image_name)?>" alt=""></td>
-								<td><?php echo ucwords($services->catservices_name_en);?></td>
-								<td><?php echo ucwords($services->services_name);?></td>
-								<td><?php echo limitKalimat($services->services_desc, 151);?></td>
+								<td><img src="<?=site_url('uploads/img/catservices/thumb-'.$catservices->image_name)?>" alt=""></td>
+								<td><?php echo ucwords($catservices->catservices_name_en);?></td>
+								<td><?php echo limitKalimat($catservices->catservices_desc_en, 151);?></td>
 								<td>
 									<!-- Action -->
-									<?php if ($services->services_pub == '88'): ?>
-										<a href="<?php echo site_url('admin/services/action/publish?id='.hash_link_encode($services->services_id));?>" class="btn btn-flat btn-danger" title="Publish">
+									<?php if ($catservices->catservices_pub == '88'): ?>
+										<a href="<?php echo site_url('admin/catservices/action/publish?id='.hash_link_encode($catservices->catservices_id));?>" class="btn btn-flat btn-danger" title="Publish">
 											<i class="fa fa-bullhorn"></i>
 										</a>
 									<?php else: ?>
-										<a href="<?php echo site_url('admin/services/action/publish?id='.hash_link_encode($services->services_id));?>" class="btn btn-flat btn-success" title="Publish">
+										<a href="<?php echo site_url('admin/catservices/action/publish?id='.hash_link_encode($catservices->catservices_id));?>" class="btn btn-flat btn-success" title="Publish">
 											<i class="fa fa-bullhorn"></i>
 										</a>
 									<?php endif ?>
-									<a class="btn btn-flat btn-default btn-edit-services" data-id="<?php echo hash_link_encode($services->services_id);?>" title="Update">
+									<a class="btn btn-flat btn-default btn-edit-catservices" data-id="<?php echo hash_link_encode($catservices->catservices_id);?>" title="Update">
 										<i class="fa fa-edit"></i>
 									</a>
-									<a onclick="return confirm('Are you sure ?')"  href="<?php echo site_url('admin/services/action/delete?id='.hash_link_encode($services->services_id));?>" class="btn btn-warning btn-flat" title="Delete">
+									<a onclick="return confirm('Are you sure ?')"  href="<?php echo site_url('admin/catservices/action/delete?id='.hash_link_encode($catservices->catservices_id));?>" class="btn btn-warning btn-flat" title="Delete">
 									<i class="fa fa-trash"></i>
 									</a>
 								</td>
@@ -101,7 +99,6 @@
 						<tr>
 							<th>#</th>
 							<th>Image</th>
-							<th>Category</th>
 							<th>Title</th>
 							<th>Description</th>
 							<th>Action</th>
@@ -121,59 +118,54 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Add Our services</h4>
+				<h4 class="modal-title">Add Category Service</h4>
 			</div>
-			<?php echo form_open_multipart('admin/services/action/insert');?>
+			<?php echo form_open_multipart('admin/catservices/action/insert');?>
 			<div class="modal-body">
-				<div class="form-group">
-					<label for="catservices">Category</label>
-					<select class="form-control" name="catservices">
-						<?php foreach ($catservices as $cat): ?>
-							<option value="<?=$cat->catservices_id?>"><?=$cat->catservices_name_en?></option>
-						<?php endforeach; ?>
-					</select>
-				</div>
 				<div class="nav-tabs-custom">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">ID</a></li>
 						<li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
+						<li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Images</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="tab_1">
 							<div class="form-group">
-								<label for="services">Title ID</label>
+								<label for="catservices">Title</label>
 								<input type="text" name="name" class="form-control" placeholder="title">
 							</div>
 							<div class="form-group">
-								<label for="services">Description ID</label>
+								<label for="catservices">Description</label>
 								<textarea name="desc" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
 							</div>
 						</div>
 						<div class="tab-pane" id="tab_2">
 							<div class="form-group">
-								<label for="services">Title ENG</label>
+								<label for="catservices">Title</label>
 								<input type="text" name="name_en" class="form-control" placeholder="title">
 							</div>
 							<div class="form-group">
-								<label for="services">Description ENG</label>
+								<label for="catservices">Description</label>
 								<textarea name="desc_en" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
 							</div>
 						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="form-group">
-							<label for="product">Image Thumbnail</label>
-							<input type="file" name="image[]" class="form-control" required>
+						<div class="tab-pane" id="tab_3">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="product">Image Thumbnail</label>
+										<input type="file" name="image[]" class="form-control" required>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="product">Image Icon</label>
+										<input type="file" name="image[]" class="form-control" required>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<!-- <div class="col-lg-6">
-						<div class="form-group">
-							<label for="product">Image Icon</label>
-							<input type="file" name="image[]" class="form-control" required>
-						</div>
-					</div> -->
 				</div>
 			</div>
 			<div class="modal-footer">
@@ -193,64 +185,59 @@
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Update Our services</h4>
+				<h4 class="modal-title">Update Our catservices</h4>
 			</div>
-			<?php echo form_open_multipart('admin/services/action/update');?>
+			<?php echo form_open_multipart('admin/catservices/action/update');?>
 			<div class="modal-body">
-				<div class="form-group">
-					<label for="catservices">Category</label>
-					<select class="form-control" name="catservices">
-						<?php foreach ($catservices as $cat): ?>
-							<option value="<?=$cat->catservices_id?>"><?=$cat->catservices_name_en?></option>
-						<?php endforeach; ?>
-					</select>
-				</div>
 				<div class="nav-tabs-custom">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#edit_1" data-toggle="tab" aria-expanded="false">ID</a></li>
 						<li class=""><a href="#edit_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
+						<li class=""><a href="#edit_3" data-toggle="tab" aria-expanded="false">Images</a></li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="edit_1">
 							<div class="form-group">
-								<label for="services">Title ID</label>
+								<label for="catservices">Title</label>
 								<input id="id" type="hidden" name="id">
-								<input id="title" type="text" name="name" class="form-control" placeholder="title">
+								<input id="name" type="text" name="name" class="form-control" placeholder="title">
 							</div>
 							<div class="form-group">
-								<label for="services">Description ID</label>
+								<label for="catservices">Description</label>
 								<textarea id="desc" name="desc" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
 							</div>
 						</div>
 						<div class="tab-pane" id="edit_2">
 							<div class="form-group">
-								<label for="services">Title ENG</label>
-								<input id="title_en" type="text" name="name_en" class="form-control" placeholder="title">
+								<label for="catservices">Title</label>
+								<input id="name_en" type="text" name="name_en" class="form-control" placeholder="title">
 							</div>
 							<div class="form-group">
-								<label for="services">Description ENG</label>
+								<label for="catservices">Description</label>
 								<textarea id="desc_en" name="desc_en" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
+							</div>
+						</div>
+						<div class="tab-pane" id="edit_3">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="product">Image Thumbnail</label>
+										<input id="image" type="hidden" name="id_image_0">
+										<input type="file" name="image[]" class="form-control">
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label for="product">Image Icon</label>
+										<input id="icon" type="hidden" name="id_image_1">
+										<input type="file" name="image[]" class="form-control">
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="form-group">
-							<label for="product">Image Thumbnail</label>
-							<input id="image" type="hidden" name="id_image_0">
-							<input type="file" name="image[]" class="form-control">
-						</div>
-					</div>
-					<!-- <div class="col-lg-6">
-						<div class="form-group">
-							<label for="product">Image Icon</label>
-							<input id="icon" type="hidden" name="id_image_1">
-							<input type="file" name="image[]" class="form-control">
-						</div>
-					</div>
-				</div> -->
 			</div>
 			<div class="modal-footer">
 				<button type="reset" class="btn btn-default btn-flat"><i class="fa fa-refresh"></i> Reset</button>

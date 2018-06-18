@@ -60,11 +60,8 @@
 						<ul class="nav nav-tabs">
 							<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">ID</a></li>
 							<li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
-							<!-- <li class="pull-right"><button type='submit' class="text-muted btn btn-flat btn-primary"><i class="fa fa-save"></i> Save</button></li> -->
 						</ul>
-
 						<div class="tab-content">
-
 							<div class="tab-pane active" id="tab_1">
 								<div class="form-group">
 									<label for="title">Slide Text</label>
