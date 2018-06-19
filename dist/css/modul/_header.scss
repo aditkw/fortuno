@@ -1,3 +1,12 @@
+// nav scrolled
+.nav_scrolled {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding-top: 20px;
+  top: 0;
+  left: 0;
+}
 header {
   margin-top: 20px;
   .header {
@@ -5,6 +14,8 @@ header {
       margin-bottom: 0;
     }
     nav {
+      transition-duration: 1s;
+      background-color: $cwhite;
       .nav-list {
         border: 0;
         border-right: 1px solid #ccc;

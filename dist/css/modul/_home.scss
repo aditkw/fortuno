@@ -6,6 +6,9 @@ section {
     #slider {
       min-height: 100vh;
       background: #cdcdcd;
+      background-image: url($base_url+"dist/img/assets/slider1.png");
+      background-size: cover;
+      background-attachment: fixed;
     }
     #about {
       min-height: 100vh;
@@ -28,21 +31,97 @@ section {
       }
     }
     #services {
-      background-image: url($base_url+"dist/img/assets/serviceBackground.png");
+      background-image: url($base_url+"dist/img/assets/serviceBackground-min.png");
       background-size: cover;
-      background-position: left top;
-      -webkit-filter: contrast(1);
-      filter: contrast(1);
+      // background-position: left top;
+      background-attachment: fixed;
       .background-filter-container {
-        background-color: #0009;
+        @extend .modal-color;
         min-height: 100vh;
         .services-left {
           padding-top: 15%;
         }
         .services-right {
           padding-top: 12.5%;
+          .mechanical-title, .electrical-title {
+            cursor: pointer;
+          }
+          .mechanical-title:hover, .electrical-title:hover {
+            text-decoration: underline;
+            color: $corange;
+          }
         }
       }
+    }
+    #portfolio {
+      background-color: #f9f9f9;
+      .row {
+        div {
+          padding: 0;
+          img {
+            height: 350px;
+            width: 100%;
+          }
+          div {
+            display: none;
+            p {
+              padding: 0 10%;
+            }
+            .port_title {
+              color: $cwhite_opa;
+            }
+            .port_title:hover {
+              color: $cwhite;
+            }
+            button {
+              background-color: $corange;
+              color: $cwhite_opa;
+              padding: 8px;
+              border: none;
+              border-radius: 15px;
+              cursor: pointer;
+              position: relative;
+            }
+            button:hover {
+              color: $cwhite;
+              bottom: 2px;
+              text-decoration: underline;
+            }
+          }
+          .port_img_link_active {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            z-index: 1;
+          }
+        }
+      }
+    }
+    #contact {
+      .cont-container {
+        div {
+          padding: 0;
+          div:first-child {
+            img {
+              height: 100vh;
+            }
+            div {
+              top: 0;
+              height: 100%;
+              padding: 25% 15% 15% 25%;
+            }
+          }
+          .cont-contact {
+            background-color: #f0f0f0;
+            padding: 5%;
+          }
+        }
+      }
+    }
+    .gap {
+      min-height: 10vh;
+      background-color: $cwhite;
     }
   }
 }

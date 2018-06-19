@@ -3,13 +3,35 @@ $tbh: #555; //text_before_hover
 $tah: #000; //text_after_hover
 $alink: #7c82a6; //active_link
 $cwhite: #fff;
+$cwhite_opa: #f0f0f0;
 $corange: #fba419;
+$corange_opa: #fba419b3;
+$cblue: #535b8c;
+$cblue_opa: rgba(83, 91, 140, 0.7);
+$modal_color: rgba(0, 0, 0, 0.7);
+$cgrey: #ddd;
+$cnero: #212121;
 
 .cwhite {
   color: $cwhite;
 }
+.cwhite_opa {
+  color: $cwhite_opa;
+}
 .corange {
   color: $corange;
+}
+.corange_opa {
+  color: $corange_opa;
+}
+.cblue {
+  color: $cblue;
+}
+.cblue_opa {
+  color: $cblue_opa;
+}
+.cgrey {
+  color: $cgrey;
 }
 div, .row {
   margin: 0;
@@ -19,6 +41,9 @@ div, .row {
 }
 .cursor_pointer {
   cursor: pointer;
+}
+.modal-color {
+  background-color: $modal_color;
 }
 .hoverious {
   @extend .cursor_pointer;
@@ -32,8 +57,8 @@ a {
   @extend .hoverious;
 }
 a:hover {
-  @extend .hoverious:hover;
-  text-decoration: none;
+  @extend .hoverious;
+  // text-decoration: none;
   color: $alink;
 }
 // blockquote
