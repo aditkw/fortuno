@@ -16,6 +16,7 @@ header {
     nav {
       transition-duration: 1s;
       background-color: $cwhite;
+      z-index: 2;
       .nav-list {
         border: 0;
         border-right: 1px solid #ccc;

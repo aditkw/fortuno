@@ -106,6 +106,7 @@ header .header hr {
 header .header nav {
   transition-duration: 1s;
   background-color: #fff;
+  z-index: 2;
 }
 header .header nav .nav-list {
   border: 0;
