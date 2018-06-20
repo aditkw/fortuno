@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 12, 2018 at 10:06 AM
+-- Generation Time: Jun 20, 2018 at 11:05 AM
 -- Server version: 10.2.14-MariaDB
 -- PHP Version: 7.2.6
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_fortuno`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fortu_about`
+--
+
+CREATE TABLE `fortu_about` (
+  `about_id` int(8) NOT NULL,
+  `about_title` varchar(255) NOT NULL,
+  `about_desc` text NOT NULL,
+  `about_pub` enum('88','99') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fortu_about`
+--
+
+INSERT INTO `fortu_about` (`about_id`, `about_title`, `about_desc`, `about_pub`) VALUES
+(4, 'haii', '<p>guys</p>\r\n', '99');
 
 -- --------------------------------------------------------
 
@@ -43,6 +63,29 @@ CREATE TABLE `fortu_banner` (
 INSERT INTO `fortu_banner` (`banner_id`, `banner_type`, `banner_link`, `banner_alt`, `banner_pub`) VALUES
 (1, 'slide', '#', '#', '99'),
 (2, 'slide', '#', '#', '99');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fortu_catservices`
+--
+
+CREATE TABLE `fortu_catservices` (
+  `catservices_id` int(11) NOT NULL,
+  `catservices_name` varchar(255) NOT NULL,
+  `catservices_name_en` varchar(255) NOT NULL,
+  `catservices_desc` text NOT NULL,
+  `catservices_desc_en` text NOT NULL,
+  `catservices_pub` enum('88','99') NOT NULL,
+  `catservices_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fortu_catservices`
+--
+
+INSERT INTO `fortu_catservices` (`catservices_id`, `catservices_name`, `catservices_name_en`, `catservices_desc`, `catservices_desc_en`, `catservices_pub`, `catservices_link`) VALUES
+(3, 'kategori', 'category', '<p>testasd</p>\r\n', '<p>test</p>\r\n', '99', 'category');
 
 -- --------------------------------------------------------
 
@@ -103,21 +146,28 @@ INSERT INTO `fortu_image` (`image_id`, `parent_id`, `image_parent_name`, `image_
 (36, 21, 'clients', '-7971.png', 0),
 (37, 22, 'clients', '-8734.png', 0),
 (38, 23, 'clients', '-9158.png', 0),
-(45, 4, 'services', 'business-establishments-and-structures-3670.jpg', 0),
-(46, 4, 'services', 'business-establishments-and-structures-3671.png', 1),
-(47, 5, 'services', 'due-diligence-engagements-5762.jpg', 0),
-(48, 5, 'services', 'due-diligence-engagements-5763.png', 1),
-(49, 6, 'services', 'legal-and-banking-contracts-630.jpg', 0),
-(50, 6, 'services', 'legal-and-banking-contracts-631.png', 1),
-(51, 7, 'services', 'management-consultancy-2856.jpg', 0),
-(52, 7, 'services', 'management-consultancy-2857.png', 1),
-(53, 8, 'services', 'local-taxation-7281.jpg', 0),
-(54, 8, 'services', 'local-taxation-7282.png', 1),
-(55, 9, 'services', 'accounting-and-audit-compliance-3526.jpg', 0),
-(56, 9, 'services', 'accounting-and-audit-compliance-3527.png', 1),
 (57, 1, 'slide', '-7892.jpg', 0),
 (58, 2, 'slide', '-8011.jpg', 0),
-(62, 9, 'event', 'test-lagi-9427.jpg', 0);
+(62, 9, 'event', 'test-lagi-9427.jpg', 0),
+(66, 4, 'about', 'qwewqe-1149.jpg', 0),
+(75, 3, 'catservices', 'test-65.jpg', 0),
+(76, 3, 'catservices', 'test-8152.jpg', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fortu_portofolio`
+--
+
+CREATE TABLE `fortu_portofolio` (
+  `portofolio_id` int(8) NOT NULL,
+  `portofolio_name` varchar(255) NOT NULL,
+  `portofolio_name_en` varchar(255) NOT NULL,
+  `portofolio_desc` text NOT NULL,
+  `portofolio_desc_en` text NOT NULL,
+  `portofolio_pub` enum('88','99') NOT NULL,
+  `portofolio_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -157,6 +207,7 @@ INSERT INTO `fortu_seo` (`seo_id`, `seo_page`, `seo_title`, `seo_keyword`, `seo_
 
 CREATE TABLE `fortu_services` (
   `services_id` int(11) NOT NULL,
+  `catservices_id` int(8) NOT NULL,
   `services_name` varchar(255) NOT NULL,
   `services_name_en` varchar(255) NOT NULL,
   `services_desc` text NOT NULL,
@@ -165,18 +216,6 @@ CREATE TABLE `fortu_services` (
   `services_pub` enum('88','99') NOT NULL COMMENT '99 = publish',
   `services_link` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `fortu_services`
---
-
-INSERT INTO `fortu_services` (`services_id`, `services_name`, `services_name_en`, `services_desc`, `services_desc_en`, `services_alt`, `services_pub`, `services_link`) VALUES
-(4, 'Business establishments and structures', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'business-establishments-and-structures'),
-(5, 'Due diligence engagements', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'due-diligence-engagements'),
-(6, 'Legal and banking contracts', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'legal-and-banking-contracts'),
-(7, 'Management consultancy', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'management-consultancy'),
-(8, 'Local taxation', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'local-taxation'),
-(9, 'Accounting and audit compliance', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'accounting-and-audit-compliance');
 
 -- --------------------------------------------------------
 
@@ -205,22 +244,6 @@ INSERT INTO `fortu_site` (`site_id`, `site_name`, `site_title`, `site_desc`, `si
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fortu_subservices`
---
-
-CREATE TABLE `fortu_subservices` (
-  `subservices_id` int(11) NOT NULL,
-  `services_id` int(8) NOT NULL,
-  `subservices_name` varchar(255) NOT NULL,
-  `subservices_name_en` varchar(255) NOT NULL,
-  `subservices_desc` text NOT NULL,
-  `subservices_desc_en` text NOT NULL,
-  `subservices_pub` enum('88','99') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `fortu_text`
 --
 
@@ -243,7 +266,7 @@ CREATE TABLE `fortu_text` (
 --
 
 INSERT INTO `fortu_text` (`text_id`, `text_footer`, `text_footer_en`, `text_slide`, `text_slide_en`, `text_quote`, `text_quote_en`, `text_service`, `text_service_en`, `text_portofolio`, `text_portofolio_en`) VALUES
-(1, 'wwqwqwqLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'eqiwjeiqw', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.', 'adsqowe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ', 'ejiqwjei', 'adasdasd', 'ejqiwjeiqwe', 'qqqqwqeqwe', 'eqwiejiqw');
+(1, 'wwqwqwqLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'eqiwjeiqw', 'anjay', 'adsqowe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ', 'ejiqwjei', 'adasdasd', 'ejqiwjeiqwe', 'qqqqwqeqwe', 'eqwiejiqw');
 
 -- --------------------------------------------------------
 
@@ -268,7 +291,7 @@ CREATE TABLE `fortu_user` (
 --
 
 INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_email`, `user_level`, `user_status`, `user_image`, `user_session`) VALUES
-(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '272da34fc7021a904cb93a58bdc1c1f666c1e5af'),
+(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '9a23eaa4f95b0429323af55ec0c42e6c8d248030'),
 (2, 'mainlwd', 'a82d82f5133af2c987010c8e446c35230164a0fe', 'Maintenance LWD', 'lwd@lawavedesign.com', 'admin', 'active', '', 'b6bc5de8c9694006f7c96f34e37c0551c8b13525');
 
 --
@@ -276,10 +299,22 @@ INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_nam
 --
 
 --
+-- Indexes for table `fortu_about`
+--
+ALTER TABLE `fortu_about`
+  ADD PRIMARY KEY (`about_id`);
+
+--
 -- Indexes for table `fortu_banner`
 --
 ALTER TABLE `fortu_banner`
   ADD PRIMARY KEY (`banner_id`);
+
+--
+-- Indexes for table `fortu_catservices`
+--
+ALTER TABLE `fortu_catservices`
+  ADD PRIMARY KEY (`catservices_id`);
 
 --
 -- Indexes for table `fortu_contact`
@@ -292,6 +327,12 @@ ALTER TABLE `fortu_contact`
 --
 ALTER TABLE `fortu_image`
   ADD PRIMARY KEY (`image_id`);
+
+--
+-- Indexes for table `fortu_portofolio`
+--
+ALTER TABLE `fortu_portofolio`
+  ADD PRIMARY KEY (`portofolio_id`);
 
 --
 -- Indexes for table `fortu_seo`
@@ -328,10 +369,22 @@ ALTER TABLE `fortu_user`
 --
 
 --
+-- AUTO_INCREMENT for table `fortu_about`
+--
+ALTER TABLE `fortu_about`
+  MODIFY `about_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `fortu_banner`
 --
 ALTER TABLE `fortu_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `fortu_catservices`
+--
+ALTER TABLE `fortu_catservices`
+  MODIFY `catservices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `fortu_contact`
@@ -343,7 +396,13 @@ ALTER TABLE `fortu_contact`
 -- AUTO_INCREMENT for table `fortu_image`
 --
 ALTER TABLE `fortu_image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+
+--
+-- AUTO_INCREMENT for table `fortu_portofolio`
+--
+ALTER TABLE `fortu_portofolio`
+  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `fortu_seo`
@@ -355,7 +414,7 @@ ALTER TABLE `fortu_seo`
 -- AUTO_INCREMENT for table `fortu_services`
 --
 ALTER TABLE `fortu_services`
-  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `fortu_text`
