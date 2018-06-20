@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@font-face {
+  url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
+  font-family: "roboto";
+}
 .cwhite {
   color: #fff;
 }
@@ -53,6 +57,10 @@ div, .row {
 
 a:hover {
   color: #7c82a6;
+}
+
+body {
+  font-family: "roboto";
 }
 
 blockquote {
@@ -148,7 +156,7 @@ header .header nav .search-container .search button {
   border: 0;
 }
 
-section .homepage #slider, section .homepage #about, section .homepage #services, section .homepage #portfolio, section .homepage #contact {
+section .homepage #slider, section .homepage #sistem_utilitas, section .homepage #about, section .homepage #services, section .homepage #portfolio, section .homepage #contact {
   min-height: 100vh;
 }
 section .homepage #slider {
@@ -157,6 +165,16 @@ section .homepage #slider {
   background-image: url("http://localhost/fortuno/dist/img/assets/slider1.png");
   background-size: cover;
   background-attachment: fixed;
+}
+section .homepage #sistem_utilitas .title {
+  padding-top: 25vh;
+  padding-bottom: 5vh;
+}
+section .homepage #sistem_utilitas .content {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  line-height: 1.5em;
+  font-size: 1.2em;
 }
 section .homepage #about {
   min-height: 100vh;
@@ -185,20 +203,53 @@ section .homepage #services .background-filter-container {
   min-height: 100vh;
 }
 section .homepage #services .background-filter-container .services-left {
-  padding-top: 15%;
-}
-section .homepage #services .background-filter-container .services-right {
   padding-top: 12.5%;
 }
-section .homepage #services .background-filter-container .services-right .mechanical-title, section .homepage #services .background-filter-container .services-right .electrical-title {
+section .homepage #services .background-filter-container .services-right {
+  padding-top: 10%;
+}
+section .homepage #services .background-filter-container .services-right .mechanical-title, section .homepage #services .background-filter-container .services-right .electrical-title, section .homepage #services .background-filter-container .services-right .gas-title {
   cursor: pointer;
 }
-section .homepage #services .background-filter-container .services-right .mechanical-title:hover, section .homepage #services .background-filter-container .services-right .electrical-title:hover {
+section .homepage #services .background-filter-container .services-right .mechanical-title .fa-chevron-circle-right, section .homepage #services .background-filter-container .services-right .electrical-title .fa-chevron-circle-right, section .homepage #services .background-filter-container .services-right .gas-title .fa-chevron-circle-right {
+  transition-duration: 1s;
+}
+section .homepage #services .background-filter-container .services-right .mechanical-title:hover, section .homepage #services .background-filter-container .services-right .electrical-title:hover, section .homepage #services .background-filter-container .services-right .gas-title:hover {
   text-decoration: underline;
   color: #fba419;
 }
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub, section .homepage #services .background-filter-container .services-right ul.electrical-sub {
+  display: none;
+  list-style: none;
+  z-index: 1;
+  top: 35px;
+  padding: 0;
+  border: 1px solid #ddd;
+  background-color: #212121;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li, section .homepage #services .background-filter-container .services-right ul.electrical-sub li {
+  padding: 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li a, section .homepage #services .background-filter-container .services-right ul.electrical-sub li a {
+  color: #fba419b3;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:hover, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:hover {
+  background-color: #000;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:hover a, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:hover a {
+  color: #fba419;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:last-child, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:last-child {
+  border: none;
+}
 section .homepage #portfolio {
   background-color: #f9f9f9;
+}
+section .homepage #portfolio .port-desc {
+  padding-left: 15vw;
+  padding-right: 15vw;
 }
 section .homepage #portfolio .row div {
   padding: 0;

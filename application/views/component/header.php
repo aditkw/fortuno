@@ -1,3 +1,4 @@
+
 <header id="beranda">
   <div class="container-fluid header">
     <div class="row">
@@ -9,10 +10,10 @@
       <div class="col-md-2">
         <div class="form-group text-center select_language">
           <select class="form-control cursor_pointer" id="select_language">
-            <option value="English">English</option>
             <option value="Indonesia">Indonesia</option>
+            <option value="English">English</option>
           </select>
-          <label for="select_language"><small class="hoverious">Choose Your Language</small></label>
+          <label for="select_language"><small class="hoverious">Pilih Bahasa Anda</small></label>
         </div>
       </div>
       <div class="col-md-2"></div>
@@ -20,7 +21,7 @@
     <hr>
     <nav class="row text-center">
       <div class="col-md-2"></div>
-      <div class="col-md-1 nav-list homepage"><a href="#homepage">HOME</a></div>
+      <div class="col-md-1 nav-list homepage"><a href="#beranda">HOME</a></div>
       <div class="col-md-1 nav-list about"><a href="#about">ABOUT</a></div>
       <div class="col-md-1 nav-list services"><a href="#services">SERVICES</a></div>
       <div class="col-md-1 nav-list portfolio"><a href="#portfolio">PORTFOLIO</a></div>

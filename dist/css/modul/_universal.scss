@@ -11,6 +11,13 @@ $cblue_opa: rgba(83, 91, 140, 0.7);
 $modal_color: rgba(0, 0, 0, 0.7);
 $cgrey: #ddd;
 $cnero: #212121;
+$space: 5vw;
+
+@font-face {
+  url: $base_url+"dist/fonts/Roboto/Roboto-Regular.ttf";
+  font-family: "roboto";
+}
+
 
 .cwhite {
   color: $cwhite;
@@ -60,6 +67,10 @@ a:hover {
   @extend .hoverious;
   // text-decoration: none;
   color: $alink;
+}
+body {
+  font-family: "roboto";
+  // font-size: 1.1em;
 }
 // blockquote
 blockquote {

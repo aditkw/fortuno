@@ -1,6 +1,6 @@
 section {
   .homepage {
-    #slider, #about, #services, #portfolio, #contact {
+    #slider, #sistem_utilitas, #about, #services, #portfolio, #contact {
       min-height: 100vh;
     }
     #slider {
@@ -9,6 +9,19 @@ section {
       background-image: url($base_url+"dist/img/assets/slider1.png");
       background-size: cover;
       background-attachment: fixed;
+    }
+    #sistem_utilitas {
+      // background: #f0f0f0;
+      .title {
+        padding-top: 25vh;
+        padding-bottom: 5vh;
+      }
+      .content {
+        padding-left: 15vw;
+        padding-right: 15vw;
+        line-height: 1.5em;
+        font-size: 1.2em;
+      }
     }
     #about {
       min-height: 100vh;
@@ -39,22 +52,56 @@ section {
         @extend .modal-color;
         min-height: 100vh;
         .services-left {
-          padding-top: 15%;
+          padding-top: 12.5%;
         }
         .services-right {
-          padding-top: 12.5%;
-          .mechanical-title, .electrical-title {
+          padding-top: 10%;
+          .mechanical-title, .electrical-title, .gas-title {
             cursor: pointer;
+            .fa-chevron-circle-right {
+              transition-duration: 1s;
+            }
           }
-          .mechanical-title:hover, .electrical-title:hover {
+          .mechanical-title:hover, .electrical-title:hover, .gas-title:hover {
             text-decoration: underline;
             color: $corange;
+          }
+          ul.mechanical-sub, ul.electrical-sub {
+            display: none;
+            list-style: none;
+            z-index: 1;
+            top: 35px;
+            padding: 0;
+            border: 1px solid $cgrey;
+            background-color: $cnero;
+            li {
+              padding: 15px;
+              border-bottom: 1px solid $cgrey;
+              cursor: pointer;
+              a {
+                color: $corange_opa;
+              }
+            }
+            li:hover {
+              background-color: $tah;
+            }
+            li:hover a {
+              color: $corange;
+            }
+            li:last-child {
+              border: none;
+            }
           }
         }
       }
     }
     #portfolio {
       background-color: #f9f9f9;
+      .port-desc {
+        $space: 15vw;
+        padding-left: $space;
+        padding-right: $space;
+      }
       .row {
         div {
           padding: 0;
