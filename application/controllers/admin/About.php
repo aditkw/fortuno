@@ -68,9 +68,9 @@ class About extends Backend_Controller
 		$this->form_validation->set_rules($rules);
 
 		if (!empty($post)) {
-			$alt 				= title_url($post['title']);
+			// $alt 				= title_url($post['desc_en']);
 
-			$array_data['about_title'] 				= $post['title'];
+			$array_data['about_desc_en'] 				= $post['desc_en'];
 			$array_data['about_desc'] 					= $post['desc'];
 		}
 
@@ -78,7 +78,7 @@ class About extends Backend_Controller
 
 			/* ----------- TAMBAH DATA ----------- */
 			case 'insert':
-				$this->form_validation->set_rules('title','about Title','trim|required|is_unique[{PRE}about.about_title]');
+				// $this->form_validation->set_rules('title','about Title','trim|required|is_unique[{PRE}about.about_title]');
 
 				if ($this->form_validation->run() == FALSE) {
 					$this->session->set_flashdata('error', validation_errors('<li>','</li>'));
@@ -86,7 +86,7 @@ class About extends Backend_Controller
 				}
 
 				else {
-					$upload_image = $this->lawave_image->upload_image($this->modul_file, $this->image_input_name, $alt);
+					$upload_image = $this->lawave_image->upload_image($this->modul_file, $this->image_input_name);
 					$this->image_moo
 					->load($upload_image['image_path'].self::DS.$upload_image['image']['file_name'])
 					->resize($this->wt,$this->ht)
@@ -108,20 +108,23 @@ class About extends Backend_Controller
 			/* ----------- EDIT DATA ----------- */
 			case 'update':
 				$id 				= hash_link_decode($post['id']);
+				// var_dump($array_data);
+				// die();
 				$where_img	= array('parent_id' => $id, 'image_parent_name' => 'about');
 				$get_data 	= $this->about_model->get($id);
 				$get_image 	= $this->image_model->get_by($where_img, NULL, NULL, TRUE);
 				$array_id 	= array('about_id' => $id);
 				$files 			= $_FILES[$this->image_input_name]['name'];
 
-				$is_unique = $this->about_model->unique_update($post['title'], $id, 'about_title');
+				// $is_unique = $this->about_model->unique_update($post['title'], $id, 'about_title');
 				// var_dump($is_unique);
 				// die();
 
-				$this->form_validation->set_rules('title','about Title','required'.$is_unique);
+				// $this->form_validation->set_rules('title','about Title','required'.$is_unique);
 				$this->form_validation->set_rules($rules);
 
 				if ($this->form_validation->run() == FALSE) {
+					// die('masuk form false');
 					$this->session->set_flashdata('error', validation_errors('<li>','</li>'));
 					redirect(site_url('admin/about'));
 				}

@@ -11,14 +11,19 @@ class About_model extends MY_Model
 	protected $_order_by = 'about_id';
 	protected $_order_by_type = 'DESC';
 	public $rules = array(
-		'title' => array(
-			'field' => 'title',
-			'label' => 'About Name / Title',
-			'rules' => 'required'
-			),
+		// 'title' => array(
+		// 	'field' => 'title',
+		// 	'label' => 'About Name / Title',
+		// 	'rules' => 'required'
+		// 	),
 		'desc' => array(
 			'field' => 'desc',
-			'label' => 'About Description',
+			'label' => 'About Description Indo',
+			'rules' => 'required'
+			),
+		'desc_en' => array(
+			'field' => 'desc_en',
+			'label' => 'About Description English',
 			'rules' => 'required'
 			)
 		);

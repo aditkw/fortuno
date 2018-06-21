@@ -25,7 +25,7 @@
 	<body class="hold-transition login-page">
 		<div class="login-box">
 			<div class="login-logo">
-				<img src="<?=site_url('dist/img/assets/loo.jpg')?>" alt="fortuno logo">
+				<img src="<?=site_url('dist/img/assets/logo.png')?>" alt="fortuno logo">
 			</div><!-- /.login-logo -->
 			<div>
 				<div class="row form-group">

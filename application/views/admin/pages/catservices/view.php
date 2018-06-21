@@ -61,7 +61,7 @@
 					<thead>
 						<tr>
 							<th width="5%">#</th>
-							<th>Image</th>
+							<!-- <th>Image</th> -->
 							<th>Title</th>
 							<th>Description</th>
 							<th width="15%">Action</th>
@@ -71,7 +71,7 @@
 						<?php $no = 1; foreach ($catservices as $catservices): ?>
 							<tr>
 								<td><?php echo $no;?></td>
-								<td><img src="<?=site_url('uploads/img/catservices/thumb-'.$catservices->image_name)?>" alt=""></td>
+								<!-- <td><img src="<?=site_url('uploads/img/catservices/thumb-'.$catservices->image_name)?>" alt=""></td> -->
 								<td><?php echo ucwords($catservices->catservices_name_en);?></td>
 								<td><?php echo limitKalimat($catservices->catservices_desc_en, 151);?></td>
 								<td>
@@ -98,7 +98,7 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>Image</th>
+							<!-- <th>Image</th> -->
 							<th>Title</th>
 							<th>Description</th>
 							<th>Action</th>
@@ -126,7 +126,7 @@
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="false">ID</a></li>
 						<li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
-						<li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Images</a></li>
+						<!-- <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Images</a></li> -->
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="tab_1">
@@ -149,21 +149,13 @@
 								<textarea name="desc_en" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
 							</div>
 						</div>
-						<div class="tab-pane" id="tab_3">
-							<div class="row">
-								<div class="col-lg-6">
-									<div class="form-group">
-										<label for="product">Image Thumbnail</label>
-										<input type="file" name="image[]" class="form-control" required>
-									</div>
-								</div>
-								<div class="col-lg-6">
-									<div class="form-group">
-										<label for="product">Image Icon</label>
-										<input type="file" name="image[]" class="form-control" required>
-									</div>
-								</div>
-							</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="form-group">
+							<label for="catservices">Icon <span class="badge bg-yellow" data-toggle="modal" data-target="#helpModal" style="cursor: help;">?</span></label>
+							<input type="text" name="icon" class="form-control" placeholder="icon">
 						</div>
 					</div>
 				</div>
@@ -193,7 +185,7 @@
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#edit_1" data-toggle="tab" aria-expanded="false">ID</a></li>
 						<li class=""><a href="#edit_2" data-toggle="tab" aria-expanded="false">ENG</a></li>
-						<li class=""><a href="#edit_3" data-toggle="tab" aria-expanded="false">Images</a></li>
+						<!-- <li class=""><a href="#edit_3" data-toggle="tab" aria-expanded="false">Images</a></li> -->
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane active" id="edit_1">
@@ -217,7 +209,7 @@
 								<textarea id="desc_en" name="desc_en" class="ckeditor form-control" placeholder="description" rows="5"></textarea>
 							</div>
 						</div>
-						<div class="tab-pane" id="edit_3">
+						<!-- <div class="tab-pane" id="edit_3">
 							<div class="row">
 								<div class="col-lg-6">
 									<div class="form-group">
@@ -234,6 +226,14 @@
 									</div>
 								</div>
 							</div>
+						</div> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3">
+						<div class="form-group">
+							<label for="catservices">Icon <span class="badge bg-yellow" data-toggle="modal" data-target="#helpModal" style="cursor: help;">?</span></label>
+							<input id="icon" type="text" name="icon" class="form-control" placeholder="icon">
 						</div>
 					</div>
 				</div>
@@ -244,6 +244,27 @@
 				<button type="submit" name="submit" class="btn btn-primary btn-flat"><i class="fa fa-save"></i> Save</button>
 			</div>
 			<?php echo form_close();?>
+		</div>
+
+	</div>
+</div>
+
+<div class="modal fade" id="helpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				<h2 class="modal-title" id="myModalLabel">Icon</h2>
+			</div>
+			<div class="modal-body">
+				<h4>1. Go to <a href="https://fontawesome.com/icons?d=gallery&s=solid" target="_blank">http://fontawesome.com</a></h4>
+				<h4>2. Search icon</h4>
+				<h4>3. Select a icon on the website</h4>
+				<h4>3. Copy the icon name like "address-book" and paste to field icon.</h4>
+			</div>
+			<div class="modal-footer">
+			</div>
 		</div>
 
 	</div>
