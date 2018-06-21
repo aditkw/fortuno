@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 20, 2018 at 11:05 AM
--- Server version: 10.2.14-MariaDB
--- PHP Version: 7.2.6
+-- Host: 127.0.0.1
+-- Generation Time: Jun 21, 2018 at 10:05 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -31,7 +31,9 @@ SET time_zone = "+00:00";
 CREATE TABLE `fortu_about` (
   `about_id` int(8) NOT NULL,
   `about_title` varchar(255) NOT NULL,
+  `about_title_en` varchar(255) NOT NULL,
   `about_desc` text NOT NULL,
+  `about_desc_en` text NOT NULL,
   `about_pub` enum('88','99') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -39,8 +41,8 @@ CREATE TABLE `fortu_about` (
 -- Dumping data for table `fortu_about`
 --
 
-INSERT INTO `fortu_about` (`about_id`, `about_title`, `about_desc`, `about_pub`) VALUES
-(4, 'haii', '<p>guys</p>\r\n', '99');
+INSERT INTO `fortu_about` (`about_id`, `about_title`, `about_title_en`, `about_desc`, `about_desc_en`, `about_pub`) VALUES
+(4, 'haii', 'asdasd', '<p>guys</p>\r\n', '<p>asdasd</p>\r\n', '99');
 
 -- --------------------------------------------------------
 
@@ -77,15 +79,16 @@ CREATE TABLE `fortu_catservices` (
   `catservices_desc` text NOT NULL,
   `catservices_desc_en` text NOT NULL,
   `catservices_pub` enum('88','99') NOT NULL,
-  `catservices_link` varchar(255) NOT NULL
+  `catservices_link` varchar(255) NOT NULL,
+  `catservices_icon` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fortu_catservices`
 --
 
-INSERT INTO `fortu_catservices` (`catservices_id`, `catservices_name`, `catservices_name_en`, `catservices_desc`, `catservices_desc_en`, `catservices_pub`, `catservices_link`) VALUES
-(3, 'kategori', 'category', '<p>testasd</p>\r\n', '<p>test</p>\r\n', '99', 'category');
+INSERT INTO `fortu_catservices` (`catservices_id`, `catservices_name`, `catservices_name_en`, `catservices_desc`, `catservices_desc_en`, `catservices_pub`, `catservices_link`, `catservices_icon`) VALUES
+(4, 'wah anjay', 'test', '<p>test</p>\r\n', '<p>test</p>\r\n', '99', 'test', 'icon');
 
 -- --------------------------------------------------------
 
@@ -258,15 +261,17 @@ CREATE TABLE `fortu_text` (
   `text_service` text NOT NULL,
   `text_service_en` text NOT NULL,
   `text_portofolio` text NOT NULL,
-  `text_portofolio_en` text NOT NULL
+  `text_portofolio_en` text NOT NULL,
+  `text_mecha` text NOT NULL,
+  `text_mecha_en` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fortu_text`
 --
 
-INSERT INTO `fortu_text` (`text_id`, `text_footer`, `text_footer_en`, `text_slide`, `text_slide_en`, `text_quote`, `text_quote_en`, `text_service`, `text_service_en`, `text_portofolio`, `text_portofolio_en`) VALUES
-(1, 'wwqwqwqLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'eqiwjeiqw', 'anjay', 'adsqowe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ', 'ejiqwjei', 'adasdasd', 'ejqiwjeiqwe', 'qqqqwqeqwe', 'eqwiejiqw');
+INSERT INTO `fortu_text` (`text_id`, `text_footer`, `text_footer_en`, `text_slide`, `text_slide_en`, `text_quote`, `text_quote_en`, `text_service`, `text_service_en`, `text_portofolio`, `text_portofolio_en`, `text_mecha`, `text_mecha_en`) VALUES
+(1, 'wwqwqwqLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'eqiwjeiqw', 'anjay', 'adsqowe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ', 'ejiqwjei', 'adasdasd', 'ejqiwjeiqwe', 'qqqqwqeqwe', 'eqwiejiqw', '', '');
 
 -- --------------------------------------------------------
 
@@ -291,7 +296,7 @@ CREATE TABLE `fortu_user` (
 --
 
 INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_email`, `user_level`, `user_status`, `user_image`, `user_session`) VALUES
-(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '9a23eaa4f95b0429323af55ec0c42e6c8d248030'),
+(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '419b3bed5388ab71eaee04ebb89177e4a1b01a66'),
 (2, 'mainlwd', 'a82d82f5133af2c987010c8e446c35230164a0fe', 'Maintenance LWD', 'lwd@lawavedesign.com', 'admin', 'active', '', 'b6bc5de8c9694006f7c96f34e37c0551c8b13525');
 
 --
@@ -384,7 +389,7 @@ ALTER TABLE `fortu_banner`
 -- AUTO_INCREMENT for table `fortu_catservices`
 --
 ALTER TABLE `fortu_catservices`
-  MODIFY `catservices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `catservices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `fortu_contact`
