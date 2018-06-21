@@ -8,7 +8,7 @@
           <span class="h1"><strong>Welcome to </strong></span><br>
           <span class="h1 cblue"><strong>Fortuno Website.</strong></span><br><br>
           <!-- <p class="h6">Fortuno adalah perusahaan yang bergerak di bidang jasa kontraktor Mekanikal dan Elektrikal (ME) dengan pengalamann kerja di bidang ME sejak tahun 2010.</p> -->
-          <p class="h5"><strong>Tahukah Kamu Pentingnya Sistem mekanikal dan elektrikal (ME) untuk suatu bangunan ?</strong></p>
+          <p class="h5"><strong><?=$text->text_slide?></strong></p>
           <span class="h5 cblue">Klik <a href="#sistem_utilitas_l"><strong><u>di sini</u></strong></a>  untuk mengetahuinya !</span>
         </div>
       </div>
@@ -16,15 +16,7 @@
     <div id="sistem_utilitas_l"></div>
     <div id="sistem_utilitas">
       <p class="h2 text-center title">SISTEM MEKANIKAL DAN ELEKTRIKAL (SISTEM UTILITAS)</p>
-      <p class="content text-justify">Di dalam Suatu Bangunan gedung terdiri dari 3 komponen penting, yaitu struktur, arsitek dan utilitas (atau dikenal dengan istilah ME (mekanikal dan elektrikal gedung).
-
-        Ketiganya satu sama lain saling terkait. Jika struktur mengedepankan kekuatan, arsitek lebih menekankan pada keindahan, maka ME (mekanikal &Elektrikal) lebih mengedepankan pada fungsi.
-
-        Sistem mekanikal dan elektrikal (ME) suatu bangunan / gedung sangat tergantung maksud suatu gedung itu dibangun. ME suatu restoran  mempunyai perbedaan dengan gedung perkantoran, atau bandara, rumah sakit atau pabik. Tetapi secara prinsip mempunyai berbagai persamaan
-
-        Tujuan utama dari suatu gedung menjadi landasan dasar dalam menentukan kekhusususan sistem ME dalam suatu bangunan/ gedung.
-
-        Fungsi system ME yang dipasang di gedung untuk membuatnya nyaman, fungsional, efisien dan aman</p>
+      <p class="content text-justify"><?=$text->text_mecha?></p>
     </div>
     <div class="row" id="about">
       <div class="col-md-2"></div>
@@ -33,18 +25,17 @@
         <div class="text-center">
           <blockquote class="blockquote text-justify">
             <p class="mb-0">
-              Sekuat apapun atau seindah apapun bangunan, jika tidak ditunjang dengan suatu System Mekanikal & Elektrikal, maka bangunan tersebut tidak ada fungsinya.
+              <?=$text->text_quote?>
             </p>
           </blockquote>
-          <p class="text-justify ">
-            Fortuno adalah perusahaan yang bergerak di bidang jasa kontraktor Mekanikal dan Elektrikal  (ME) dengan pengalamann kerja di bidang ME sejak tahun 2010.
-            Sebagai perusahaan jasa kontraktor ME yang telah memiliki sertifikasi AKLI sebagai persyaratan kontraktor Listrik dan Mekanikal Indonesia, Fortuno telah menangani berbagai macam proyek ME di Jakarta maupun kota besar lainnya.
-          </p>
+          <div class="desc">
+            <?=$about->about_desc?>
+          </div>
         </div>
       </div>
       <div class="col-md-4 about-right position-relative">
         <div class="position-absolute">
-          <img class="img-fluid" src="<?php echo base_url(); ?>dist/img/assets/aboutLeft2.png" alt="">
+          <img class="img-fluid" src="<?=site_url('uploads/img/about/'.$about->image_name)?>" alt="">
           <br><br><br><br>
         </div>
       </div>
@@ -56,34 +47,31 @@
           <div class="col-md-2"></div>
           <div class="col-md-4 services-left">
             <p class="text-left"><span class="cwhite h1"><strong>Our Company</strong></span> <br> <span class="corange h2"><strong>Great Service</strong></span></p>
-            <p class="cwhite text-justify h5">
-              Proyek ME yang kami tanganin termasuk :
-              <ol class="cwhite h5" style="line-height: 1.5em;">
-                <li>Restauran/café/foodcourt</li>
-                <li>Lounge/club/karoke</li>
-                <li>Gedung Perkantoran/perumahan</li>
-                <li>Pabrik/pergudangan</li>
-                <li>Klinik/butik</li>
-                <li>dll</li>
-              </ol>
-            </p>
+            <div class="cwhite text-justify h5">
+              <?=$text->text_service?>
+            </div>
           </div>
           <div class="col-md-4 services-right">
-            <div class="row">
-              <div class="col-md-2"><i class="fas fa-cogs cwhite h1"></i> </div>
-              <div class="col-md-10 position-relative">
-                <p class="h3 corange"><strong class="mechanical-title corange_opa click-sub-services" val="mechanical-sub">Mechanical <i class="fas fa-chevron-circle-right"></i> </strong></p>
-                <p class="cwhite text-justify">
-                  Sistem mekanikal dapat mencakup elemen infrastruktur, mesin, alat dan komponen, pemanasan, ventilasi dan sebagainya.
-                </p>
-                <ul class="position-absolute mechanical-sub">
-                  <li><a href="#">Sistem plumbing dan instalasi air</a></li>
-                  <li><a href="#">Sistem springkler</a></li>
-                  <li><a href="#">Sistem Tata Udara (Ac/ air conditioning)</a></li>
-                </ul>
+            <?php foreach ($category as $categ): ?>
+              <div class="row">
+                <div class="col-md-2"><i class="fas fa-cogs cwhite h1"></i> </div>
+                <div class="col-md-10 position-relative">
+                  <p class="h3 corange"><strong class="mechanical-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name)?>"><?=$categ->catservice_name?> <i class="fas fa-chevron-circle-right"></i> </strong></p>
+                  <div class="cwhite text-justify">
+                    <?=$categ->catservice_desc?>
+                  </div>
+                  <ul class="position-absolute <?=title_url($categ->catservice_name)?>">
+                    <?php foreach ($categ->services as $service): ?>
+                      <li><a href="#"><?=$service->services_name?></a></li>
+                    <?php endforeach; ?>
+                    <!-- <li><a href="#">Sistem springkler</a></li>
+                    <li><a href="#">Sistem Tata Udara (Ac/ air conditioning)</a></li> -->
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="row">
+            <?php endforeach; ?>
+
+            <!-- <div class="row">
               <div class="col-md-2"><i class="fas fa-lightbulb cwhite h1"></i> </div>
               <div class="col-md-10 position-relative">
                 <p class="h3 corange"><strong class="electrical-title corange_opa click-sub-services" val="electrical-sub">Electrical <i class="fas fa-chevron-circle-right"></i> </strong></p>
@@ -107,10 +95,10 @@
                 <p class="h3 corange"><strong class="gas-title corange_opa">Gas Installation</strong></p>
                 <p class="cwhite text-justify ">
                   Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan)... <a class="cwhite" href="#">Read More</a>
-                  <!--  Sistem instalasi gas di Mall ini merupakan sentral instalasi gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut. -->
+                    Sistem instalasi gas di Mall ini merupakan sentral instalasi gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut.
                 </p>
               </div>
-            </div>
+            </div> -->
           </div>
           <div class="col-md-2"></div>
         </div>

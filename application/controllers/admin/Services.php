@@ -60,7 +60,7 @@ class Services extends Backend_Controller
 						);
 
 					$services_id = $this->services_model->insert($array_data);
-					for ($i=0; $i < 2; $i++) {
+					for ($i=0; $i < 1; $i++) {
 						$array_img[] = array(
 							'parent_id' 				=> $services_id,
 							'image_parent_name'	=> 'services',
