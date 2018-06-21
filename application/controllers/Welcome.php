@@ -5,17 +5,15 @@
 class Welcome extends Frontend_Controller {
 
 	public function index() {
-			$this->data['text'] = $this->text_model->get(1);
-			$this->data['about'] = $this->about_model->get_about(array('image_parent_name' => 'about'), 1, NULL, TRUE);
-
 			$category = array();
-			$categories = $this->catservices_model->get();
+			$categories = $this->catservices_model->get_by(array('catservices_pub' => '99'));
 
 			foreach ($categories as $cat) {
 
-				$services = $this->services_model->get_by(array('catservices_id' => $cat->catservices_id));
+				$services = $this->services_model->get_by(array('catservices_id' => $cat->catservices_id, 'services_pub' => '99'));
+				$serpis = array();
 				foreach ($services as $service) {
-					$services[] = (object)array(
+					$serpis[] = (object)array(
 						'services_name' => $service->services_name,
 						'services_link' => $service->services_link,
 					);
@@ -25,12 +23,17 @@ class Welcome extends Frontend_Controller {
 					'catservice_name' => $cat->catservices_name,
 					'catservice_desc' => $cat->catservices_desc,
 					'catservice_icon' => $cat->catservices_icon,
-					'services' => $services
+					'services' => $serpis
 					);
 
+				unset($serpis);
 			}
 
 			$this->data['category'] = $category;
+			$this->data['text'] = $this->text_model->get(1);
+			$this->data['about'] = $this->about_model->get_about(array('image_parent_name' => 'about'), 1, NULL, TRUE);
+			$this->data['portofolio'] = $this->portofolio_model->get_portofolio(array('image_parent_name' => 'portofolio', 'portofolio_pub' => '99', 'image_seq' => 0), 3);
+			$this->data['contact'] = $this->contact_model->get(1);
 
 			// echo "<pre>";
 			// print_r($this->data['category']);

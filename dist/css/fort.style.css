@@ -207,6 +207,8 @@ section .homepage #portfolio {
         padding: 0 10%; }
       section .homepage #portfolio .row div div .port_title {
         color: #f0f0f0; }
+      section .homepage #portfolio .row div div div.port_desc {
+        height: auto; }
       section .homepage #portfolio .row div div .port_title:hover {
         color: #fff; }
       section .homepage #portfolio .row div div button {

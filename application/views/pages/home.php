@@ -28,7 +28,7 @@
               <?=$text->text_quote?>
             </p>
           </blockquote>
-          <div class="desc">
+          <div class="text-justify">
             <?=$about->about_desc?>
           </div>
         </div>
@@ -54,51 +54,25 @@
           <div class="col-md-4 services-right">
             <?php foreach ($category as $categ): ?>
               <div class="row">
-                <div class="col-md-2"><i class="fas fa-cogs cwhite h1"></i> </div>
+                <div class="col-md-2"><i class="fas <?=$categ->catservice_icon?> cwhite h1"></i> </div>
                 <div class="col-md-10 position-relative">
-                  <p class="h3 corange"><strong class="mechanical-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name)?>"><?=$categ->catservice_name?> <i class="fas fa-chevron-circle-right"></i> </strong></p>
+                  <p class="h3 corange"><strong class="mechanical-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name)?>"><?=$categ->catservice_name?>
+                  <?php if (!empty($categ->services)): ?>
+                    <i class="fas fa-chevron-circle-right"></i>
+                  <?php endif; ?> </strong></p>
                   <div class="cwhite text-justify">
                     <?=$categ->catservice_desc?>
                   </div>
                   <ul class="position-absolute <?=title_url($categ->catservice_name)?>">
-                    <?php foreach ($categ->services as $service): ?>
-                      <li><a href="#"><?=$service->services_name?></a></li>
-                    <?php endforeach; ?>
-                    <!-- <li><a href="#">Sistem springkler</a></li>
-                    <li><a href="#">Sistem Tata Udara (Ac/ air conditioning)</a></li> -->
+                    <?php if (!empty($categ->services)): ?>
+                      <?php foreach ($categ->services as $service): ?>
+                        <li><a href="<?=site_url("$service->services_name")?>"><?=$service->services_name?></a></li>
+                      <?php endforeach; ?>
+                    <?php endif; ?>
                   </ul>
                 </div>
               </div>
             <?php endforeach; ?>
-
-            <!-- <div class="row">
-              <div class="col-md-2"><i class="fas fa-lightbulb cwhite h1"></i> </div>
-              <div class="col-md-10 position-relative">
-                <p class="h3 corange"><strong class="electrical-title corange_opa click-sub-services" val="electrical-sub">Electrical <i class="fas fa-chevron-circle-right"></i> </strong></p>
-                <p class="cwhite text-justify ">
-                  Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah.
-                </p>
-                <ul class="position-absolute electrical-sub">
-                  <li><a href="#">Sistem Elektrikal /Arus Kuat (listrik)</a></li>
-                  <li><a href="#">Sistem penangkal petir</a></li>
-                  <li><a href="#">Sistem telepon</a></li>
-                  <li><a href="#">Sistem tata suara (Sound system)</a></li>
-                  <li><a href="#">Sistem Data & Jaringan Komputer</a></li>
-                  <li><a href="#">Sistem MATV  (master television)</a></li>
-                  <li><a href="#">Sistem CCTV (Close  Sircuit  Television)</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-2"><i class="fas fa-fire cwhite h1"></i> </div>
-              <div class="col-md-10">
-                <p class="h3 corange"><strong class="gas-title corange_opa">Gas Installation</strong></p>
-                <p class="cwhite text-justify ">
-                  Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan)... <a class="cwhite" href="#">Read More</a>
-                    Sistem instalasi gas di Mall ini merupakan sentral instalasi gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut.
-                </p>
-              </div>
-            </div> -->
           </div>
           <div class="col-md-2"></div>
         </div>
@@ -107,19 +81,19 @@
     </div>
     <div id="portfolio"><br><br><br><br><br>
       <p class="text-center h2"><strong class="cblue">Portofolio</strong></p>
-      <p class="text-center port-desc h6">Sebagai perusahaan jasa kontraktor ME yang telah memiliki sertifikasi AKLI sebagai persyaratan kontraktor Listrik dan Mekanikal Indonesia, Fortuno telah menangani berbagai macam proyek ME di Jakarta maupun kota besar lainnya. Berikut beberapa proyek ME yang telah kami kerjakan. Atau klik <a class="cblue_opa" href="#"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
+      <p class="text-center port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="#"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
       <div class="row">
-        <?php for ($i = 1; $i <= 3; $i++): ?>
+        <?php foreach ($portofolio as $port): ?>
           <div class="col-md-4 position-relative port_img_link">
             <div class="modal-color position-absolute text-center">
               <br><br><br><br>
-              <p class="h4"><a href="#"><strong class="port_title">LOREM IPSUM DOLOR</strong></a></p>
-              <p class="cwhite port_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br><br>
+              <p class="h4"><a href="#"><strong class="port_title"><?=$port->portofolio_name?></strong></a></p>
+              <div class="cwhite port_desc"><?=limitKalimat($port->portofolio_desc, 155)?></div>
               <button type="button" name="button"><strong>Read More</strong></button>
             </div>
-            <img class="port_img img-fluid" src="<?php echo base_url(); ?>dist/img/assets/portfolio<?php echo $i; ?>.png" alt="">
+            <img class="port_img img-fluid" src="<?=site_url("uploads/img/portofolio/$port->image_name")?>" alt="">
           </div>
-        <?php endfor; ?>
+        <?php endforeach; ?>
       </div>
     </div>
     <div id="contact"><br>
@@ -131,14 +105,14 @@
             <div class="modal-color position-absolute">
               <p class="h1 cwhite"><strong>Get</strong></p>
               <p class="h2 corange"><strong>in Touch</strong></p>
-              <p class="cwhite">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="cwhite"><?=$text->text_footer?></p>
             </div>
           </div>
           <div class="col-md-7 cont-contact" id="cont-contact">
             <blockquote class="blockquote text-justify">
               <p class="h2">
                 <strong>Fortuno</strong>
-                <p>Sekuat apapun atau seindah apapun bangunan, jika tidak ditunjang dengan suatu sistem mekanikal dan elektrikal, maka bangunan tersebut tidak ada fungsinya.</p>
+                <p><?=$text->text_quote?></p>
               </p>
             </blockquote>
             <div class="row">
@@ -147,7 +121,7 @@
               </div>
               <div class="col-md-10">
                 <p class="h4"><strong>Email</strong></p>
-                <p>fortuno@email.com</p>
+                <p><?=$contact->contact_email?></p>
               </div>
             </div><br>
             <div class="row">
@@ -156,7 +130,7 @@
               </div>
               <div class="col-md-10">
                 <p class="h4"><strong>Phone Number</strong></p>
-                <p>(+62) 1235 8132 135</p>
+                <p><?=$contact->contact_phone?></p>
               </div>
             </div><br>
             <div class="row">
@@ -165,7 +139,7 @@
               </div>
               <div class="col-md-10">
                 <p class="h4"><strong>Address</strong></p>
-                <p>123, Main Road, New City, My Country 123456</p>
+                <p><?=$contact->contact_address?></p>
               </div>
             </div>
           </div>

@@ -117,6 +117,9 @@ section {
             .port_title {
               color: $cwhite_opa;
             }
+            div.port_desc{
+              height: auto;
+            }
             .port_title:hover {
               color: $cwhite;
             }
