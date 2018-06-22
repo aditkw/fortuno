@@ -1,14 +1,7 @@
 section {
   .homepage {
-    #slider, #sistem_utilitas, #about, #services, #portfolio, #contact {
+    #sistem_utilitas, #about, #services, #portfolio, #contact {
       min-height: 100vh;
-    }
-    #slider {
-      min-height: 100vh;
-      background: #cdcdcd;
-      background-image: url($base_url+"dist/img/assets/slider1.png");
-      background-size: cover;
-      background-attachment: fixed;
     }
     #sistem_utilitas {
       // background: #f0f0f0;
@@ -75,11 +68,14 @@ section {
             border: 1px solid $cgrey;
             background-color: $cnero;
             li {
-              padding: 15px;
               border-bottom: 1px solid $cgrey;
               cursor: pointer;
               a {
                 color: $corange_opa;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                padding: 15px;
               }
             }
             li:hover {
@@ -87,6 +83,7 @@ section {
             }
             li:hover a {
               color: $corange;
+              // text-decoration: underline;
             }
             li:last-child {
               border: none;

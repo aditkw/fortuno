@@ -1,0 +1,44 @@
+// css
+.services-gap {
+  margin: 20px 0;
+}
+.services-container {
+  .aside-container, .article-container {
+    min-height: 100vh;
+  }
+  .aside-container {
+    background-color: $cwhite_opa;
+    padding-top: 50px;
+
+    ul {
+      list-style: none;
+      padding-left: 1.4em;
+      li {
+        line-height: 2em;
+        .title {
+          font-size: 1.4em;
+          text-decoration: underline;
+        }
+        ul {
+          list-style: decimal;
+          li {
+            .sub-title {
+              font-size: 1.2em;
+            }
+            ul {
+              list-style: square;
+              li {
+                .point {
+                  font-size: 1em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .article-container {
+    padding: 50px;
+  }
+}

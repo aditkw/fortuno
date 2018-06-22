@@ -1,18 +1,5 @@
 <section>
   <div class="homepage">
-    <div id="slider">
-      <!-- <p class="text-center h2">Slider</p> -->
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-4"><br><br><br><br><br><br>
-          <span class="h1"><strong>Welcome to </strong></span><br>
-          <span class="h1 cblue"><strong>Fortuno Website.</strong></span><br><br>
-          <!-- <p class="h6">Fortuno adalah perusahaan yang bergerak di bidang jasa kontraktor Mekanikal dan Elektrikal (ME) dengan pengalamann kerja di bidang ME sejak tahun 2010.</p> -->
-          <p class="h5"><strong>Tahukah Kamu Pentingnya Sistem mekanikal dan elektrikal (ME) untuk suatu bangunan ?</strong></p>
-          <span class="h5 cblue">Klik <a href="#sistem_utilitas_l"><strong><u>di sini</u></strong></a>  untuk mengetahuinya !</span>
-        </div>
-      </div>
-    </div>
     <div id="sistem_utilitas_l"></div>
     <div id="sistem_utilitas">
       <p class="h2 text-center title">SISTEM MEKANIKAL DAN ELEKTRIKAL (SISTEM UTILITAS)</p>
@@ -74,12 +61,11 @@
               <div class="col-md-10 position-relative">
                 <p class="h3 corange"><strong class="mechanical-title corange_opa click-sub-services" val="mechanical-sub">Mechanical <i class="fas fa-chevron-circle-right"></i> </strong></p>
                 <p class="cwhite text-justify">
-                  Sistem mekanikal dapat mencakup elemen infrastruktur, mesin, alat dan komponen, pemanasan, ventilasi dan sebagainya.
-                </p>
+                  Sistem mekanikal dapat mencakup elemen infrastruktur, mesin, alat dan komponen, pemanasan, ventilasi dan sebagainya... &nbsp;<a class="cwhite" href="<?php echo base_url(); ?>services/mechanical">Read More</a></p>
                 <ul class="position-absolute mechanical-sub">
-                  <li><a href="#">Sistem plumbing dan instalasi air</a></li>
-                  <li><a href="#">Sistem springkler</a></li>
-                  <li><a href="#">Sistem Tata Udara (Ac/ air conditioning)</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/mechanical#systemplumbing-dan-instalasi-air-bersih">Sistem plumbing dan instalasi air</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/mechanical#system-fire-fighting-system-pemadam-kebakaran">Sistem springkler</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/mechanical#system-tata-udara-ac-air-conditioning">Sistem Tata Udara (AC/ Air Conditioning)</a></li>
                 </ul>
               </div>
             </div>
@@ -88,25 +74,24 @@
               <div class="col-md-10 position-relative">
                 <p class="h3 corange"><strong class="electrical-title corange_opa click-sub-services" val="electrical-sub">Electrical <i class="fas fa-chevron-circle-right"></i> </strong></p>
                 <p class="cwhite text-justify ">
-                  Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah.
-                </p>
+                  Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah... <a class="cwhite" href="<?php echo base_url(); ?>services/electrical">Read More</a></p>
                 <ul class="position-absolute electrical-sub">
-                  <li><a href="#">Sistem Elektrikal /Arus Kuat (listrik)</a></li>
-                  <li><a href="#">Sistem penangkal petir</a></li>
-                  <li><a href="#">Sistem telepon</a></li>
-                  <li><a href="#">Sistem tata suara (Sound system)</a></li>
-                  <li><a href="#">Sistem Data & Jaringan Komputer</a></li>
-                  <li><a href="#">Sistem MATV  (master television)</a></li>
-                  <li><a href="#">Sistem CCTV (Close  Sircuit  Television)</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-elektrikal">Sistem Elektrikal /Arus Kuat (listrik)</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-penangkal-petir">Sistem penangkal petir</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-telepon">Sistem Telepon</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-tata-suara-sound-system">Sistem tata suara (Sound system)</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-data-jaringan-komputer">Sistem Data & Jaringan Komputer</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-matv-master-television">Sistem MATV (master television)</a></li>
+                  <li><a href="<?php echo base_url(); ?>services/electrical#sistem-cctv-close-circuit-television">Sistem CCTV (Close Sircuit  Television)</a></li>
                 </ul>
               </div>
             </div>
             <div class="row">
               <div class="col-md-2"><i class="fas fa-fire cwhite h1"></i> </div>
               <div class="col-md-10">
-                <p class="h3 corange"><strong class="gas-title corange_opa">Gas Installation</strong></p>
+                <p class="h3 corange"><a href="<?php echo base_url(); ?>services/gas-installation"><strong class="gas-title corange_opa">Gas Installation</strong></a></p>
                 <p class="cwhite text-justify ">
-                  Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan)... <a class="cwhite" href="#">Read More</a>
+                  Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan)... <a class="cwhite" href="<?php echo base_url(); ?>services/gas-installation">Read More</a>
                   <!--  Sistem instalasi gas di Mall ini merupakan sentral instalasi gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut. -->
                 </p>
               </div>
@@ -121,15 +106,17 @@
       <p class="text-center h2"><strong class="cblue">Portofolio</strong></p>
       <p class="text-center port-desc h6">Sebagai perusahaan jasa kontraktor ME yang telah memiliki sertifikasi AKLI sebagai persyaratan kontraktor Listrik dan Mekanikal Indonesia, Fortuno telah menangani berbagai macam proyek ME di Jakarta maupun kota besar lainnya. Berikut beberapa proyek ME yang telah kami kerjakan. Atau klik <a class="cblue_opa" href="#"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
       <div class="row">
-        <?php for ($i = 1; $i <= 3; $i++): ?>
+        <?php
+        $portfolio['title'] = array('SAIGON DELIGHT', 'PT Jerindo Sari Utama (F&B)', 'Bon Chon Chicken');
+        for ($i = 0; $i < 3; $i++): ?>
           <div class="col-md-4 position-relative port_img_link">
             <div class="modal-color position-absolute text-center">
               <br><br><br><br>
-              <p class="h4"><a href="#"><strong class="port_title">LOREM IPSUM DOLOR</strong></a></p>
+              <p class="h4"><a href="#"><strong class="port_title"><?php echo $portfolio['title'][$i]; ?></strong></a></p>
               <p class="cwhite port_desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br><br>
               <button type="button" name="button"><strong>Read More</strong></button>
             </div>
-            <img class="port_img img-fluid" src="<?php echo base_url(); ?>dist/img/assets/portfolio<?php echo $i; ?>.png" alt="">
+            <img class="port_img img-fluid" src="<?php echo base_url(); ?>dist/img/assets/portfolio<?php echo ($i+1); ?>.png" alt="">
           </div>
         <?php endfor; ?>
       </div>

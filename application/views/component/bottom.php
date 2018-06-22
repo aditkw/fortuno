@@ -5,7 +5,18 @@
     <script src="<?php echo base_url();?>plugins/bootstrap_new/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>plugins/font-awesome_new/fontawesome-all.min.js"></script>
     <script src="<?php echo base_url();?>dist/js/part/header.js"></script>
-    <script src="<?php echo base_url();?>dist/js/part/home.js"></script>
-    <script src="<?php echo base_url();?>dist/js/smoothscrool-jquery.js"></script>    
+    <script src="<?php echo base_url();?>dist/js/smoothscrool-jquery.js"></script>
+
+    <?php if (isset($top)): ?>
+      <?php
+      switch ($top) {
+        case 'services': ?>
+        <script src="<?php echo base_url();?>dist/js/part/services.js"></script>
+        <?php break;
+      }
+       ?>
+    <?php else: ?>
+      <script src="<?php echo base_url();?>dist/js/part/home.js"></script>
+    <?php endif; ?>
   </body>
 </html>

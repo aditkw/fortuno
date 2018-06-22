@@ -35,23 +35,23 @@ div, .row {
   margin: 0;
 }
 
-.bold, .hoverious, a:hover, a {
+.bold, .hoverious, header .header nav .nav-list ul.sub1 > li:hover, header .header nav .nav-list ul.sub1 > li, a:hover, a {
   font-weight: bold;
 }
 
-.cursor_pointer, .hoverious, a:hover, a {
+.cursor_pointer, .hoverious, header .header nav .nav-list ul.sub1 > li:hover, header .header nav .nav-list ul.sub1 > li, a:hover, a {
   cursor: pointer;
 }
 
-.modal-color, section .homepage #services .background-filter-container {
+.modal-color {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.hoverious, a:hover, a {
+.hoverious, header .header nav .nav-list ul.sub1 > li:hover, header .header nav .nav-list ul.sub1 > li, a:hover, a {
   color: #555;
 }
 
-.hoverious:hover, a:hover {
+.hoverious:hover, header .header nav .nav-list ul.sub1 > li:hover, a:hover {
   color: #000;
 }
 
@@ -118,6 +118,7 @@ header .header nav {
 }
 header .header nav .nav-list {
   border: 0;
+  transition-duration: 5s;
   border-right: 1px solid #ccc;
   max-height: 20px;
   line-height: 1;
@@ -126,6 +127,42 @@ header .header nav .nav-list {
 header .header nav .nav-list a {
   display: inline-block;
   width: 100%;
+}
+header .header nav .nav-list ul.sub1 {
+  display: none;
+  list-style: none;
+  padding: 0;
+  left: -15%;
+  right: -15%;
+  top: 100%;
+  min-width: 100%;
+  border-bottom: 1px solid #ddd;
+  z-index: 2;
+  padding-top: 10%;
+}
+header .header nav .nav-list ul.sub1 > li {
+  padding: 10px 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom: none;
+}
+header .header nav .nav-list ul.sub1 > li ul.sub2 {
+  display: none;
+  list-style: none;
+  padding: 0;
+  top: -1px;
+  left: -120%;
+  right: -120%;
+  margin-left: 220%;
+  border: 1px solid #ddd;
+}
+header .header nav .nav-list ul.sub1 > li ul.sub2 > li {
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}
+header .header nav .nav-list ul.sub1 > li:hover {
+  color: #7c82a6;
 }
 header .header nav .nav-list.portfolio {
   min-width: 10%;
@@ -155,160 +192,31 @@ header .header nav .search-container .search button {
   border-radius: 0;
   border: 0;
 }
-
-section .homepage #slider, section .homepage #sistem_utilitas, section .homepage #about, section .homepage #services, section .homepage #portfolio, section .homepage #contact {
-  min-height: 100vh;
-}
-section .homepage #slider {
+header .header #sampul {
   min-height: 100vh;
   background: #cdcdcd;
-  background-image: url("http://localhost/fortuno/dist/img/assets/slider1.png");
   background-size: cover;
   background-attachment: fixed;
 }
-section .homepage #sistem_utilitas .title {
-  padding-top: 25vh;
-  padding-bottom: 5vh;
-}
-section .homepage #sistem_utilitas .content {
-  padding-left: 15vw;
-  padding-right: 15vw;
-  line-height: 1.5em;
-  font-size: 1.2em;
-}
-section .homepage #about {
-  min-height: 100vh;
-  margin: 0;
-  padding-top: 12.5%;
-}
-section .homepage #about .about-left blockquote {
-  display: inline-block;
-}
-section .homepage #about .about-right {
-  position: relative;
-}
-section .homepage #about .about-right div.position-absolute {
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-}
-section .homepage #services {
-  background-image: url("http://localhost/fortuno/dist/img/assets/serviceBackground-min.png");
+header .header #sampul2 {
+  min-height: 45vh;
   background-size: cover;
-  background-attachment: fixed;
 }
-section .homepage #services .background-filter-container {
-  min-height: 100vh;
-}
-section .homepage #services .background-filter-container .services-left {
-  padding-top: 12.5%;
-}
-section .homepage #services .background-filter-container .services-right {
-  padding-top: 10%;
-}
-section .homepage #services .background-filter-container .services-right .mechanical-title, section .homepage #services .background-filter-container .services-right .electrical-title, section .homepage #services .background-filter-container .services-right .gas-title {
-  cursor: pointer;
-}
-section .homepage #services .background-filter-container .services-right .mechanical-title .fa-chevron-circle-right, section .homepage #services .background-filter-container .services-right .electrical-title .fa-chevron-circle-right, section .homepage #services .background-filter-container .services-right .gas-title .fa-chevron-circle-right {
-  transition-duration: 1s;
-}
-section .homepage #services .background-filter-container .services-right .mechanical-title:hover, section .homepage #services .background-filter-container .services-right .electrical-title:hover, section .homepage #services .background-filter-container .services-right .gas-title:hover {
-  text-decoration: underline;
-  color: #fba419;
-}
-section .homepage #services .background-filter-container .services-right ul.mechanical-sub, section .homepage #services .background-filter-container .services-right ul.electrical-sub {
-  display: none;
-  list-style: none;
-  z-index: 1;
-  top: 35px;
-  padding: 0;
-  border: 1px solid #ddd;
-  background-color: #212121;
-}
-section .homepage #services .background-filter-container .services-right ul.mechanical-sub li, section .homepage #services .background-filter-container .services-right ul.electrical-sub li {
-  padding: 15px;
-  border-bottom: 1px solid #ddd;
-  cursor: pointer;
-}
-section .homepage #services .background-filter-container .services-right ul.mechanical-sub li a, section .homepage #services .background-filter-container .services-right ul.electrical-sub li a {
-  color: #fba419b3;
-}
-section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:hover, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:hover {
-  background-color: #000;
-}
-section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:hover a, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:hover a {
-  color: #fba419;
-}
-section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:last-child, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:last-child {
-  border: none;
-}
-section .homepage #portfolio {
-  background-color: #f9f9f9;
-}
-section .homepage #portfolio .port-desc {
-  padding-left: 15vw;
-  padding-right: 15vw;
-}
-section .homepage #portfolio .row div {
-  padding: 0;
-}
-section .homepage #portfolio .row div img {
-  height: 350px;
+header .header #sampul2 .modal-color {
   width: 100%;
+  background: linear-gradient(to right, #fff, rgba(0, 0, 0, 0));
+  min-height: 45vh;
 }
-section .homepage #portfolio .row div div {
-  display: none;
+header .header #sampul2 .title-sampul2 {
+  text-shadow: 2px 2px #ccc;
 }
-section .homepage #portfolio .row div div p {
-  padding: 0 10%;
+header .header #sampul2 .title-sampul2 p:first-child {
+  color: #000;
+  margin-top: 20%;
 }
-section .homepage #portfolio .row div div .port_title {
-  color: #f0f0f0;
-}
-section .homepage #portfolio .row div div .port_title:hover {
-  color: #fff;
-}
-section .homepage #portfolio .row div div button {
-  background-color: #fba419;
-  color: #f0f0f0;
-  padding: 8px;
-  border: none;
-  border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-}
-section .homepage #portfolio .row div div button:hover {
-  color: #fff;
-  bottom: 2px;
-  text-decoration: underline;
-}
-section .homepage #portfolio .row div .port_img_link_active {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  z-index: 1;
-}
-section .homepage #contact .cont-container div {
-  padding: 0;
-}
-section .homepage #contact .cont-container div div:first-child img {
-  height: 100vh;
-}
-section .homepage #contact .cont-container div div:first-child div {
-  top: 0;
-  height: 100%;
-  padding: 25% 15% 15% 25%;
-}
-section .homepage #contact .cont-container div .cont-contact {
-  background-color: #f0f0f0;
-  padding: 5%;
-}
-section .homepage .gap {
-  min-height: 10vh;
-  background-color: #fff;
+header .header #sampul2 .title-sampul2 p:last-child {
+  color: #535b8c;
+  margin-left: 50%;
 }
 
 footer {

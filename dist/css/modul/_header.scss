@@ -19,6 +19,7 @@ header {
       z-index: 2;
       .nav-list {
         border: 0;
+        transition-duration: 5s;
         border-right: 1px solid #ccc;
         max-height: 20px;
         line-height: 1;
@@ -26,6 +27,46 @@ header {
         a {
           display: inline-block;
           width: 100%;
+        }
+
+        ul.sub1 {
+          display: none;
+          list-style: none;
+          padding: 0;
+          left: -15%;
+          right: -15%;
+          top: 100%;
+          min-width: 100%;
+          border-bottom: 1px solid $cgrey;
+          z-index: 2;
+          padding-top: 10%;
+          > li {
+            @extend .hoverious;
+            padding: 10px 0;
+            background-color: $cwhite;
+            border: 1px solid $cgrey;
+            border-bottom: none;
+            ul.sub2 {
+              display: none;
+              list-style: none;
+              padding: 0;
+              top: -1px;
+              left: -120%;
+              right: -120%;
+              margin-left: 220%;
+              border: 1px solid $cgrey;
+              > li {
+                padding: 10px 0;
+                background-color: $cwhite;
+                border-top: 1px solid $cgrey;
+              }
+            }
+          }
+          > li:hover {
+            @extend .hoverious;
+            color: $alink;
+          }
+
         }
       }
       .nav-list.portfolio {
@@ -57,6 +98,37 @@ header {
             border-radius: 0;
             border: 0;
           }
+        }
+      }
+    }
+    // slider = Sampul
+    // sampul = page home
+    #sampul {
+      min-height: 100vh;
+      background: #cdcdcd;
+      // background-image: url($base_url+"dist/img/assets/slider1.png");
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    // sampul2 = page services
+    #sampul2 {
+      min-height: 45vh;
+      background-size: cover;
+      .modal-color {
+        width: 100%;
+        background: linear-gradient(to right, #fff, rgba(0,0,0,0));
+        min-height: 45vh;
+        // opacity: 0.5;
+      }
+      .title-sampul2 {
+        text-shadow: 2px 2px #ccc;
+        p:first-child {
+          color: $tah;
+          margin-top: 20%;
+        }
+        p:last-child {
+          color: $cblue;
+          margin-left: 50%;
         }
       }
     }

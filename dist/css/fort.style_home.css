@@ -1,0 +1,250 @@
+@charset "UTF-8";
+@font-face {
+  url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
+  font-family: "roboto";
+}
+.cwhite {
+  color: #fff;
+}
+
+.cwhite_opa {
+  color: #f0f0f0;
+}
+
+.corange {
+  color: #fba419;
+}
+
+.corange_opa {
+  color: #fba419b3;
+}
+
+.cblue {
+  color: #535b8c;
+}
+
+.cblue_opa {
+  color: rgba(83, 91, 140, 0.7);
+}
+
+.cgrey {
+  color: #ddd;
+}
+
+div, .row {
+  margin: 0;
+}
+
+.bold, .hoverious, a:hover, a {
+  font-weight: bold;
+}
+
+.cursor_pointer, .hoverious, a:hover, a {
+  cursor: pointer;
+}
+
+.modal-color, section .homepage #services .background-filter-container {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hoverious, a:hover, a {
+  color: #555;
+}
+
+.hoverious:hover, a:hover {
+  color: #000;
+}
+
+a:hover {
+  color: #7c82a6;
+}
+
+body {
+  font-family: "roboto";
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "“";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "— ";
+}
+
+section .homepage #sistem_utilitas, section .homepage #about, section .homepage #services, section .homepage #portfolio, section .homepage #contact {
+  min-height: 100vh;
+}
+section .homepage #sistem_utilitas .title {
+  padding-top: 25vh;
+  padding-bottom: 5vh;
+}
+section .homepage #sistem_utilitas .content {
+  padding-left: 15vw;
+  padding-right: 15vw;
+  line-height: 1.5em;
+  font-size: 1.2em;
+}
+section .homepage #about {
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 12.5%;
+}
+section .homepage #about .about-left blockquote {
+  display: inline-block;
+}
+section .homepage #about .about-right {
+  position: relative;
+}
+section .homepage #about .about-right div.position-absolute {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+section .homepage #services {
+  background-image: url("http://localhost/fortuno/dist/img/assets/serviceBackground-min.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+section .homepage #services .background-filter-container {
+  min-height: 100vh;
+}
+section .homepage #services .background-filter-container .services-left {
+  padding-top: 12.5%;
+}
+section .homepage #services .background-filter-container .services-right {
+  padding-top: 10%;
+}
+section .homepage #services .background-filter-container .services-right .mechanical-title, section .homepage #services .background-filter-container .services-right .electrical-title, section .homepage #services .background-filter-container .services-right .gas-title {
+  cursor: pointer;
+}
+section .homepage #services .background-filter-container .services-right .mechanical-title .fa-chevron-circle-right, section .homepage #services .background-filter-container .services-right .electrical-title .fa-chevron-circle-right, section .homepage #services .background-filter-container .services-right .gas-title .fa-chevron-circle-right {
+  transition-duration: 1s;
+}
+section .homepage #services .background-filter-container .services-right .mechanical-title:hover, section .homepage #services .background-filter-container .services-right .electrical-title:hover, section .homepage #services .background-filter-container .services-right .gas-title:hover {
+  text-decoration: underline;
+  color: #fba419;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub, section .homepage #services .background-filter-container .services-right ul.electrical-sub {
+  display: none;
+  list-style: none;
+  z-index: 1;
+  top: 35px;
+  padding: 0;
+  border: 1px solid #ddd;
+  background-color: #212121;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li, section .homepage #services .background-filter-container .services-right ul.electrical-sub li {
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li a, section .homepage #services .background-filter-container .services-right ul.electrical-sub li a {
+  color: #fba419b3;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:hover, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:hover {
+  background-color: #000;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:hover a, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:hover a {
+  color: #fba419;
+}
+section .homepage #services .background-filter-container .services-right ul.mechanical-sub li:last-child, section .homepage #services .background-filter-container .services-right ul.electrical-sub li:last-child {
+  border: none;
+}
+section .homepage #portfolio {
+  background-color: #f9f9f9;
+}
+section .homepage #portfolio .port-desc {
+  padding-left: 15vw;
+  padding-right: 15vw;
+}
+section .homepage #portfolio .row div {
+  padding: 0;
+}
+section .homepage #portfolio .row div img {
+  height: 350px;
+  width: 100%;
+}
+section .homepage #portfolio .row div div {
+  display: none;
+}
+section .homepage #portfolio .row div div p {
+  padding: 0 10%;
+}
+section .homepage #portfolio .row div div .port_title {
+  color: #f0f0f0;
+}
+section .homepage #portfolio .row div div .port_title:hover {
+  color: #fff;
+}
+section .homepage #portfolio .row div div button {
+  background-color: #fba419;
+  color: #f0f0f0;
+  padding: 8px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  position: relative;
+}
+section .homepage #portfolio .row div div button:hover {
+  color: #fff;
+  bottom: 2px;
+  text-decoration: underline;
+}
+section .homepage #portfolio .row div .port_img_link_active {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+section .homepage #contact .cont-container div {
+  padding: 0;
+}
+section .homepage #contact .cont-container div div:first-child img {
+  height: 100vh;
+}
+section .homepage #contact .cont-container div div:first-child div {
+  top: 0;
+  height: 100%;
+  padding: 25% 15% 15% 25%;
+}
+section .homepage #contact .cont-container div .cont-contact {
+  background-color: #f0f0f0;
+  padding: 5%;
+}
+section .homepage .gap {
+  min-height: 10vh;
+  background-color: #fff;
+}
+
+/*# sourceMappingURL=fort.style_home.css.map */

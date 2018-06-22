@@ -1,0 +1,137 @@
+@charset "UTF-8";
+@font-face {
+  url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
+  font-family: "roboto";
+}
+.cwhite {
+  color: #fff;
+}
+
+.cwhite_opa {
+  color: #f0f0f0;
+}
+
+.corange {
+  color: #fba419;
+}
+
+.corange_opa {
+  color: #fba419b3;
+}
+
+.cblue {
+  color: #535b8c;
+}
+
+.cblue_opa {
+  color: rgba(83, 91, 140, 0.7);
+}
+
+.cgrey {
+  color: #ddd;
+}
+
+div, .row {
+  margin: 0;
+}
+
+.bold, .hoverious, a:hover, a {
+  font-weight: bold;
+}
+
+.cursor_pointer, .hoverious, a:hover, a {
+  cursor: pointer;
+}
+
+.modal-color {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hoverious, a:hover, a {
+  color: #555;
+}
+
+.hoverious:hover, a:hover {
+  color: #000;
+}
+
+a:hover {
+  color: #7c82a6;
+}
+
+body {
+  font-family: "roboto";
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "“";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "— ";
+}
+
+.services-gap {
+  margin: 20px 0;
+}
+
+.services-container .aside-container, .services-container .article-container {
+  min-height: 100vh;
+}
+.services-container .aside-container {
+  background-color: #f0f0f0;
+  padding-top: 50px;
+}
+.services-container .aside-container ul {
+  list-style: none;
+  padding-left: 1.4em;
+}
+.services-container .aside-container ul li {
+  line-height: 2em;
+}
+.services-container .aside-container ul li .title {
+  font-size: 1.4em;
+  text-decoration: underline;
+}
+.services-container .aside-container ul li ul {
+  list-style: decimal;
+}
+.services-container .aside-container ul li ul li .sub-title {
+  font-size: 1.2em;
+}
+.services-container .aside-container ul li ul li ul {
+  list-style: square;
+}
+.services-container .aside-container ul li ul li ul li .point {
+  font-size: 1em;
+}
+.services-container .article-container {
+  padding: 50px;
+}
+
+/*# sourceMappingURL=fort.style_services.css.map */

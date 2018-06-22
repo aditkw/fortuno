@@ -23,3 +23,9 @@ $route['our-service/(:any)'] 							  = 'service/detail/$1';
 $route['news/(:any)'] 							        = 'news/detail/$1';
 $route['event/(:any)'] 							        = 'event/detail/$1';
 $route['sitemap\.xml'] 					            = 'seo/sitemap';
+
+// NEW FRONT END (Jangq)
+$route['services']                            = 'services';
+$route['services/mechanical']                 = 'services/mechanical';
+$route['services/electrical']                 = 'services/electrical';
+$route['services/gas-installation']           = 'services/gas';

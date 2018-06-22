@@ -13,7 +13,20 @@
 		<!-- <link rel="stylesheet" href="<?php echo base_url();?>plugins/font-awesome_new/fontawesome-all.min.css"> -->
 		<!-- Favicon -->
 		<link rel="shortcut icon" href="<?php echo site_url('dist/img/assets/fav.png');?>" type="image/png">
+
 		<!-- Style -->
 		<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style.css">
+		<?php if (isset($top)): ?>
+			<?php
+			switch ($top) {
+				case 'services': ?>
+				<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style_services.css">
+				<?php break;
+			}
+			 ?>
+		<?php else: ?>
+			<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style_home.css">
+		<?php endif; ?>
+
 	</head>
 <body>
