@@ -17,21 +17,15 @@
        <ul>
          <li><a class="title" href="<?php echo base_url(); ?>services">Services</a>
            <ul>
-               <li><a class="sub-title" href="<?php echo base_url(); ?>services/mechanical">Mechanical</a>
+             <?php foreach ($category as $categ): ?>
+               <li><a class="sub-title" href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_name))?>"><?=$categ->catservice_name?></a>
                  <ul>
-                  <?php foreach ($component['dummyservices']['mechanical']['article'] as $value): ?>
-                   <li><a class="point" href="<?php echo base_url(); ?>services/mechanical#<?php echo strtolower(url_title($value['title'])); ?>"><?php echo $value['title']; ?></a></li>
+                 <?php foreach ($categ->services as $service): ?>
+                   <li><a class="point" href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_name))?>#<?=strtolower(url_title($service->services_name));?>"><?=$service->services_name?></a></li>
                   <?php endforeach; ?>
                  </ul>
                </li>
-               <li><a class="sub-title" href="<?php echo base_url(); ?>services/electrical">Electrical</a>
-                 <ul>
-                 <?php foreach ($component['dummyservices']['electrical']['article'] as $value): ?>
-                   <li><a class="point" href="<?php echo base_url(); ?>services/electrical#<?php echo strtolower(url_title($value['title'])); ?>"><?php echo $value['title']; ?></a></li>
-                 <?php endforeach; ?>
-                 </ul>
-               </li>
-               <li><a class="sub-title" href="<?php echo base_url(); ?>services/gas-installation">Gas Installation</a></li>
+             <?php endforeach; ?>
            </ul>
          </li>
        </ul>
@@ -40,12 +34,12 @@
    <div class="col-md-7 article-container">
      <h1><a href="#"><?php echo $component['title']; ?></a></h1>
      <article>
-        <?php if (isset($component['dummyservices'][strtolower($component['title'])]['article'])): ?>
-          <?php foreach ($component['dummyservices'][strtolower($component['title'])]['article'] as $value): ?>
-            <h2 id="<?php echo strtolower(url_title($value['title'])); ?>" style="padding-top:16vh" class="h2"><?php echo $value['title']; ?></h2>
-            <p><?php echo $value['content']; ?></p><br>
-          <?php endforeach; ?>
-        <?php endif; ?>
+       <?php if ($component['num_array_categ']): ?>
+         <?php foreach ($category[$component['num_array_categ']-1]->services as $categ): ?>
+           <h2 id="<?=strtolower(url_title($categ->services_name));?>" style="padding-top:16vh" class="h2"><?=$categ->services_name;?></h2>
+           <p><?=$categ->services_desc;?></p><br>
+         <?php endforeach; ?>
+       <?php endif; ?>
      </article>
    </div>
    <div class="col-md-1"></div>

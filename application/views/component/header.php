@@ -29,33 +29,23 @@
     ?>
     <nav class="row text-center">
       <div class="col-md-2"></div>
-      <div class="col-md-1 nav-list homepage"><a href="<?php echo $at_index; ?>#beranda">HOME</a></div>
-      <div class="col-md-1 nav-list about"><a href="<?php echo $at_index; ?>#about">ABOUT</a></div>
+      <div class="col-md-1 nav-list homepage"><a href="<?=base_url()?>#beranda">HOME</a></div>
+      <div class="col-md-1 nav-list about"><a href="<?=base_url()?>#about">ABOUT</a></div>
       <div class="col-md-1 nav-list services position-relative menu-has-sub"><a href="<?php echo $at_index; ?>#services">SERVICES</a>
         <ul class="position-absolute sub1">
-          <li class="position-relative sub1-has-sub">MECHANICAL <i class="fas fa-chevron-circle-right"></i>
-            <ul class="position-absolute sub2">
-              <li><a href="<?php echo base_url(); ?>services/mechanical#systemplumbing-dan-instalasi-air-bersih">Sistem plumbing dan instalasi air</a></li>
-              <li><a href="<?php echo base_url(); ?>services/mechanical#system-fire-fighting-system-pemadam-kebakaran">Sistem springkler</a></li>
-              <li><a href="<?php echo base_url(); ?>services/mechanical#system-tata-udara-ac-air-conditioning">Sistem Tata Udara (AC/ Air Conditioning)</a></li>
-            </ul>
-          </li>
-          <li class="position-relative sub1-has-sub">ELECTRICAL <i class="fas fa-chevron-circle-right"></i>
-            <ul class="position-absolute sub2">
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-elektrikal">Sistem Elektrikal /Arus Kuat (listrik)</a></li>
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-penangkal-petir">Sistem penangkal petir</a></li>
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-telepon">Sistem Telepon</a></li>
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-tata-suara-sound-system">Sistem tata suara (Sound system)</a></li>
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-data-jaringan-komputer">Sistem Data & Jaringan Komputer</a></li>
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-matv-master-television">Sistem MATV (master television)</a></li>
-              <li><a href="<?php echo base_url(); ?>services/electrical#sistem-cctv-close-circuit-television">Sistem CCTV (Close Sircuit  Television)</a></li>
-            </ul>
-          </li>
-          <li><a href="<?php echo base_url(); ?>services/gas-installation">GAS INSTALLATION</a></li>
+          <?php foreach ($category as $categ): ?>
+            <li class="position-relative sub1-has-sub"><?=strtoupper($categ->catservice_name)?> <i class="fas fa-chevron-circle-right"></i>
+              <ul class="position-absolute sub2">
+                <?php foreach ($categ->services as $service): ?>
+                  <li><a href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_name))?>#<?=title_url($service->services_name)?>"><?=$service->services_name?></a></li>
+                <?php endforeach; ?>
+              </ul>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </div>
-      <div class="col-md-1 nav-list portfolio"><a href="<?php echo $at_index; ?>#portfolio">PORTFOLIO</a></div>
-      <div class="col-md-1 nav-list contact"><a href="<?php echo $at_index; ?>#contact">CONTACT</a></div>
+      <div class="col-md-1 nav-list portfolio"><a href="<?=base_url()?>#portfolio">PORTFOLIO</a></div>
+      <div class="col-md-1 nav-list contact"><a href="<?=base_url()?>#contact">CONTACT</a></div>
       <div class="col-md-3 text-left search-container">
         <div class="form-group search">
           <input type="text" class="form-control" placeholder="Search Here...">
