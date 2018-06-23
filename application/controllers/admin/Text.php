@@ -30,12 +30,14 @@ class Text extends Backend_Controller
 					// id
 					'text_slide' => $post['slide'],
 					'text_quote' => $post['quote'],
+					'text_mecha' => $post['mecha'],
 					'text_footer' => $post['footer'],
 					'text_service' => $post['service'],
 					'text_portofolio' => $post['portofolio'],
 					// en
 					'text_slide_en' => $post['slide_en'],
 					'text_quote_en' => $post['quote_en'],
+					'text_mecha_en' => $post['mecha_en'],
 					'text_footer_en' => $post['footer_en'],
 					'text_service_en' => $post['service_en'],
 					'text_portofolio_en' => $post['portofolio_en'],

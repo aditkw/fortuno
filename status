@@ -1,0 +1,91 @@
+[33mcommit e794f58d7bf0115c3ee6752cc41a846958e5d839[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Fri Jun 22 21:40:59 2018 +0700
+
+    kelar tabrakan
+
+[33mcommit e9148dda1f26f66dd90df7e69a9f966f21001228[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Fri Jun 22 20:50:44 2018 +0700
+
+    ceritanya service
+
+[33mcommit 2c81211ea1ed12b8bab98a46b3ee43a630669611[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Wed Jun 20 17:48:43 2018 +0700
+
+    sinkronin sebagian data dari sumber
+
+[33mcommit aad56495f9e6a8c3b98fb1aab63ae02eb85c86b2[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Tue Jun 19 19:08:15 2018 +0700
+
+    Homepage, Mobile Version Menyusul
+
+[33mcommit bb18426e74b203237891127c43d63afb869ad6ea[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Tue Jun 19 18:57:40 2018 +0700
+
+    Homepage, Mobile Version Menyusul
+
+[33mcommit f9e1a6f7bd91f107ffa2f5b10eddb3c671b83afd[m[33m ([m[1;31morigin/adit[m[33m)[m
+Merge: cffe1a0 4a45614
+Author: aditwalihadi14 <aditwalihadi14@gmail.com>
+Date:   Mon Jun 18 17:44:49 2018 +0700
+
+    Merge branch 'adit'
+
+[33mcommit cffe1a0cfab09af32b93b19e4e7a8ffcbb45b0e7[m
+Author: aditwalihadi14 <aditwalihadi14@gmail.com>
+Date:   Mon Jun 18 17:41:28 2018 +0700
+
+    track file
+
+[33mcommit 4a456141734e8bf0374bad1b7967e45a3243c95c[m
+Author: aditwalihadi14 <aditwalihadi14@gmail.com>
+Date:   Mon Jun 18 17:35:18 2018 +0700
+
+    hal admin
+
+[33mcommit 89e944bf0f66ff7966139f7deaef2c47de9d2414[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Sun Jun 17 17:21:05 2018 +0700
+
+    nyicil coy
+
+[33mcommit 49c2d7c0af3f7ccbde74a4b19247b16aec9ce26e[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Sun Jun 17 14:30:50 2018 +0700
+
+    1
+
+[33mcommit df9a5da38fc821c3b0af1ec38c4f172636179994[m
+Merge: 604a0c1 647194c
+Author: aditwalihadi14 <aditwalihadi14@gmail.com>
+Date:   Tue Jun 12 17:09:03 2018 +0700
+
+    Merge branch 'master' of https://github.com/aditkw/fortuno
+
+[33mcommit 604a0c13ee082369ad88f314add575d60157d348[m
+Author: aditwalihadi14 <aditwalihadi14@gmail.com>
+Date:   Tue Jun 12 17:07:38 2018 +0700
+
+    db
+
+[33mcommit 647194cf8e58dfefed612d0214442ea5d8623ed9[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Tue Jun 12 16:54:49 2018 +0700
+
+    del
+
+[33mcommit 5aa86ebc4d6bc610e223a7e6200e171f4205c95b[m
+Author: Ujang Jabbar <jabbarujang@gmail.com>
+Date:   Tue Jun 12 16:53:02 2018 +0700
+
+    sa
+
+[33mcommit 8ce496ea042dd5549ddc0d547e1e16decb6617ef[m
+Author: aditwalihadi14 <aditwalihadi14@gmail.com>
+Date:   Tue Jun 12 16:39:35 2018 +0700
+
+    push

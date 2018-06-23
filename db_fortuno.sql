@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 12, 2018 at 10:06 AM
--- Server version: 10.2.14-MariaDB
--- PHP Version: 7.2.6
+-- Host: 127.0.0.1
+-- Generation Time: Jun 21, 2018 at 01:51 PM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_fortuno`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fortu_about`
+--
+
+CREATE TABLE `fortu_about` (
+  `about_id` int(8) NOT NULL,
+  `about_title` varchar(255) NOT NULL,
+  `about_title_en` varchar(255) NOT NULL,
+  `about_desc` text NOT NULL,
+  `about_desc_en` text NOT NULL,
+  `about_pub` enum('88','99') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fortu_about`
+--
+
+INSERT INTO `fortu_about` (`about_id`, `about_title`, `about_title_en`, `about_desc`, `about_desc_en`, `about_pub`) VALUES
+(4, 'haii', 'asdasd', '<p>Fortuno adalah perusahaan yang bergerak di bidang jasa kontraktor Mekanikal dan Elektrikal (ME) dengan pengalamann kerja di bidang ME sejak tahun 2010. Sebagai perusahaan jasa kontraktor ME yang telah memiliki sertifikasi AKLI sebagai persyaratan kontraktor Listrik dan Mekanikal Indonesia, Fortuno telah menangani berbagai macam proyek ME di Jakarta maupun kota besar lainnya.</p>\r\n', '<p>Fortuno is a company engaged in the field of Mechanical and Electrical contracting services (ME) with the experience of work in the field of ME since 2010. As a ME contracting service company that has been certified AKLI as a requirement of Electrical and Mechanical contractors Indonesia, Fortuno has handled various projects ME in Jakarta and other big cities.</p>\r\n', '99');
 
 -- --------------------------------------------------------
 
@@ -47,6 +69,32 @@ INSERT INTO `fortu_banner` (`banner_id`, `banner_type`, `banner_link`, `banner_a
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `fortu_catservices`
+--
+
+CREATE TABLE `fortu_catservices` (
+  `catservices_id` int(11) NOT NULL,
+  `catservices_name` varchar(255) NOT NULL,
+  `catservices_name_en` varchar(255) NOT NULL,
+  `catservices_desc` text NOT NULL,
+  `catservices_desc_en` text NOT NULL,
+  `catservices_pub` enum('88','99') NOT NULL,
+  `catservices_link` varchar(255) NOT NULL,
+  `catservices_icon` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fortu_catservices`
+--
+
+INSERT INTO `fortu_catservices` (`catservices_id`, `catservices_name`, `catservices_name_en`, `catservices_desc`, `catservices_desc_en`, `catservices_pub`, `catservices_link`, `catservices_icon`) VALUES
+(4, 'Mechanical', 'Mechanical', '<p>Sistem mekanikal dapat mencakup elemen infrastruktur, mesin, alat dan komponen, pemanasan, ventilasi dan sebagainya.</p>\r\n', '<p>Mechanical systems may include elements of infrastructure, machinery, tools and components, heating, ventilation and so on.</p>\r\n', '99', 'mechanical', 'fa-cogs'),
+(5, 'Electrical', 'Electrical', '<p>Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah.</p>\r\n', '<p>Electrical system is a series of power supply equipment to meet the needs of low voltage electrical power.</p>\r\n', '99', 'electrical', 'fa-lightbulb'),
+(6, 'Gas Installation', 'Gas Installation', '<p>Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan)</p>\r\n', '<p>Gas installation system in mall usually for allotment of restaurant and Food Court (food center)</p>\r\n', '99', 'gas-installation', 'fa-fire');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `fortu_contact`
 --
 
@@ -69,7 +117,7 @@ CREATE TABLE `fortu_contact` (
 --
 
 INSERT INTO `fortu_contact` (`contact_id`, `contact_phone`, `contact_fax`, `contact_email`, `contact_address`, `contact_maps`, `contact_fb`, `contact_yt`, `contact_tw`, `contact_gplus`, `contact_in`) VALUES
-(1, '021 - 54381328', '021 - 54394828', 'info@your-web.com', 'Jl. Jembatan Batu No. 82 - 83\r\nPinangsia Jakarta 11110', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.4297126470617!2d106.70244424152723!3d-6.149574103835754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f812814e7aa7%3A0xf9b7032a017de8d3!2sMitra+Asia+Synergy.+PT!5e0!3m2!1sen!2sid!4v1524547293072\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>', 'https://www.facebook.com/', 'http://youtube.com', 'https://www.twitter.com/', 'www.google.com', 'http://linkedin.com');
+(1, '021 - 54381328', '021 - 54394828', 'info@your-web.com', 'Jl. Jembatan Batu No. 82 - 83\r\nPinangsia Jakarta 11110', '', 'https://www.facebook.com/', 'http://youtube.com', 'https://www.twitter.com/', 'www.google.com', 'http://linkedin.com');
 
 -- --------------------------------------------------------
 
@@ -103,21 +151,55 @@ INSERT INTO `fortu_image` (`image_id`, `parent_id`, `image_parent_name`, `image_
 (36, 21, 'clients', '-7971.png', 0),
 (37, 22, 'clients', '-8734.png', 0),
 (38, 23, 'clients', '-9158.png', 0),
-(45, 4, 'services', 'business-establishments-and-structures-3670.jpg', 0),
-(46, 4, 'services', 'business-establishments-and-structures-3671.png', 1),
-(47, 5, 'services', 'due-diligence-engagements-5762.jpg', 0),
-(48, 5, 'services', 'due-diligence-engagements-5763.png', 1),
-(49, 6, 'services', 'legal-and-banking-contracts-630.jpg', 0),
-(50, 6, 'services', 'legal-and-banking-contracts-631.png', 1),
-(51, 7, 'services', 'management-consultancy-2856.jpg', 0),
-(52, 7, 'services', 'management-consultancy-2857.png', 1),
-(53, 8, 'services', 'local-taxation-7281.jpg', 0),
-(54, 8, 'services', 'local-taxation-7282.png', 1),
-(55, 9, 'services', 'accounting-and-audit-compliance-3526.jpg', 0),
-(56, 9, 'services', 'accounting-and-audit-compliance-3527.png', 1),
 (57, 1, 'slide', '-7892.jpg', 0),
 (58, 2, 'slide', '-8011.jpg', 0),
-(62, 9, 'event', 'test-lagi-9427.jpg', 0);
+(62, 9, 'event', 'test-lagi-9427.jpg', 0),
+(66, 4, 'about', '-1430.png', 0),
+(75, 3, 'catservices', 'test-65.jpg', 0),
+(76, 3, 'catservices', 'test-8152.jpg', 1),
+(90, 15, 'services', 'qweqwe-8714.png', 0),
+(91, 16, 'services', 'sprinkler-system-2614.jpg', 0),
+(92, 17, 'services', 'air-conditioning-system-9636.png', 0),
+(93, 18, 'services', 'electrical-system-power-flow-electric-9732.png', 0),
+(94, 19, 'services', 'lightning-protection-system-8470.jpg', 0),
+(95, 20, 'services', 'sound-system-2003.png', 0),
+(104, 4, 'portofolio', 'lorem-ipsum-dolor-6092.png', 0),
+(105, 4, 'portofolio', 'lorem-ipsum-dolor-6093.jpg', 1),
+(106, 4, 'portofolio', 'lorem-ipsum-dolor-6094.jpg', 2),
+(107, 4, 'portofolio', 'lorem-ipsum-dolor-6095.jpg', 3),
+(108, 5, 'portofolio', 'lorem-ipsum-dolor-9320.png', 0),
+(109, 5, 'portofolio', 'lorem-ipsum-dolor-9321.jpg', 1),
+(110, 5, 'portofolio', 'lorem-ipsum-dolor-9322.jpg', 2),
+(111, 5, 'portofolio', 'lorem-ipsum-dolor-9323.jpg', 3),
+(112, 6, 'portofolio', 'lorem-ipsum-dolor-4254.png', 0),
+(113, 6, 'portofolio', 'lorem-ipsum-dolor-4255.jpg', 1),
+(114, 6, 'portofolio', 'lorem-ipsum-dolor-4256.png', 2),
+(115, 6, 'portofolio', 'lorem-ipsum-dolor-4257.jpg', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fortu_portofolio`
+--
+
+CREATE TABLE `fortu_portofolio` (
+  `portofolio_id` int(8) NOT NULL,
+  `portofolio_name` varchar(255) NOT NULL,
+  `portofolio_name_en` varchar(255) NOT NULL,
+  `portofolio_desc` text NOT NULL,
+  `portofolio_desc_en` text NOT NULL,
+  `portofolio_pub` enum('88','99') NOT NULL,
+  `portofolio_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fortu_portofolio`
+--
+
+INSERT INTO `fortu_portofolio` (`portofolio_id`, `portofolio_name`, `portofolio_name_en`, `portofolio_desc`, `portofolio_desc_en`, `portofolio_pub`, `portofolio_link`) VALUES
+(4, 'Lorem Ipsum Dolor', 'Lorem Ipsum Dolor', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'lorem-ipsum-dolor'),
+(5, 'Lorem Ipsum Dolor', 'Lorem Ipsum Dolor', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'lorem-ipsum-dolor'),
+(6, 'Lorem Ipsum Dolor', 'Lorem Ipsum Dolor', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'lorem-ipsum-dolor');
 
 -- --------------------------------------------------------
 
@@ -157,6 +239,7 @@ INSERT INTO `fortu_seo` (`seo_id`, `seo_page`, `seo_title`, `seo_keyword`, `seo_
 
 CREATE TABLE `fortu_services` (
   `services_id` int(11) NOT NULL,
+  `catservices_id` int(8) NOT NULL,
   `services_name` varchar(255) NOT NULL,
   `services_name_en` varchar(255) NOT NULL,
   `services_desc` text NOT NULL,
@@ -170,13 +253,13 @@ CREATE TABLE `fortu_services` (
 -- Dumping data for table `fortu_services`
 --
 
-INSERT INTO `fortu_services` (`services_id`, `services_name`, `services_name_en`, `services_desc`, `services_desc_en`, `services_alt`, `services_pub`, `services_link`) VALUES
-(4, 'Business establishments and structures', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'business-establishments-and-structures'),
-(5, 'Due diligence engagements', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'due-diligence-engagements'),
-(6, 'Legal and banking contracts', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'legal-and-banking-contracts'),
-(7, 'Management consultancy', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'management-consultancy'),
-(8, 'Local taxation', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'local-taxation'),
-(9, 'Accounting and audit compliance', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '', '99', 'accounting-and-audit-compliance');
+INSERT INTO `fortu_services` (`services_id`, `catservices_id`, `services_name`, `services_name_en`, `services_desc`, `services_desc_en`, `services_alt`, `services_pub`, `services_link`) VALUES
+(15, 4, 'Sistem plumbing dan instalasi air', 'Plumbing system and air installation', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '99', 'plumbing-system-and-air-installation'),
+(16, 4, 'Sistem springkler', 'Sprinkler System', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '99', 'sprinkler-system'),
+(17, 4, 'Sistem Tata Udara (Ac/ air conditioning)', 'Air Conditioning System', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '99', 'air-conditioning-system'),
+(18, 5, 'Sistem Elektrikal /Arus Kuat (listrik)', 'Electrical System / Power Flow (electric)', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '99', 'electrical-system-power-flow-electric'),
+(19, 5, 'Sistem penangkal petir', 'Lightning protection system', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '99', 'lightning-protection-system'),
+(20, 5, 'Sistem tata suara', 'Sound system', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '', '99', 'sound-system');
 
 -- --------------------------------------------------------
 
@@ -205,22 +288,6 @@ INSERT INTO `fortu_site` (`site_id`, `site_name`, `site_title`, `site_desc`, `si
 -- --------------------------------------------------------
 
 --
--- Table structure for table `fortu_subservices`
---
-
-CREATE TABLE `fortu_subservices` (
-  `subservices_id` int(11) NOT NULL,
-  `services_id` int(8) NOT NULL,
-  `subservices_name` varchar(255) NOT NULL,
-  `subservices_name_en` varchar(255) NOT NULL,
-  `subservices_desc` text NOT NULL,
-  `subservices_desc_en` text NOT NULL,
-  `subservices_pub` enum('88','99') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `fortu_text`
 --
 
@@ -235,15 +302,17 @@ CREATE TABLE `fortu_text` (
   `text_service` text NOT NULL,
   `text_service_en` text NOT NULL,
   `text_portofolio` text NOT NULL,
-  `text_portofolio_en` text NOT NULL
+  `text_portofolio_en` text NOT NULL,
+  `text_mecha` text NOT NULL,
+  `text_mecha_en` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `fortu_text`
 --
 
-INSERT INTO `fortu_text` (`text_id`, `text_footer`, `text_footer_en`, `text_slide`, `text_slide_en`, `text_quote`, `text_quote_en`, `text_service`, `text_service_en`, `text_portofolio`, `text_portofolio_en`) VALUES
-(1, 'wwqwqwqLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.', 'eqiwjeiqw', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.', 'adsqowe', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. Dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna ', 'ejiqwjei', 'adasdasd', 'ejqiwjeiqwe', 'qqqqwqeqwe', 'eqwiejiqw');
+INSERT INTO `fortu_text` (`text_id`, `text_footer`, `text_footer_en`, `text_slide`, `text_slide_en`, `text_quote`, `text_quote_en`, `text_service`, `text_service_en`, `text_portofolio`, `text_portofolio_en`, `text_mecha`, `text_mecha_en`) VALUES
+(1, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'Tahukah Kamu Pentingnya Sistem mekanikal dan elektrikal (ME) untuk suatu bangunan ?', 'Did You Know The Importance of Mechanical and Electrical Systems (ME) for buildings?', 'Sekuat apapun atau seindah apapun bangunan, jika tidak ditunjang dengan suatu sistem mekanikal dan elektrikal, maka bangunan tersebut tidak ada fungsinya.', 'As strong as anything or as not supported by a Mechanical & Electrical System, then the building is not functioning.', '<p>Proyek ME yang kami tanganin termasuk : </p>\r\n\r\n<ol>\r\n <li>Restauran/café/foodcourt</li>\r\n <li>Lounge/club/karoke</li>\r\n <li>Gedung Perkantoran/perumahan</li>\r\n <li>Pabrik/pergudangan</li>\r\n <li>Klinik/butik</li>\r\n <li>dll.</li>\r\n</ol>\r\n', '<p>The ME projects we include include: &lt;!-- p--&gt;</p>\r\n\r\n<ol>\r\n <li>Restaurant / caf & eacute; / foodcourt &lt;!-- li--&gt;</li>\r\n <li>Lounge / club / karoke &lt;!-- li--&gt;</li>\r\n <li>Office / residential building &lt;!-- li--&gt;</li>\r\n <li>Factory / warehousing &lt;!-- li--&gt;</li>\r\n <li>Clinic / boutique &lt;!-- li--&gt;</li>\r\n <li>etc. &lt;!-- li--&gt; &lt;!-- ol--&gt;</li>\r\n</ol>\r\n', 'Sebagai perusahaan jasa kontraktor ME yang telah memiliki sertifikasi AKLI sebagai persyaratan kontraktor Listrik dan Mekanikal Indonesia, Fortuno telah menangani berbagai macam proyek ME di Jakarta maupun kota besar lainnya. Berikut beberapa proyek ME yang telah kami kerjakan.', 'As a ME contracting service company that has AKLI certification as a condition of Indonesian Electrical and Mechanical contractor, Fortuno has handled various ME projects in Jakarta and other big cities. Here are some of the ME projects we\'ve worked on. Or click here to see all the ME projects we\'ve worked on.', 'Di dalam Suatu Bangunan gedung terdiri dari 3 komponen penting, yaitu struktur, arsitek dan utilitas (atau dikenal dengan istilah ME (mekanikal dan elektrikal gedung). Ketiganya satu sama lain saling terkait. Jika struktur mengedepankan kekuatan, arsitek lebih menekankan pada keindahan, maka ME (mekanikal &Elektrikal) lebih mengedepankan pada fungsi. Sistem mekanikal dan elektrikal (ME) suatu bangunan / gedung sangat tergantung maksud suatu gedung itu dibangun. ME suatu restoran mempunyai perbedaan dengan gedung perkantoran, atau bandara, rumah sakit atau pabik. Tetapi secara prinsip mempunyai berbagai persamaan Tujuan utama dari suatu gedung menjadi landasan dasar dalam menentukan kekhusususan sistem ME dalam suatu bangunan/ gedung. Fungsi system ME yang dipasang di gedung untuk membuatnya nyaman, fungsional, efisien dan aman', 'In Building A building consists of 3 important components, namely structure, architect and utility (or known as ME (mechanical and electrical building), all of which are related to each other.If the structure emphasizes the strength, the architect put more emphasis on beauty, then ME (mechanical & electrical) is more emphasis on function The mechanical and electrical system &#40;ME&#41; of a building depends very much on the purpose of the building being constructed ME a restaurant has a difference with an office building, or an airport, a hospital or a pabik But in principle it has various equations The main purpose of a building becomes the basic foundation in determining the specificity of the ME system in a building The function of the ME system installed in the building to make it comfortable, functional, efficient and safe');
 
 -- --------------------------------------------------------
 
@@ -268,7 +337,7 @@ CREATE TABLE `fortu_user` (
 --
 
 INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_email`, `user_level`, `user_status`, `user_image`, `user_session`) VALUES
-(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '272da34fc7021a904cb93a58bdc1c1f666c1e5af'),
+(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '419b3bed5388ab71eaee04ebb89177e4a1b01a66'),
 (2, 'mainlwd', 'a82d82f5133af2c987010c8e446c35230164a0fe', 'Maintenance LWD', 'lwd@lawavedesign.com', 'admin', 'active', '', 'b6bc5de8c9694006f7c96f34e37c0551c8b13525');
 
 --
@@ -276,10 +345,22 @@ INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_nam
 --
 
 --
+-- Indexes for table `fortu_about`
+--
+ALTER TABLE `fortu_about`
+  ADD PRIMARY KEY (`about_id`);
+
+--
 -- Indexes for table `fortu_banner`
 --
 ALTER TABLE `fortu_banner`
   ADD PRIMARY KEY (`banner_id`);
+
+--
+-- Indexes for table `fortu_catservices`
+--
+ALTER TABLE `fortu_catservices`
+  ADD PRIMARY KEY (`catservices_id`);
 
 --
 -- Indexes for table `fortu_contact`
@@ -292,6 +373,12 @@ ALTER TABLE `fortu_contact`
 --
 ALTER TABLE `fortu_image`
   ADD PRIMARY KEY (`image_id`);
+
+--
+-- Indexes for table `fortu_portofolio`
+--
+ALTER TABLE `fortu_portofolio`
+  ADD PRIMARY KEY (`portofolio_id`);
 
 --
 -- Indexes for table `fortu_seo`
@@ -328,10 +415,22 @@ ALTER TABLE `fortu_user`
 --
 
 --
+-- AUTO_INCREMENT for table `fortu_about`
+--
+ALTER TABLE `fortu_about`
+  MODIFY `about_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT for table `fortu_banner`
 --
 ALTER TABLE `fortu_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `fortu_catservices`
+--
+ALTER TABLE `fortu_catservices`
+  MODIFY `catservices_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `fortu_contact`
@@ -343,7 +442,13 @@ ALTER TABLE `fortu_contact`
 -- AUTO_INCREMENT for table `fortu_image`
 --
 ALTER TABLE `fortu_image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+
+--
+-- AUTO_INCREMENT for table `fortu_portofolio`
+--
+ALTER TABLE `fortu_portofolio`
+  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `fortu_seo`
@@ -355,7 +460,7 @@ ALTER TABLE `fortu_seo`
 -- AUTO_INCREMENT for table `fortu_services`
 --
 ALTER TABLE `fortu_services`
-  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `fortu_text`

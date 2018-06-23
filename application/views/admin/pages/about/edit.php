@@ -28,25 +28,41 @@
 							<img id="preview-image" src="<?php echo base_url($path_file.'/'.$image_index->image_name);?>" class="preview-image img img-responsive" alt="image index">
 						</div>
 					</div>
-					<div class="col-md-9 col-lg-8">
+					<!-- <div class="col-md-9 col-lg-8">
 						<div class="row">
 							<div class="col-md-12 col-lg-12">
 								<div class="form-group">
-									<label for="about">Title</label>
-									<input type="hidden" name="id" value="<?php echo hash_link_encode($about->about_id); ?>">
-									<input type="text" name="title" class="form-control" value="<?php echo $about->about_title; ?>" placeholder="about title" required>
+									<label for="about">Title ID</label>
+									<input type="text" name="title" class="form-control" value="<?php echo $about->about_title; ?>" placeholder="about title indonesian" required>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 col-lg-12">
+								<div class="form-group">
+									<label for="about">Title EN</label>
+									<input type="text" name="title_en" class="form-control" value="<?php echo $about->about_title_en; ?>" placeholder="about title english" required>
 								</div>
 							</div>
 						</div>
 						<hr>
-					</div>
+					</div> -->
 				</div>
 				<hr>
 				<div class="row">
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
-							<label for="about">Description</label>
+							<label for="about">Description ID</label>
+							<input type="hidden" name="id" value="<?php echo hash_link_encode($about->about_id); ?>">
 							<textarea name="desc" class="ckeditor"><?php echo $about->about_desc; ?></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 col-lg-12">
+						<div class="form-group">
+							<label for="about">Description EN</label>
+							<textarea name="desc_en" class="ckeditor"><?php echo $about->about_desc_en; ?></textarea>
 						</div>
 					</div>
 				</div>

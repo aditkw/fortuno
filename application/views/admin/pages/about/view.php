@@ -55,15 +55,15 @@
 		<div class="box">
 			<div class="box-body">
 				<div class="form-group text-right">
-					<button class="btn btn-primary btn-flat" onclick="window.location.href='<?php echo site_url('admin/about/page/add');?>'" title="Add New"><i class="fa fa-plus"></i> Add New</button>
+					<!-- <button class="btn btn-primary btn-flat" onclick="window.location.href='<?php echo site_url('admin/about/page/add');?>'" title="Add New"><i class="fa fa-plus"></i> Add New</button> -->
 				</div>
 				<table id="datatable1" class="table table-striped">
 					<thead>
 						<tr>
 							<th width="5%">#</th>
 							<th>Image</th>
-							<th>Title</th>
-							<th>Description</th>
+							<th>Description ID</th>
+							<th>Description EN</th>
 							<th width="15%">Action</th>
 						</tr>
 					</thead>
@@ -74,11 +74,11 @@
 								<td>
 									<img src="<?php echo base_url('uploads/img/about/'.$thumb_pre.$about->image_name);?>" class="img img-responsive" alt="<?php echo $about->about_title;?>">
 								</td>
-								<td><?php echo ucwords($about->about_title);?></td>
 								<td><?php echo ucwords($about->about_desc);?></td>
+								<td><?php echo ucwords($about->about_desc_en);?></td>
 								<td>
 									<!-- Action -->
-									<?php if ($about->about_pub == '88'): ?>
+									<!-- <?php if ($about->about_pub == '88'): ?>
 										<a href="<?php echo site_url('admin/about/action/publish?id='.hash_link_encode($about->about_id));?>" class="btn btn-flat btn-danger" title="Publish">
 											<i class="fa fa-bullhorn"></i>
 										</a>
@@ -86,13 +86,13 @@
 										<a href="<?php echo site_url('admin/about/action/publish?id='.hash_link_encode($about->about_id));?>" class="btn btn-flat btn-success" title="Publish">
 											<i class="fa fa-bullhorn"></i>
 										</a>
-									<?php endif ?>
+									<?php endif ?> -->
 									<a class="btn btn-flat btn-default" onclick="window.location.href='<?php echo site_url('admin/about/page/edit?id='.hash_link_encode($about->about_id));?>'" title="Update">
 										<i class="fa fa-edit"></i>
 									</a>
-									<a onclick="return confirm('Are you sure ?')"  href="<?php echo site_url('admin/about/action/delete?id='.hash_link_encode($about->about_id));?>" class="btn btn-warning btn-flat" title="Delete">
+									<!-- <a onclick="return confirm('Are you sure ?')"  href="<?php echo site_url('admin/about/action/delete?id='.hash_link_encode($about->about_id));?>" class="btn btn-warning btn-flat" title="Delete">
 									<i class="fa fa-trash"></i>
-									</a>
+									</a> -->
 								</td>
 							</tr>
 						<?php $no++; endforeach ?>

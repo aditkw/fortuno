@@ -74,8 +74,8 @@
 								<td><?php echo $no;?></td>
 								<td><img src="<?=site_url('uploads/img/services/thumb-'.$services->image_name)?>" alt=""></td>
 								<td><?php echo ucwords($services->catservices_name_en);?></td>
-								<td><?php echo ucwords($services->services_name);?></td>
-								<td><?php echo limitKalimat($services->services_desc, 151);?></td>
+								<td><?php echo ucwords($services->services_name_en);?></td>
+								<td><?php echo limitKalimat($services->services_desc_en, 151);?></td>
 								<td>
 									<!-- Action -->
 									<?php if ($services->services_pub == '88'): ?>

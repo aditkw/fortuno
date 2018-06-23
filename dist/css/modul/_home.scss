@@ -49,17 +49,17 @@ section {
         }
         .services-right {
           padding-top: 10%;
-          .mechanical-title, .electrical-title, .gas-title {
+          .mechanical-title, .electrical-title, .gas-installation-title {
             cursor: pointer;
             .fa-chevron-circle-right {
               transition-duration: 1s;
             }
           }
-          .mechanical-title:hover, .electrical-title:hover, .gas-title:hover {
+          .mechanical-title:hover, .electrical-title:hover, .gas-installation-title:hover {
             text-decoration: underline;
             color: $corange;
           }
-          ul.mechanical-sub, ul.electrical-sub {
+          ul{
             display: none;
             list-style: none;
             z-index: 1;
@@ -113,6 +113,9 @@ section {
             }
             .port_title {
               color: $cwhite_opa;
+            }
+            div.port_desc{
+              height: auto;
             }
             .port_title:hover {
               color: $cwhite;

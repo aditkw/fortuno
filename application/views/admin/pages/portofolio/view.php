@@ -62,8 +62,8 @@
 						<tr>
 							<th width="5%">#</th>
 							<th width="15%">Image</th>
-							<th>Portofolio Name</th>
-							<th>Portofolio Desc</th>
+							<th>Name</th>
+							<th>Description</th>
 							<th width="15%">Action</th>
 						</tr>
 					</thead>
@@ -75,7 +75,7 @@
 									<img src="<?php echo base_url('uploads/img/portofolio/thumb-'.$portofolio->image_name);?>" class="img img-responsive" alt="">
 								</td>
 								<td><?php echo ucwords($portofolio->portofolio_name_en);?></td>
-								<td><?php echo $portofolio->portofolio_desc_en;?></td>
+								<td><?php echo limitKalimat($portofolio->portofolio_desc_en, 155);?></td>
 								<td>
 									<!-- Action -->
 									<?php if ($portofolio->portofolio_pub == '88'): ?>
@@ -101,8 +101,8 @@
 						<tr>
 							<th width="5%">#</th>
 							<th width="15%">Image</th>
-							<th>Portofolio Name</th>
-							<th>Portofolio Desc</th>
+							<th>Name</th>
+							<th>Description</th>
 							<th width="15%">Action</th>
 						</tr>
 					</thead>

@@ -64,31 +64,39 @@
 						<div class="tab-content">
 							<div class="tab-pane active" id="tab_1">
 								<div class="form-group">
-									<label for="title">Slide Text</label>
-									<textarea name="slide" class="form-control" placeholder="Text on the slide" rows="5"><?php echo $text->text_slide;?></textarea>
+									<label for="title">Header Text</label>
+									<textarea name="slide" class="form-control" placeholder="Text home header background" rows="5"><?php echo $text->text_slide;?></textarea>
+								</div>
+								<div class="form-group">
+									<label for="title">ME Text</label>
+									<textarea name="mecha" class="form-control" placeholder="Text for mechanical electrical" rows="5"><?php echo $text->text_mecha;?></textarea>
 								</div>
 								<div class="form-group">
 									<label for="title">Quote Text</label>
-									<textarea name="quote" class="form-control" placeholder="Text for quote homepage" rows="5"><?php echo $text->text_quote;?></textarea>
+									<textarea name="quote" class="form-control" placeholder="Text for quote" rows="5"><?php echo $text->text_quote;?></textarea>
 								</div>
 								<div class="form-group">
 									<label for="title">Service Text</label>
-									<textarea name="service" class="form-control" placeholder="Text on the service desc" rows="5"><?php echo $text->text_service;?></textarea>
+									<textarea name="service" class="form-control ckeditor" placeholder="Text on the service desc" rows="5"><?php echo $text->text_service;?></textarea>
 								</div>
 								<div class="form-group">
 									<label for="title">Portofolio Text</label>
 									<textarea name="portofolio" class="form-control" placeholder="Text on the portofolio desc" rows="5"><?php echo $text->text_portofolio;?></textarea>
 								</div>
 								<div class="form-group">
-									<label for="title">Footer Text</label>
-									<textarea name="footer" class="form-control" placeholder="Text on the footer" rows="5"><?php echo $text->text_footer;?></textarea>
+									<label for="title">Get in touch Text</label>
+									<textarea name="footer" class="form-control" placeholder="Text on the background get in touch" rows="5"><?php echo $text->text_footer;?></textarea>
 								</div>
 							</div><!-- /.tab-pane -->
 
 							<div class="tab-pane" id="tab_2">
 								<div class="form-group">
-									<label for="title">Slide Text</label>
-									<textarea name="slide_en" class="form-control" placeholder="Text on the slide" rows="5"><?php echo $text->text_slide_en;?></textarea>
+									<label for="title">Header Text</label>
+									<textarea name="slide_en" class="form-control" placeholder="Text home header background" rows="5"><?php echo $text->text_slide_en;?></textarea>
+								</div>
+								<div class="form-group">
+									<label for="title">ME Text</label>
+									<textarea name="mecha_en" class="form-control" placeholder="Text for mechanical electrical" rows="5"><?php echo $text->text_mecha_en;?></textarea>
 								</div>
 								<div class="form-group">
 									<label for="title">Quote Text</label>
@@ -96,15 +104,15 @@
 								</div>
 								<div class="form-group">
 									<label for="title">Service Text</label>
-									<textarea name="service_en" class="form-control" placeholder="Text on the service desc" rows="5"><?php echo $text->text_service_en;?></textarea>
+									<textarea name="service_en" class="form-control ckeditor" placeholder="Text on the service desc" rows="5"><?php echo $text->text_service_en;?></textarea>
 								</div>
 								<div class="form-group">
 									<label for="title">Portofolio Text</label>
 									<textarea name="portofolio_en" class="form-control" placeholder="Text on the portofolio desc" rows="5"><?php echo $text->text_portofolio_en;?></textarea>
 								</div>
 								<div class="form-group">
-									<label for="title">Footer Text</label>
-									<textarea name="footer_en" class="form-control" placeholder="Text on the footer" rows="5"><?php echo $text->text_footer_en;?></textarea>
+									<label for="title">Get in touch Text</label>
+									<textarea name="footer_en" class="form-control" placeholder="Text on the background get in touch" rows="5"><?php echo $text->text_footer_en;?></textarea>
 								</div>
 							</div><!-- /.tab-pane -->
 
