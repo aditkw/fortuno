@@ -61,7 +61,7 @@
 					<thead>
 						<tr>
 							<th width="5%">#</th>
-							<!-- <th>Image</th> -->
+							<th>Image</th>
 							<th>Title</th>
 							<th>Description</th>
 							<th width="15%">Action</th>
@@ -71,7 +71,7 @@
 						<?php $no = 1; foreach ($catservices as $catservices): ?>
 							<tr>
 								<td><?php echo $no;?></td>
-								<!-- <td><img src="<?=site_url('uploads/img/catservices/thumb-'.$catservices->image_name)?>" alt=""></td> -->
+								<td><img src="<?=site_url('uploads/img/catservices/thumb-'.$catservices->image_name)?>" alt=""></td>
 								<td><?php echo ucwords($catservices->catservices_name_en);?></td>
 								<td><?php echo limitKalimat($catservices->catservices_desc_en, 151);?></td>
 								<td>
@@ -98,7 +98,7 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<!-- <th>Image</th> -->
+							<th>Image</th>
 							<th>Title</th>
 							<th>Description</th>
 							<th>Action</th>
@@ -152,10 +152,16 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-lg-6">
 						<div class="form-group">
 							<label for="catservices">Icon <span class="badge bg-yellow" data-toggle="modal" data-target="#helpModal" style="cursor: help;">?</span></label>
 							<input type="text" name="icon" class="form-control" placeholder="icon">
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label for="product">Image Thumbnail</label>
+							<input type="file" name="image[]" class="form-control">
 						</div>
 					</div>
 				</div>
@@ -230,10 +236,17 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-3">
+					<div class="col-lg-6">
 						<div class="form-group">
 							<label for="catservices">Icon <span class="badge bg-yellow" data-toggle="modal" data-target="#helpModal" style="cursor: help;">?</span></label>
 							<input id="icon" type="text" name="icon" class="form-control" placeholder="icon">
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="form-group">
+							<label for="product">Image Thumbnail</label>
+							<input id="image" type="hidden" name="id_image_0">
+							<input type="file" name="image[]" class="form-control">
 						</div>
 					</div>
 				</div>
