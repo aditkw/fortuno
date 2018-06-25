@@ -17,7 +17,7 @@
        <ul>
          <li><a class="title" href="<?php echo base_url(); ?>services">Services</a>
            <ul>
-             <?php foreach ($category as $categ): ?>
+             <?php foreach ($cat_all as $categ): ?>
                <li><a class="sub-title" href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_name))?>"><?=$categ->catservice_name?></a>
                  <ul>
                  <?php foreach ($categ->services as $service): ?>
@@ -32,10 +32,14 @@
      </aside>
    </div>
    <div class="col-md-7 article-container">
-     <h1><a href="#"><?php echo $component['title']; ?></a></h1>
+     <?php if (isset($category)): ?>
+      <h1><a href="#"><?php echo $category[0]->catservice_name; ?></a></h1>
+     <?php else: ?>
+       <h1><a href="#"><?php echo $component['title']; ?></a></h1>
+     <?php endif; ?>
      <article>
-       <?php if ($component['num_array_categ']): ?>
-         <?php foreach ($category[$component['num_array_categ']-1]->services as $categ): ?>
+       <?php if (isset($category)): ?>
+         <?php foreach ($category[0]->services as $categ): ?>
            <h2 id="<?=strtolower(url_title($categ->services_name));?>" style="padding-top:16vh" class="h2"><?=$categ->services_name;?></h2>
            <p><?=$categ->services_desc;?></p><br>
          <?php endforeach; ?>

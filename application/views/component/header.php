@@ -33,7 +33,7 @@
       <div class="col-md-1 nav-list about"><a href="<?=base_url()?>#about">ABOUT</a></div>
       <div class="col-md-1 nav-list services position-relative menu-has-sub"><a href="<?php echo $at_index; ?>#services">SERVICES</a>
         <ul class="position-absolute sub1">
-          <?php foreach ($category as $categ): ?>
+          <?php foreach ($cat_all as $categ): ?>
             <li class="position-relative sub1-has-sub"><?=strtoupper($categ->catservice_name)?> <i class="fas fa-chevron-circle-right"></i>
               <ul class="position-absolute sub2">
                 <?php foreach ($categ->services as $service): ?>
@@ -67,13 +67,16 @@
       </div>
 
     <?php elseif (isset($header['services'])): ?>
-      <div id="sampul2" class="position-relative" style="background-image: url('<?php echo base_url(); ?>dist/img/assets/<?php echo $header['services']['sampul']; ?>');">
+      <?php (isset($category)) ? $sampul = $category[0]->catservice_bg : $sampul = 'services.jpg' ; ?>
+      <div id="sampul2" class="position-relative" style="background-image: url('<?php echo base_url(); ?>uploads/img/catservices/<?php echo $sampul ?>');">
         <div class="modal-color position-absolute"></div>
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-4 title-sampul2">
-            <p class="h1"><strong><?php echo $header['services']['title'][1]; ?></strong></p>
-            <p class="h1"><strong><?php echo $header['services']['title'][0]; ?></strong></p>
+            <?php if (isset($category)): ?>
+              <p class="h1"><strong><?php echo strtoupper($category[0]->catservice_name) ?></strong></p>
+            <?php endif; ?>
+            <p class="h1"><strong><?php echo $header['services']['title']; ?></strong></p>
           </div>
           <div class="col-md-4"></div>
           <div class="col-md-2"></div>
