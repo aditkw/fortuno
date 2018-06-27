@@ -161,6 +161,9 @@ class Frontend_Controller extends MY_Controller
 			'benefits-for-our-client', 'international-association'
 		);
 
+		$categories = $this->catservices_model->get_by(array('catservices_pub' => '99'));
+		$this->data['cat_all'] = $this->catservices_model->olahData($categories, FALSE);
+
 	}
 }
 

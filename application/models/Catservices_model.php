@@ -50,6 +50,41 @@ class Catservices_model extends MY_Model
 		return parent::get_by($where,$limit,$offset,$single,$select);
 	}
 
+	function olahData($categories, $wimage=NULL)
+	{
+	  $category = array();
+	  foreach ($categories as $cat) {
+
+			$this->db->where(array('catservices_id' => $cat->catservices_id, 'services_pub' => '99'));
+			$services = $this->db->get('{PRE}services')->result();
+
+	    $serpis = array();
+	    foreach ($services as $service) {
+	      $serpis[] = (object)array(
+	        'services_name' => $service->services_name,
+	        'services_name_en' => $service->services_name_en,
+	        'services_desc' => $service->services_desc,
+	        'services_desc_en' => $service->services_desc_en,
+	        'services_link' => $service->services_link
+	      );
+	    }
+
+	    $category[] = (object)array(
+	      'catservice_name' => $cat->catservices_name,
+	      'catservice_name_en' => $cat->catservices_name_en,
+	      'catservice_desc' => $cat->catservices_desc,
+	      'catservice_icon' => $cat->catservices_icon,
+	      'services' => $serpis
+	      );
+
+	    ($wimage == TRUE) ? $category[0]->catservice_bg = $cat->image_name : '';
+
+	    unset($serpis);
+	  }
+
+	  return $category;
+	}
+
 	public function count_product($where = NULL, $like = NULL)
 	{
 		if ($like) {

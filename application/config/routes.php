@@ -26,6 +26,7 @@ $route['sitemap\.xml'] 					            = 'seo/sitemap';
 
 // NEW FRONT END (Jangq)
 $route['services']                            = 'services';
-$route['services/mechanical']                 = 'services/mechanical';
-$route['services/electrical']                 = 'services/electrical';
-$route['services/gas-installation']           = 'services/gas';
+$route['services/(:any)']                     = 'services/category/$1';
+// $route['services/mechanical']                 = 'services/mechanical';
+// $route['services/electrical']                 = 'services/electrical';
+// $route['services/gas-installation']           = 'services/gas';

@@ -160,8 +160,12 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="form-group">
+<<<<<<< HEAD
 							<label for="product">Cover Image</label>
 							<input type="hidden" name="id_image_0">
+=======
+							<label for="product">Image Thumbnail</label>
+>>>>>>> 5cff521f480f623c339771f02906b0f051af2b94
 							<input type="file" name="image[]" class="form-control">
 						</div>
 					</div>
