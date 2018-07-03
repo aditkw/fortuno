@@ -4,10 +4,10 @@
 * Library Lawave_image diciptakan untuk mengolah data gambar/image (Upload, Delete dan membuat Thumbnail).
 *
 */
-class Lawave_ttf
+class Lawave_pdf
 {
-	private $ttf_path;
-	private $path = '../dist/';
+	private $pdf_path;
+	private $path = '../uploads/pdf';
 	const DS = DIRECTORY_SEPARATOR;
 
 	/*
@@ -21,7 +21,7 @@ class Lawave_ttf
 		2. $field_name 	-> nilai dari attribut "name" pada tag input bertipe file
 		3. $alt 				-> merupakan alt untuk gambar yang juga digunakan untuk mengganti nama gambar yang diupload
 	*/
-	function upload_ttf($ttf_folder, $field_name, $alt = NULL)
+	function upload_pdf($pdf_folder, $field_name, $alt = NULL)
 	{
 		$_this =& get_instance();
 		$_this->load->library('upload');
@@ -31,7 +31,7 @@ class Lawave_ttf
 		| me-load library yang akan digunakan
 		*/
 
-		$this->ttf_path = realpath(APPPATH . $this->path.$ttf_folder);
+		$this->pdf_path = realpath(APPPATH . $this->path.$pdf_folder);
 		$files 						= $_FILES[$field_name];
 		$rand 						= rand(11, 10000);
 
@@ -41,8 +41,8 @@ class Lawave_ttf
 		| $rand -> nilai random yang digunakan sebagai nama file yang diupload
 		*/
 
-		$config['upload_path']		= $this->ttf_path;
-		$config['allowed_types']	= 'ttf';
+		$config['upload_path']		= $this->pdf_path;
+		$config['allowed_types']	= 'pdf';
 		$ext											= explode('.', $files['name']);
 
 		/*
@@ -64,14 +64,14 @@ class Lawave_ttf
 		| upload file
 		*/
 
-		$ttf = $_this->upload->data();
+		$pdf = $_this->upload->data();
 
 		/*
 		| memasukan data file yang diupload kedalam "$image"
 		*/
 
-		$data['ttf'] 			= $ttf;
-		$data['ttf_path'] = $this->ttf_path;
+		$data['pdf'] 			= $pdf;
+		$data['pdf_path'] = $this->pdf_path;
 
 		return $data;
 
@@ -83,14 +83,14 @@ class Lawave_ttf
 	}
 
 
-	public function delete_ttf($ttf_folder, $ttf_name)
+	public function delete_pdf($pdf_folder, $pdf_name)
 	{
 		$_this =& get_instance();
 
-		$this->ttf_path = realpath(APPPATH . $this->path.$ttf_folder);
+		$this->pdf_path = realpath(APPPATH . $this->path.$pdf_folder);
 
-		if (!empty($ttf_name)) {
-			unlink($this->ttf_path.self::DS.$ttf_name);
+		if (!empty($pdf_name)) {
+			unlink($this->pdf_path.self::DS.$pdf_name);
 
 			/*
 			| gambar dihapus jika parameter pertama tidak kosong (empty)

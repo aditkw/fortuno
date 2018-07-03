@@ -9,6 +9,7 @@ class Portofolio extends Backend_Controller
 	protected $wt 							= 70;
 	protected $ht 							= 0;
 	protected $image_input_name = 'image';
+	protected $pdf_input_name = 'pdf';
 	protected $modul_file 			= 'portofolio';
 
 	function index()
@@ -87,6 +88,9 @@ class Portofolio extends Backend_Controller
 				}
 
 				else {
+					$files 			= $_FILES[$this->image_input_name]['name'];
+					$pdf  			= $_FILES[$this->pdf_input_name]['name'];
+
 					// $this->load->library('image_moo');
 					$upload_image = $this->lawave_image->upload_images(
 						$this->modul_file,
@@ -104,7 +108,7 @@ class Portofolio extends Backend_Controller
 
 					$portofolio_id = $this->portofolio_model->insert($array_data);
 
-					for ($i=0; $i < 4; $i++) {
+					for ($i=0; $i < count($files); $i++) {
 						$array_img[] = array(
 							'parent_id' 				=> $portofolio_id,
 							'image_parent_name'	=> 'portofolio',
@@ -168,19 +172,31 @@ class Portofolio extends Backend_Controller
 						$id_img = array('image_id' => $post['id_image_'.$i]);
 
 						// jika _file[image][name] tidak kosong
-						if (!empty($post['delete_image_'.$i])) {
+						if(!empty($post['delete_image_'.$i]))
+						 $del_id = $post['delete_image_'.$i];
+					  else
+					 	 $del_id = null;
+
+						if (!empty($del_id)) {
 							$image 	= $this->image_model->get($post['id_image_'.$i]);
 							// hapus gambar lama
 							$this->lawave_image->delete_image($this->modul_file, $image->image_name, $this->thumb_pre);
-							// array yang akan dikirim ke function update
-							$array_img = array(
-								'image_name' 	=> ''
-								);
-							// proses update gambar
-							$this->image_model->update($array_img, $id_img); // insert_batch gambar
+
+							$this->image_model->delete($post['id_image_'.$i]); // insert_batch gambar
 						}
 
 						else if (!empty($files[$i])) {
+							if(empty($del_id)){
+								$array_img[] = array(
+									'parent_id' 				=> $id,
+									'image_parent_name'	=> 'portofolio',
+									'image_name' 				=> $upload_image[$i],
+									'image_seq'					=> $i
+									);
+
+							$this->image_model->insert($array_img, TRUE);
+							}
+
 							$image 	= $this->image_model->get($post['id_image_'.$i]);
 							// hapus gambar lama
 							$this->lawave_image->delete_image($this->modul_file, $image->image_name, $this->thumb_pre);

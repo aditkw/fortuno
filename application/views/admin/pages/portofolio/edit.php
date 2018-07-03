@@ -90,7 +90,7 @@
 						</div>
 					</div>
 				</div> -->
-				<div class="row">
+				<div id="rowImage" class="row">
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
 							<div class="callout callout-warning">
@@ -112,16 +112,16 @@
 									<?php else: ?>
 										<img src="<?php echo base_url('dist/img/assets/no-image-1.jpg');?>" class="preview-image img img-responsive" alt="portofolio image">
 									<?php endif?>
-									<?php if (!empty($image->image_name)): ?>
+
 										<input type="checkbox" name="delete_image_<?=$no?>" class="minimal" value="delete"> Delete image
-									<?php else: ?>
-										<input type="checkbox" name="delete_image_<?=$no?>" class="minimal hidden" disabled> Delete image
-									<?php endif?>
+
 								</div>
 							</div>
 						<?php endif ?>
 					<?php $no++; endforeach ?>
 				</div>
+				<button id="addImage" type="button" name="button">Add more image</button>
+				
 				<hr>
 				<div class="form-group">
 					<button type="reset" class="btn btn-default btn-flat"><i class="fa fa-refresh"></i> Reset</button>

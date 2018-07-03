@@ -38,6 +38,12 @@
 			4000
 		);
 
+		$("#addImage").click( () => {
+			let _element = "<div class=\"col-md-5 col-lg-4 col-sm-6 col-xs-10\"><div class=\"form-group\"><label for=\"portofolio\">Image </label><input type=\"file\" name=\"image[]\" class=\"form-control\"></div></div>"
+
+			$("#rowImage").append(_element)
+		});
+
 		$(function () {
 			// DATE PICKER JQUERY UI
 			$( function() {
@@ -90,24 +96,6 @@
 				});
 			});
 
-			$('.btn-edit-clients').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/clients/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#desc").val(data.desc);
-						$("#update").modal('show');
-					}
-				});
-			});
 			// get category (edit)
 			$('.btn-edit-catservices').click(function() {
 				var id = $(this).attr('data-id');
@@ -247,45 +235,6 @@
 						data: { dataID: id},
 						success: function(response) {
 							$('#subcat').html(response);
-						}
-					});
-				});
-
-				$('#category_edt').change(function() {
-					var id = $(this).val();
-					// alert(id_category);
-					$.ajax({
-						type: 'POST',
-						url: '<?=site_url('admin/product/product/ajax_subcat')?>',
-						data: { dataID: id},
-						success: function(response) {
-							$('#subcat_edt').html(response);
-						}
-					});
-				});
-
-				$('#catproject').change(function() {
-					var id = $(this).val();
-					// alert(id_category);
-					$.ajax({
-						type: 'POST',
-						url: '<?=site_url('admin/project/project/ajax_subcat')?>',
-						data: { dataID: id},
-						success: function(response) {
-							$('#subcat').html(response);
-						}
-					});
-				});
-
-				$('#subcat').change(function() {
-					var id = $(this).val();
-					// alert(id_category);
-					$.ajax({
-						type: 'POST',
-						url: '<?=site_url('admin/product/product/ajax_type')?>',
-						data: { dataID: id},
-						success: function(response) {
-							$('#type').html(response);
 						}
 					});
 				});

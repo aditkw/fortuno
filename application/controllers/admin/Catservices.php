@@ -5,11 +5,7 @@
 */
 class Catservices extends Backend_Controller
 {
-<<<<<<< HEAD
-	protected $max_size					= 1024 * 1000;
-=======
->>>>>>> 5cff521f480f623c339771f02906b0f051af2b94
-	protected $wt 	= 70;
+ 	protected $wt 	= 70;
 	protected $ht = 0;
 	protected $image_input_name = 'image';
 	protected $modul_file 			= 'catservices';
@@ -17,11 +13,8 @@ class Catservices extends Backend_Controller
 	{
 		$this->data['content'] 	= 'admin/pages/catservices/view';
 		$array_where = array('{PRE}image.image_parent_name' => 'catservices', '{PRE}image.image_seq' => '0');
-<<<<<<< HEAD
-		$this->data['catservices'] 		= $this->catservices_model->get_category(array('image_parent_name' => 'catservices'));
-=======
+
 		$this->data['catservices'] 		= $this->catservices_model->get_category($array_where);
->>>>>>> 5cff521f480f623c339771f02906b0f051af2b94
 
 		$this->load->view('admin/media', $this->data);
 	}

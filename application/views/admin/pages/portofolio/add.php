@@ -74,8 +74,25 @@
 						</div>
 					</div>
 				</div>
+				<div id="rowImage" class="row">
+					<div class="col-md-12 col-lg-12">
+						<div class="form-group">
+							<div class="callout callout-warning">
+								<h4><i class="fa fa-warning"></i></h4>
+								<p>Portofolio pdf</p>
+								<p>ekstensi harus pdf</p>
+							</div>
+						</div>
+					</div>
+						<div class="col-md-5 col-lg-4 col-sm-6 col-xs-10">
+							<div class="form-group">
+								<label for="portofolio">Pdf </label>
+								<input type="file" name="pdf[]" class="form-control">
+							</div>
+						</div>
+				</div>
 				<hr>
-				<div class="row">
+				<div id="rowImage" class="row">
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
 							<div class="callout callout-warning">
@@ -85,18 +102,14 @@
 							</div>
 						</div>
 					</div>
-					<?php for ($i=1; $i < 4; $i++):?>
 						<div class="col-md-5 col-lg-4 col-sm-6 col-xs-10">
 							<div class="form-group">
 								<label for="portofolio">Image </label>
 								<input type="file" name="image[]" class="form-control">
-								<!-- <div style="border: 1px solid #ddd; margin-top: 5px; padding: 5px;">
-									<img id="preview-image<?php echo $i;?>" src="" class="img img-responsive" alt="portofolio image">
-								</div> -->
 							</div>
 						</div>
-					<?php endfor ?>
 				</div>
+				<button id="addImage" type="button" name="button">Add more image</button>
 				<hr>
 				<div class="form-group">
 					<button type="reset" class="btn btn-default btn-flat"><i class="fa fa-refresh"></i> Reset</button>
