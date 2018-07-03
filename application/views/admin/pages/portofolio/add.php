@@ -61,7 +61,7 @@
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
 							<label for="portofolio">Description(Indonesia)</label>
-							<textarea name="desc" class="ckeditor"></textarea>
+							<textarea name="desc" class="ckeditor" required></textarea>
 						</div>
 					</div>
 				</div>
@@ -70,11 +70,11 @@
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
 							<label for="portofolio">Description(English)</label>
-							<textarea name="desc_en" class="ckeditor"></textarea>
+							<textarea name="desc_en" class="ckeditor" required></textarea>
 						</div>
 					</div>
 				</div>
-				<div id="rowImage" class="row">
+				<div class="row">
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
 							<div class="callout callout-warning">
@@ -87,7 +87,7 @@
 						<div class="col-md-5 col-lg-4 col-sm-6 col-xs-10">
 							<div class="form-group">
 								<label for="portofolio">Pdf </label>
-								<input type="file" name="pdf[]" class="form-control">
+								<input type="file" name="pdf" class="form-control" required>
 							</div>
 						</div>
 				</div>
@@ -97,7 +97,6 @@
 						<div class="form-group">
 							<div class="callout callout-warning">
 								<h4><i class="fa fa-warning"></i></h4>
-								<p>3 Detail Images</p>
 								<p>Ukuran gambar 350 * 350</p>
 							</div>
 						</div>

@@ -80,7 +80,9 @@ class Portofolio extends Backend_Controller
 			/* ---------- TAMBAH DATA ---------- */
 			case 'insert':
 				$this->form_validation->set_rules('name','portofolio Name','required|is_unique[{PRE}portofolio.portofolio_name]');
-				$this->form_validation->set_rules($rules);
+				// $this->form_validation->set_rules($rules);
+				// print_r($post);
+				// die();
 
 				if ($this->form_validation->run() == FALSE) {
 					$this->session->set_flashdata('error', validation_errors('<li>','</li>'));
@@ -101,10 +103,13 @@ class Portofolio extends Backend_Controller
 						$this->ht
 						);
 
-					// $this->image_moo
-					// 	->load($this->img_path.'/'.$this->modul_file.'/'.$upload_image[0])
-					// 	->resize(252,255)
-					// 	->save_pa('thumbnail_','');
+					$upload_pdf = $this->lawave_pdf->upload_pdf(
+						$this->modul_file,
+						$this->pdf_input_name
+					);
+
+					$array_data['portofolio_pdf'] = $upload_pdf['pdf']['file_name'];
+
 
 					$portofolio_id = $this->portofolio_model->insert($array_data);
 
@@ -223,6 +228,9 @@ class Portofolio extends Backend_Controller
 				foreach ($image as $key => $image) {
 					$this->lawave_image->delete_image($this->modul_file, $image->image_name, $this->thumb_pre);
 				}
+
+				// apus pdf file
+				$this->lawave_pdf->delete_pdf($this->modul_file, $get_data->portofolio_pdf);
 
 				// hapus data
 				$this->portofolio_model->delete($id);
