@@ -137,6 +137,7 @@ class Portofolio extends Backend_Controller
 				$get_image 	= $this->image_model->get_by($where_img); // dapatkan data berdasarkan id
 				$array_id 	= array('portofolio_id' => $id);		// id untuk update berbentuk array
 				$files 			= $_FILES[$this->image_input_name]['name'];
+				$pdf 			  = $_FILES[$this->pdf_input_name]['name'];
 				$count_file = count($files);
 
 				$is_unique = $this->portofolio_model->unique_update($post['name'], $id, 'portofolio_name');
@@ -159,7 +160,7 @@ class Portofolio extends Backend_Controller
 					$upload_image = $this->lawave_image->upload_images(
 						$this->modul_file,
 						$this->image_input_name,
-						$alt,
+						'alt',
 						$this->thumb_pre,
 						$this->wt,
 						$this->ht
@@ -212,6 +213,28 @@ class Portofolio extends Backend_Controller
 							// proses update gambar
 							$this->image_model->update($array_img, $id_img); // insert_batch gambar
 						}
+					}
+
+					if (!empty($pdf)) {
+						$upload_pdf = $this->lawave_pdf->upload_pdf(
+							$this->modul_file,
+							$this->pdf_input_name
+						);
+
+						// hapus pdf lama
+						if (!empty($get_data->portofolio_pdf)) {
+							$this->lawave_pdf->delete_pdf($this->modul_file, $get_data->portofolio_pdf);
+						}
+
+						// array yang akan dikirim ke function update
+						$array_pdf = array(
+							'portofolio_pdf' 	=> $upload_pdf['pdf']['file_name']
+							);
+						// print_r($array_pdf);
+						// die($id);
+
+						// proses update pdf
+						$this->portofolio_model->update($array_pdf, $array_id); // insert_batch pdf
 					}
 
 					$this->session->set_flashdata('success', $this->edit_text);
