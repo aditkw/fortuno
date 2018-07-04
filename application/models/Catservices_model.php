@@ -55,7 +55,8 @@ class Catservices_model extends MY_Model
 	  $category = array();
 	  foreach ($categories as $cat) {
 
-			$this->db->where(array('catservices_id' => $cat->catservices_id, 'services_pub' => '99'));
+			$this->db->where(array('catservices_id' => $cat->catservices_id, 'services_pub' => '99', 'image_parent_name' => 'services'));
+			$this->db->join('{PRE}'.'image', '{PRE}'.'image.parent_id = {PRE}services.services_id');
 			$services = $this->db->get('{PRE}services')->result();
 
 	    $serpis = array();
@@ -65,7 +66,8 @@ class Catservices_model extends MY_Model
 	        'services_name_en' => $service->services_name_en,
 	        'services_desc' => $service->services_desc,
 	        'services_desc_en' => $service->services_desc_en,
-	        'services_link' => $service->services_link
+					'services_link' => $service->services_link,
+	        'services_img' => $service->image_name
 	      );
 	    }
 
