@@ -7,11 +7,14 @@
     <script src="<?php echo base_url();?>dist/js/part/header.js"></script>
     <script src="<?php echo base_url();?>dist/js/smoothscrool-jquery.js"></script>
 
-    <?php if (isset($top)): ?>
+    <?php if (isset($bottom)): ?>
       <?php
-      switch ($top) {
+      switch ($bottom) {
         case 'services': ?>
         <script src="<?php echo base_url();?>dist/js/part/services.js"></script>
+        <?php break;
+        case 'portfolio': ?>
+        <script src="<?php echo base_url();?>dist/js/part/portfolio.js"></script>
         <?php break;
       }
        ?>

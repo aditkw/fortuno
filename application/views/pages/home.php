@@ -69,7 +69,7 @@
     </div>
     <div id="portfolio"><br><br><br><br><br>
       <p class="text-center h2"><strong class="cblue">Portofolio</strong></p>
-      <p class="text-center port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="#"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
+      <p class="text-center port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="<?=site_url("portfolio/");?>"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
       <div class="row">
         <?php foreach ($portofolio as $port): ?>
           <div class="col-md-4 position-relative port_img_link">
@@ -77,7 +77,7 @@
               <br><br><br><br>
               <p class="h4"><a href="#"><strong class="port_title"><?=$port->portofolio_name?></strong></a></p>
               <div class="cwhite port_desc"><?=limitKalimat($port->portofolio_desc, 155)?></div>
-              <button type="button" name="button"><strong>Read More</strong></button>
+              <a href="<?=site_url("portfolio/".title_url($port->portofolio_name));?>"><button type="button" name="button"><strong>Read More</strong></button></a>
             </div>
             <img class="port_img img-fluid" src="<?=site_url("uploads/img/portofolio/$port->image_name")?>" alt="">
           </div>

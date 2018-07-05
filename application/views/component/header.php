@@ -67,7 +67,7 @@
       </div>
 
     <?php elseif (isset($header['services'])): ?>
-      <?php (isset($category)) ? $sampul = $category[0]->catservice_bg : $sampul = 'services.jpg' ; ?>
+      <?php (isset($category)) ? $sampul = $category[0]->catservice_bg : $sampul = 'services.png' ; ?>
       <div id="sampul2" class="position-relative" style="background-image: url('<?php echo base_url(); ?>uploads/img/catservices/<?php echo $sampul ?>');">
         <div class="modal-color position-absolute"></div>
         <div class="row">
@@ -82,6 +82,19 @@
           <div class="col-md-2"></div>
         </div>
       </div>
+
+  <?php elseif (isset($header['portfolio'])): ?>
+      <!-- <div id="sampul3" class="position-relative" style="background-image: url('<?php echo base_url(); ?>dist/img/assets/portfolio.jpeg');">
+        <div class="modal-color position-absolute"></div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-4 title-sampul3 text-center">
+            <p class="h1"><strong>Our Portfolio</strong></p>
+          </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-2"></div>
+        </div>
+      </div> -->
     <?php endif; ?>
   </div>
 </header>
