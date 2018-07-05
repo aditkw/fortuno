@@ -49,7 +49,7 @@
 								<i class="fa fa-newspaper-o"></i> <span> Portofolio</span>
 							</a>
 						</li>
-						<li class="treeview <?php echo active_perent($uri_2, $menu['misscellaneous']) ?>">
+						<!-- <li class="treeview <?php echo active_perent($uri_2, $menu['misscellaneous']) ?>">
 							<a href="#">
 								<i class="fa fa-image"></i> <span> Misscellaneous</span>
 								<i class="fa fa-angle-left pull-right"></i>
@@ -57,15 +57,15 @@
 							<ul class="treeview-menu">
 								<li class="<?php echo active_menu($uri_2, 'slide') ?>">
 									<a href="<?php echo site_url('admin/slide');?>"><i class="fa fa-circle-o"></i> Slide </a>
-								</li>
+								</li> -->
 								<!-- <li class="<?php echo active_menu($uri_2, 'banner') ?>">
 									<a href="<?php echo site_url('admin/banner');?>"><i class="fa fa-circle-o"></i> Banner </a>
 								</li>
 								<li class="<?php echo active_menu($uri_2, 'video') ?>">
 									<a href="<?php echo '#'; //site_url('admin/video');?>"><i class="fa fa-circle-o"></i> Video </a>
 								</li> -->
-							</ul>
-						</li>
+							<!-- </ul>
+						</li> -->
 						<li class="treeview <?php echo active_perent($uri_2, $menu['seo']) ?>">
 							<a href="#">
 								<i class="fa fa-search"></i> <span>S E O</span>

@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','form_validation','pagination','encryption','session','upload','image_lib','user_agent','image_moo','email','lawave_image','lawave_paging','lawave_shipment','pdf');
+$autoload['libraries'] = array('database','form_validation','pagination','encryption','session','upload','image_lib','user_agent','image_moo','email','lawave_image','lawave_paging','lawave_shipment','pdf','lawave_pdf');
 
 /*
 | -------------------------------------------------------------------

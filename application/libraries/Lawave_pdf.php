@@ -7,7 +7,7 @@
 class Lawave_pdf
 {
 	private $pdf_path;
-	private $path = '../uploads/pdf';
+	private $path = '../uploads/pdf/';
 	const DS = DIRECTORY_SEPARATOR;
 
 	/*

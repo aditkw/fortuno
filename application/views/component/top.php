@@ -22,6 +22,9 @@
 				case 'services': ?>
 				<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style_services.css">
 				<?php break;
+				case 'portfolio': ?>
+				<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style_portfolio.css">
+				<?php break;
 			}
 			 ?>
 		<?php else: ?>

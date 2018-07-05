@@ -41,6 +41,7 @@
        <?php if (isset($category)): ?>
          <?php foreach ($category[0]->services as $categ): ?>
            <h2 id="<?=strtolower(url_title($categ->services_name));?>" style="padding-top:16vh" class="h2"><?=$categ->services_name;?></h2>
+           <img style="max-width:100%;" src="<?=site_url('uploads/img/services/'.$categ->services_img)?>" alt="">
            <p><?=$categ->services_desc;?></p><br>
          <?php endforeach; ?>
        <?php endif; ?>

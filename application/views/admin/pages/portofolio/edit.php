@@ -82,14 +82,37 @@
 				</div>
 				<hr>
 
-				<!-- <div class="row">
+				<div class="row">
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
-							<label for="portofolio">Image Alt</label>
-							<input type="text" name="alt" class="form-control" value="<?php echo $portofolio->portofolio_alt;?>" placeholder="image alt" required>
+							<div class="callout callout-warning">
+								<h4><i class="fa fa-warning"></i></h4>
+								<p>Portofolio pdf</p>
+								<p>ekstensi harus pdf</p>
+							</div>
 						</div>
 					</div>
-				</div> -->
+						<div class="col-md-5 col-lg-4 col-sm-6 col-xs-10">
+							<div class="form-group">
+								<label for="portofolio">Pdf </label>
+								<input type="file" name="pdf" class="form-control">
+							</div>
+						</div>
+						<div class="col-md-5 col-lg-4 col-sm-6 col-xs-10">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									Current pdf
+								</div>
+								<div class="panel-body">
+									<?php if (!empty($portofolio->portofolio_pdf)): ?>
+										<a target="_blank" href="<?=site_url('uploads/pdf/portofolio/'.$portofolio->portofolio_pdf)?>"><?=$portofolio->portofolio_pdf?></a>
+										<?php else: ?>
+											no pdf.
+									<?php endif; ?>
+								</div>
+							</div>
+						</div>
+				</div>
 				<div id="rowImage" class="row">
 					<div class="col-md-12 col-lg-12">
 						<div class="form-group">
@@ -121,7 +144,7 @@
 					<?php $no++; endforeach ?>
 				</div>
 				<button id="addImage" type="button" name="button">Add more image</button>
-				
+
 				<hr>
 				<div class="form-group">
 					<button type="reset" class="btn btn-default btn-flat"><i class="fa fa-refresh"></i> Reset</button>
