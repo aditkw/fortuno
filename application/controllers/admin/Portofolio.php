@@ -80,7 +80,9 @@ class Portofolio extends Backend_Controller
 			/* ---------- TAMBAH DATA ---------- */
 			case 'insert':
 				$this->form_validation->set_rules('name','portofolio Name','required|is_unique[{PRE}portofolio.portofolio_name]');
-				$this->form_validation->set_rules($rules);
+				// $this->form_validation->set_rules($rules);
+				// print_r($post);
+				// die();
 
 				if ($this->form_validation->run() == FALSE) {
 					$this->session->set_flashdata('error', validation_errors('<li>','</li>'));
@@ -101,10 +103,13 @@ class Portofolio extends Backend_Controller
 						$this->ht
 						);
 
-					// $this->image_moo
-					// 	->load($this->img_path.'/'.$this->modul_file.'/'.$upload_image[0])
-					// 	->resize(252,255)
-					// 	->save_pa('thumbnail_','');
+					$upload_pdf = $this->lawave_pdf->upload_pdf(
+						$this->modul_file,
+						$this->pdf_input_name
+					);
+
+					$array_data['portofolio_pdf'] = $upload_pdf['pdf']['file_name'];
+
 
 					$portofolio_id = $this->portofolio_model->insert($array_data);
 
@@ -132,6 +137,7 @@ class Portofolio extends Backend_Controller
 				$get_image 	= $this->image_model->get_by($where_img); // dapatkan data berdasarkan id
 				$array_id 	= array('portofolio_id' => $id);		// id untuk update berbentuk array
 				$files 			= $_FILES[$this->image_input_name]['name'];
+				$pdf 			  = $_FILES[$this->pdf_input_name]['name'];
 				$count_file = count($files);
 
 				$is_unique = $this->portofolio_model->unique_update($post['name'], $id, 'portofolio_name');
@@ -154,7 +160,7 @@ class Portofolio extends Backend_Controller
 					$upload_image = $this->lawave_image->upload_images(
 						$this->modul_file,
 						$this->image_input_name,
-						$alt,
+						'alt',
 						$this->thumb_pre,
 						$this->wt,
 						$this->ht
@@ -209,6 +215,28 @@ class Portofolio extends Backend_Controller
 						}
 					}
 
+					if (!empty($pdf)) {
+						$upload_pdf = $this->lawave_pdf->upload_pdf(
+							$this->modul_file,
+							$this->pdf_input_name
+						);
+
+						// hapus pdf lama
+						if (!empty($get_data->portofolio_pdf)) {
+							$this->lawave_pdf->delete_pdf($this->modul_file, $get_data->portofolio_pdf);
+						}
+
+						// array yang akan dikirim ke function update
+						$array_pdf = array(
+							'portofolio_pdf' 	=> $upload_pdf['pdf']['file_name']
+							);
+						// print_r($array_pdf);
+						// die($id);
+
+						// proses update pdf
+						$this->portofolio_model->update($array_pdf, $array_id); // insert_batch pdf
+					}
+
 					$this->session->set_flashdata('success', $this->edit_text);
 					redirect(site_url('admin/portofolio'));
 				}
@@ -223,6 +251,9 @@ class Portofolio extends Backend_Controller
 				foreach ($image as $key => $image) {
 					$this->lawave_image->delete_image($this->modul_file, $image->image_name, $this->thumb_pre);
 				}
+
+				// apus pdf file
+				$this->lawave_pdf->delete_pdf($this->modul_file, $get_data->portofolio_pdf);
 
 				// hapus data
 				$this->portofolio_model->delete($id);
