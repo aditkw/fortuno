@@ -1,0 +1,180 @@
+@charset "UTF-8";
+@font-face {
+  url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
+  font-family: "roboto";
+}
+.cwhite {
+  color: #fff;
+}
+
+.cwhite_opa {
+  color: #f0f0f0;
+}
+
+.corange {
+  color: #fba419;
+}
+
+.corange_opa {
+  color: #fba419b3;
+}
+
+.cblue {
+  color: #535b8c;
+}
+
+.cblue_opa {
+  color: rgba(83, 91, 140, 0.7);
+}
+
+.cgrey {
+  color: #ddd;
+}
+
+div, .row {
+  margin: 0;
+}
+
+.bold, .hoverious, a:hover, a {
+  font-weight: bold;
+}
+
+.cursor_pointer, .hoverious, a:hover, a {
+  cursor: pointer;
+}
+
+.modal-color {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hoverious, a:hover, a {
+  color: #555;
+}
+
+.hoverious:hover, a:hover {
+  color: #000;
+}
+
+a:hover {
+  color: #7c82a6;
+}
+
+body {
+  font-family: "roboto";
+}
+
+blockquote {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  font-style: italic;
+  margin: 0.25em 0;
+  padding: 0.35em 40px;
+  line-height: 1.45;
+  position: relative;
+  color: #383838;
+}
+
+blockquote:before {
+  display: block;
+  padding-left: 10px;
+  content: "“";
+  font-size: 80px;
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  color: #7a7a7a;
+}
+
+blockquote cite {
+  color: #999999;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+blockquote cite:before {
+  content: "— ";
+}
+
+header #sampul3 {
+  min-height: 45vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+header #sampul3 .modal-color {
+  width: 100%;
+  background: -webkit-linear-gradient(left, #fff, rgba(0, 0, 0, 0));
+  background: -o-linear-gradient(left, #fff, rgba(0, 0, 0, 0));
+  background: linear-gradient(to right, #fff, rgba(0, 0, 0, 0));
+  min-height: 45vh;
+}
+header #sampul3 .title-sampul3 p {
+  margin-top: 20%;
+  color: #000;
+}
+
+.gallery-portfolio {
+  background-color: #f6f6f6;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container {
+  padding: 10px;
+  margin-bottom: 40px;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a {
+  display: inline-block;
+  height: 100%;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a img {
+  padding: 10px;
+  background-color: #212121;
+  width: 100%;
+  height: 100%;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a p {
+  padding: 5px 15px 10px 15px;
+  background-color: #212121;
+  color: #fff;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a .hover {
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #f0f0f0;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a .hover span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  margin: auto;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a .hover span:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.in-gallery {
+  padding: 40px 0;
+}
+.in-gallery .img-container {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.in-gallery a img {
+  padding: 0 !important;
+}
+.in-gallery a p {
+  padding: 0;
+}
+.in-gallery a .hover span {
+  padding: 0 20px;
+}
+
+/*# sourceMappingURL=fort.style_portfolio.css.map */
