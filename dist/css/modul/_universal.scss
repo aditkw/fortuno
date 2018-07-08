@@ -18,7 +18,6 @@ $space: 5vw;
   font-family: "roboto";
 }
 
-
 .cwhite {
   color: $cwhite;
 }
@@ -104,4 +103,32 @@ blockquote cite {
 
 blockquote cite:before {
     content: "\2014 \2009";
+}
+
+.valid_err {
+  padding-right: 36px;
+  padding-left: 36px;
+  font-weight: 500;
+}
+.form-w-icon {
+  position: relative;
+  margin: 0;
+  margin-top: 1rem;
+  .icon-placeholder {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    left: 12px;
+    // color: $cnero;
+    color: #757575;
+  }
+  .icon-placeholder-ta{
+    @extend .icon-placeholder;
+    bottom: unset;
+    top: 12px;
+  }
+  input[type='text'].form-control, input[type='password'].form-control, textarea {
+    padding-left: 36px;
+  }
 }

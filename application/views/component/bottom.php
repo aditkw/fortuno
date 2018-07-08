@@ -5,6 +5,7 @@
     <script src="<?php echo base_url();?>plugins/bootstrap_new/bootstrap.min.js"></script>
     <script src="<?php echo base_url();?>plugins/font-awesome_new/fontawesome-all.min.js"></script>
     <script src="<?php echo base_url();?>dist/js/part/header.js"></script>
+    <script src="<?php echo base_url();?>dist/js/part/universal.js"></script>
     <script src="<?php echo base_url();?>dist/js/smoothscrool-jquery.js"></script>
 
     <?php if (isset($bottom)): ?>

@@ -92,6 +92,7 @@ section {
         }
       }
     }
+
     #portfolio {
       background-color: #f9f9f9;
       .port-desc {
@@ -120,12 +121,12 @@ section {
             .port_title:hover {
               color: $cwhite;
             }
-            button {
+            button, .btn-home-default {
               background-color: $corange;
               color: $cwhite_opa;
               padding: 8px;
               border: none;
-              border-radius: 15px;
+              border-radius: 10px;
               cursor: pointer;
               position: relative;
             }
@@ -157,11 +158,49 @@ section {
               top: 0;
               height: 100%;
               padding: 25% 15% 15% 25%;
+              .text-footer {
+                button {
+                  margin-top: 5px;
+                  background-color: $corange;
+                  color: $cwhite_opa;
+                  padding: 8px;
+                  border: none;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  position: relative;
+                }
+                button:hover {
+                  color: $cwhite;
+                  bottom: 2px;
+                  text-decoration: underline;
+                }
+              }
             }
           }
           .cont-contact {
             background-color: #f0f0f0;
             padding: 5%;
+          }
+        }
+      }
+      #ModalCenter {
+        .modal-header {
+          // background-color: $cnero;
+          // color: $cwhite;
+          img {
+            width: 150px;
+          }
+        }
+        .modal-body {
+          textarea {
+            height: 140px;
+          }
+          button[type='submit'] {
+            background-color: $corange;
+            border-color: $corange_opa;
+          }
+          button[type='submit']:focus {
+            box-shadow: 0 0 0 .2rem $corange_opa;
           }
         }
       }
