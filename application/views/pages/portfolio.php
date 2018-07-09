@@ -1,8 +1,19 @@
 <div class="text-center">
   <p class="h2">Portofolio</p>
-  <p class="text-center">
+  <p class="text-center px-5">
     Di bawah ini merupakan <em>project-project</em> yang sudah kami kerjakan.
   </p>
+  <div class="row services-gap text-left">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+      <!-- Nav Jadul -->
+      <?php $link_nav_jadul =  substr(base_url(), 0, -1); ?>
+      &nbsp;&nbsp;&nbsp;<a href="<?=$link_nav_jadul;?>/">Fortuno</a>
+      <?php foreach ($this->uri->segments as  $value) {
+        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"> <?=ucwords($value);?></a>  <?php
+      }  ?>
+    </div>
+  </div> <br>
 </div>
 <div class="row gallery-portfolio">
   <div class="col-md-1"></div>

@@ -153,7 +153,7 @@ header {
         div.row {
           div.col-md-4 {
             flex: 46.333%;
-            max-width: 46.333%;    
+            max-width: 46.333%;
           }
         }
       }
@@ -201,6 +201,14 @@ header {
         padding-left: 20px;
         padding-right: 20px;
       }
+      #sampul2 {
+        .title-sampul2 {
+          p:first-child {
+            margin-left: 20%;
+            margin-top: 10%;
+          }
+        }
+      }
       nav.nav-desktop {
         display: none;
       }
@@ -215,6 +223,23 @@ header {
     .header {
       nav.nav-mobile {
         display: none;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 560px) {
+  header {
+    .header {
+      #sampul2 {
+        .title-sampul2 {
+          p:first-child {
+            margin-top: 20% !important;
+          }
+          p {
+            margin: 0 !important;
+            text-align: center;
+          }
+        }
       }
     }
   }

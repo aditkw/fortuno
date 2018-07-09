@@ -74,7 +74,7 @@
 
     </div>
     <div id="portfolio">
-      <p class="text-center h2"><strong class="cblue">Portofolio</strong></p>
+      <p class="text-center h2"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portofolio</strong></a></p>
       <p class="text-justify port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="<?=site_url("portfolio/");?>"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
       <div class="row">
         <?php foreach ($portofolio as $port): ?>
