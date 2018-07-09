@@ -7,7 +7,7 @@
         <img class="img-fluid" src="<?php echo base_url(); ?>dist/img/assets/logo.png" alt="Fortuno">
       </div>
       <div class="col-md-4"></div>
-      <div class="col-md-2">
+      <div class="col-md-2 lang-container">
         <div class="form-group text-center select_language">
           <select class="form-control cursor_pointer" id="select_language">
             <option value="Indonesia">Indonesia</option>
@@ -27,7 +27,44 @@
         $at_index = base_url();
       }
     ?>
-    <nav class="row text-center">
+    <nav class="navbar navbar-expand-md bg-light navbar-light nav-mobile">
+      <a class="navbar-brand" href="#"><strong>Fortuno Navigation</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="<?=base_url()?>#beranda">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=base_url()?>#about">ABOUT</a>
+          </li>
+          <li class="nav-item dropdown style-dropdown-mobile">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarServices" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICES</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarServices">
+              <?php foreach ($cat_all as $categ): ?>
+                <li class="nav-item">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbar<?=strtoupper($categ->catservice_name)?>" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?=strtoupper($categ->catservice_name)?></a>
+                  <ul class="dropdown-menu" aria-labelledby="navbar<?=strtoupper($categ->catservice_name)?>">
+                    <?php foreach ($categ->services as $service): ?>
+                      <li class="nav-item"><a class="nav-link" href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_name))?>#<?=title_url($service->services_name)?>"><?=$service->services_name?></a></li>
+                    <?php endforeach; ?>
+                  </ul>
+                </li>
+              <?php endforeach; ?>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=base_url()?>#portfolio">PORTFOLIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?=base_url()?>#contact">CONTACT</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="row text-center nav-desktop">
       <div class="col-md-2"></div>
       <div class="col-md-1 nav-list homepage"><a href="<?=base_url()?>#beranda">HOME</a></div>
       <div class="col-md-1 nav-list about"><a href="<?=base_url()?>#about">ABOUT</a></div>

@@ -15,7 +15,7 @@
               <?=$text->text_quote?>
             </p>
           </blockquote>
-          <div class="text-justify">
+          <div class="text-justify about-desc-desktop">
             <?=$about->about_desc?>
           </div>
         </div>
@@ -26,7 +26,11 @@
           <br><br><br><br>
         </div>
       </div>
-      <div class="col-md-2"></div>
+      <div class="col-md-2">
+        <div class="text-justify about-desc-mobile">
+          <?=$about->about_desc?>
+        </div>
+      </div>
     </div>
     <div id="services">
       <div class="background-filter-container">
@@ -42,9 +46,11 @@
             <?php foreach ($category as $categ): ?>
               <?php $segment_kedua = str_replace(' ', '-',strtolower($categ->catservice_name)); ?>
               <div class="row">
-                <div class="col-md-2"><i class="fas <?=$categ->catservice_icon?> cwhite h1"></i> </div>
+                <div class="col-md-2"><i class="fas <?=$categ->catservice_icon?> cwhite h1 services-icon-desktop"></i> </div>
                 <div class="col-md-10 position-relative">
-                  <p class="h3 corange"><strong class="<?=$segment_kedua?>-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name)?>-sub"><?=$categ->catservice_name?>
+                  <p class="h3 corange"><strong class="<?=$segment_kedua?>-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name)?>-sub">
+                    <i class="fas <?=$categ->catservice_icon?> cwhite h1 d-none services-icon-mobile"></i>
+                    <?=$categ->catservice_name?>
                   <?php if (!empty($categ->services)): ?>
                     <i class="fas fa-chevron-circle-right"></i>
                   <?php endif; ?> </strong></p>
@@ -67,9 +73,9 @@
       </div>
 
     </div>
-    <div id="portfolio"><br><br><br><br><br>
+    <div id="portfolio">
       <p class="text-center h2"><strong class="cblue">Portofolio</strong></p>
-      <p class="text-center port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="<?=site_url("portfolio/");?>"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
+      <p class="text-justify port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="<?=site_url("portfolio/");?>"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
       <div class="row">
         <?php foreach ($portofolio as $port): ?>
           <div class="col-md-4 position-relative port_img_link">

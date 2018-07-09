@@ -154,6 +154,9 @@ section .homepage #about .about-right div.position-absolute {
   bottom: 0;
   margin: auto;
 }
+section .homepage #about .about-desc-mobile {
+  display: none;
+}
 section .homepage #services {
   background-image: url("http://localhost/fortuno/dist/img/assets/serviceBackground-min.png");
   background-size: cover;
@@ -209,6 +212,7 @@ section .homepage #services .background-filter-container .services-right ul li:l
 }
 section .homepage #portfolio {
   background-color: #f9f9f9;
+  padding-top: 120px;
 }
 section .homepage #portfolio .port-desc {
   padding-left: 15vw;
@@ -303,6 +307,53 @@ section .homepage #contact #ModalCenter .modal-body button[type=submit]:focus {
 section .homepage .gap {
   min-height: 10vh;
   background-color: #fff;
+}
+
+@media only screen and (max-width: 767px) {
+  section .homepage #sistem_utilitas p {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  section .homepage #about {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  section .homepage #about .about-right div.position-absolute {
+    position: relative !important;
+  }
+  section .homepage #about .about-left .about-desc-desktop {
+    display: none;
+  }
+  section .homepage #about .about-desc-mobile {
+    display: block;
+    padding-bottom: 30px;
+  }
+  section .homepage #services .background-filter-container {
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  section .homepage #services .background-filter-container .services-icon-desktop {
+    display: none;
+  }
+  section .homepage #services .background-filter-container .services-icon-mobile {
+    display: inline-block !important;
+    margin-right: 0.5vw;
+    width: 40px;
+  }
+  section .homepage #contact div div #cont-contact {
+    padding-top: 50px;
+  }
+  section .homepage #contact div div div.row {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  section .homepage #contact div div div.row div.col-md-1 {
+    text-align: left !important;
+  }
+  section .homepage #portfolio {
+    padding-top: 40px;
+  }
 }
 
 /*# sourceMappingURL=fort.style_home.css.map */

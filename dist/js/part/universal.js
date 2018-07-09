@@ -22,28 +22,30 @@ function validGa(text, element, pat, errClass, errText) {
   } else if (pat.test(text)) {
     $(element).parents(".form-valid").find("."+errClass).remove();
   }
-  $(element).val(text);
+  if (element !== "input[name='c_name']") {
+    $(element).val(text);
+  }
   return pat.test(text);
 }
 
 function validGa_name() {
   let c_name = $("input[name='c_name']").val();
-  validGa(c_name, "input[name='c_name']", /^[a-zA-Z ]+$/i, "valid_err_name", "Please fill out this field with the correct format. Not using numbers or symbols");
+  return validGa(c_name, "input[name='c_name']", /^[a-zA-Z ]+$/i, "valid_err_name", "Please fill out this field with the correct format. Not using numbers or symbols");
 }
 
 function validGa_email() {
   let c_email = $("input[name='c_email']").val();
-  validGa(c_email, "input[name='c_email']", /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i, "valid_err_email", "Please fill out this field with the correct format. Please use the appropriate email format");
+  return validGa(c_email, "input[name='c_email']", /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i, "valid_err_email", "Please fill out this field with the correct format. Please use the appropriate email format");
 }
 
 function validGa_subject() {
   let c_subject = $("input[name='c_subject']").val();
-  validGa(c_subject, "input[name='c_subject']", /^[^<>\\]+$/i, "valid_err_subject", "Please fill out this field with the correct format. Not using harmful symbols");
+  return validGa(c_subject, "input[name='c_subject']", /^[^<>\\]+$/i, "valid_err_subject", "Please fill out this field with the correct format. Not using harmful symbols");
 }
 
 function validGa_message() {
   let c_message = $("textarea[name='c_message']").val();
-  validGa(c_message, "textarea[name='c_message']", /^.+$/i, "valid_err_message", "Please fill out this field");
+  return validGa(c_message, "textarea[name='c_message']", /^.+$/i, "valid_err_message", "Please fill out this field");
 }
 
 $(document).on("submit", ".form-valid", function(e) {
@@ -97,3 +99,15 @@ $("input[name='c_subject']").focusout(function() {
 $("textarea[name='c_message']").focusout(function() {
   validGa_message();
 });
+
+(function($){
+	$(document).ready(function(){
+		$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			$(this).parent().siblings().removeClass('open');
+			$(this).parent().toggleClass('open');
+      $(this).next().toggle();
+		});
+	});
+})(jQuery);

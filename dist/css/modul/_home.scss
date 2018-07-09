@@ -35,6 +35,9 @@ section {
           margin: auto;
         }
       }
+      .about-desc-mobile {
+        display: none;
+      }
     }
     #services {
       background-image: url($base_url+"dist/img/assets/serviceBackground-min.png");
@@ -95,6 +98,7 @@ section {
 
     #portfolio {
       background-color: #f9f9f9;
+      padding-top: 120px;
       .port-desc {
         $space: 15vw;
         padding-left: $space;
@@ -208,6 +212,71 @@ section {
     .gap {
       min-height: 10vh;
       background-color: $cwhite;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  section {
+    .homepage {
+      #sistem_utilitas {
+        p {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+      #about {
+        padding-left: 20px;
+        padding-right: 20px;
+        .about-right {
+          div.position-absolute {
+            position: relative !important;
+          }
+        }
+        .about-left {
+          .about-desc-desktop {
+            display: none;
+          }
+        }
+        .about-desc-mobile {
+          display: block;
+          padding-bottom: 30px;
+        }
+      }
+      #services {
+        .background-filter-container {
+          padding-bottom: 50px;
+          padding-left: 20px;
+          padding-right: 20px;
+          .services-icon-desktop {
+            display: none;
+          }
+          .services-icon-mobile {
+            display: inline-block !important;
+            margin-right: 0.5vw;
+            width: 40px;
+          }
+        }
+      }
+      #contact {
+        div {
+          div {
+            #cont-contact {
+              padding-top: 50px;
+            }
+            div.row {
+              padding-left: 40px;
+              padding-right: 40px;
+              div.col-md-1 {
+                text-align: left !important;
+              }
+            }
+          }
+        }
+      }
+      #portfolio {
+        padding-top: 40px;
+      }
     }
   }
 }
