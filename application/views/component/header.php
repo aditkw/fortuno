@@ -28,7 +28,7 @@
       }
     ?>
     <nav class="navbar navbar-expand-md bg-light navbar-light nav-mobile">
-      <a class="navbar-brand" href="#"><strong>Fortuno Navigation</strong></a>
+      <a class="navbar-brand" href="<?=base_url()?>#beranda"><strong><span class="cblue">Fortuno</span> Navigation</strong></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>
