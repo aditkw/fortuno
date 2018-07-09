@@ -2,7 +2,7 @@
 $(document).ready(function() {
   let aside = $('aside');
   aside.hide();
-  aside.slideDown(400);
+  aside.slideDown(800);
 })
 
 
@@ -16,13 +16,9 @@ $(window).scroll(function() {
   if ($('.nav-mobile').css('display') === 'none' && $('.services-gap .col-md-11').text().replace(/\s/g, '') !== 'Fortuno>Services') {
     let wS = $(window).scrollTop();
     if (wS > 380 && !hasClass) {
-      aside.slideUp(800);
       aside.addClass('link-dictionary-left');
-      aside.slideDown(800);
     } else if (wS <= 380 && hasClass) {
-      aside.slideUp(800);
       aside.removeClass('link-dictionary-left');
-      aside.slideDown(800);
     } else if (wS > (aT+aH-wH) && hasClass) {
       aside.css('bottom', '10.1vh');
     } else {
