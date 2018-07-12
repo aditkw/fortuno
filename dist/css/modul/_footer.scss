@@ -11,3 +11,25 @@ footer {
     }
   }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 953px) {
+  footer {
+    div.row {
+      div.col-md-2 {
+        flex: 24.666667%;
+        max-width: 24.666667%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  footer {
+    text-align: center;
+    padding-bottom: 20px;
+    div.row {
+      div.col-md-8 {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

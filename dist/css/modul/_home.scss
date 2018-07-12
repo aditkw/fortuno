@@ -35,6 +35,9 @@ section {
           margin: auto;
         }
       }
+      .about-desc-mobile {
+        display: none;
+      }
     }
     #services {
       background-image: url($base_url+"dist/img/assets/serviceBackground-min.png");
@@ -92,8 +95,10 @@ section {
         }
       }
     }
+
     #portfolio {
       background-color: #f9f9f9;
+      padding-top: 120px;
       .port-desc {
         $space: 15vw;
         padding-left: $space;
@@ -120,12 +125,12 @@ section {
             .port_title:hover {
               color: $cwhite;
             }
-            button {
+            button, .btn-home-default {
               background-color: $corange;
               color: $cwhite_opa;
               padding: 8px;
               border: none;
-              border-radius: 15px;
+              border-radius: 10px;
               cursor: pointer;
               position: relative;
             }
@@ -157,6 +162,23 @@ section {
               top: 0;
               height: 100%;
               padding: 25% 15% 15% 25%;
+              .text-footer {
+                button {
+                  margin-top: 5px;
+                  background-color: $corange;
+                  color: $cwhite_opa;
+                  padding: 8px;
+                  border: none;
+                  border-radius: 10px;
+                  cursor: pointer;
+                  position: relative;
+                }
+                button:hover {
+                  color: $cwhite;
+                  bottom: 2px;
+                  text-decoration: underline;
+                }
+              }
             }
           }
           .cont-contact {
@@ -165,10 +187,96 @@ section {
           }
         }
       }
+      #ModalCenter {
+        .modal-header {
+          // background-color: $cnero;
+          // color: $cwhite;
+          img {
+            width: 150px;
+          }
+        }
+        .modal-body {
+          textarea {
+            height: 140px;
+          }
+          button[type='submit'] {
+            background-color: $corange;
+            border-color: $corange_opa;
+          }
+          button[type='submit']:focus {
+            box-shadow: 0 0 0 .2rem $corange_opa;
+          }
+        }
+      }
     }
     .gap {
       min-height: 10vh;
       background-color: $cwhite;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  section {
+    .homepage {
+      #sistem_utilitas {
+        p {
+          padding-left: 25px;
+          padding-right: 25px;
+        }
+      }
+      #about {
+        padding-left: 20px;
+        padding-right: 20px;
+        .about-right {
+          div.position-absolute {
+            position: relative !important;
+          }
+        }
+        .about-left {
+          .about-desc-desktop {
+            display: none;
+          }
+        }
+        .about-desc-mobile {
+          display: block;
+          padding-bottom: 30px;
+        }
+      }
+      #services {
+        .background-filter-container {
+          padding-bottom: 50px;
+          padding-left: 20px;
+          padding-right: 20px;
+          .services-icon-desktop {
+            display: none;
+          }
+          .services-icon-mobile {
+            display: inline-block !important;
+            margin-right: 0.5vw;
+            width: 40px;
+          }
+        }
+      }
+      #contact {
+        div {
+          div {
+            #cont-contact {
+              padding-top: 50px;
+            }
+            div.row {
+              padding-left: 40px;
+              padding-right: 40px;
+              div.col-md-1 {
+                text-align: left !important;
+              }
+            }
+          }
+        }
+      }
+      #portfolio {
+        padding-top: 40px;
+      }
     }
   }
 }

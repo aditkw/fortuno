@@ -1,9 +1,20 @@
 <div class="text-center">
   <p class="h2">Nama Project</p>
-  <p class="text-center">
+  <p class="text-center px-5">
     deskripsi singkat tentang project ini.. Lorem ipsum dolor sit amet
   </p>
-</div>
+  <div class="row services-gap text-left">
+    <div class="col-md-1"></div>
+    <div class="col-md-11">
+      <!-- Nav Jadul -->
+      <?php $link_nav_jadul =  substr(base_url(), 0, -1); ?>
+      <a href="<?=$link_nav_jadul;?>/">Fortuno</a>
+      <?php foreach ($this->uri->segments as  $value) {
+        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"> <?=ucwords($value);?></a>  <?php
+      }  ?>
+    </div>
+  </div>
+</div><br>
 <div class="row gallery-portfolio in-gallery">
   <div class="col-md-1"></div>
   <div class="col-md-10">
