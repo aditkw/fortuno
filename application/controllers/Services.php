@@ -27,7 +27,6 @@
       $arr_where = array('catservices_pub' => '99', 'image_parent_name' => 'catservices', 'catservices_link' => $link);
       $categories = $this->catservices_model->get_category($arr_where);
       $category = $this->catservices_model->olahData($categories, TRUE);
-
       $this->data['category'] = $category;
 
       $this->load->view('index', $this->data);
