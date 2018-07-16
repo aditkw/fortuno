@@ -3,21 +3,21 @@
 		<tr>
 			<td>
 				<h3 style="color: #5d9ec3;">
-					Pesan dari pengunjung Abubakar Rekan
+					Pesan dari pengunjung Fortuno
 				</h3>
 			</td>
 		</tr>
 		<tr>
 			<td>
+				<strong>Subject : </strong><?php echo $subject ?>
+			</td>
+		</tr>
+		<tr>
+		<tr>
+			<td>
 				<strong>Nama : </strong><?php echo $nama ?>
 			</td>
 		</tr>
-		<tr>
-			<td>
-				<strong>Telepon : </strong><?php echo $telp ?>
-			</td>
-		</tr>
-		<tr>
 			<td>
 				<strong>Email : </strong><?php echo $email ?>
 			</td>

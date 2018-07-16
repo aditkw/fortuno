@@ -79,7 +79,7 @@ class Portofolio extends Backend_Controller
 
 			/* ---------- TAMBAH DATA ---------- */
 			case 'insert':
-				$this->form_validation->set_rules('name','portofolio Name','required|is_unique[{PRE}portofolio.portofolio_name]');
+				$this->form_validation->set_rules('name_en','portofolio Name','required|is_unique[{PRE}portofolio.portofolio_name_en]');
 				// $this->form_validation->set_rules($rules);
 				// print_r($post);
 				// die();
@@ -140,10 +140,11 @@ class Portofolio extends Backend_Controller
 				$pdf 			  = $_FILES[$this->pdf_input_name]['name'];
 				$count_file = count($files);
 
-				$is_unique = $this->portofolio_model->unique_update($post['name'], $id, 'portofolio_name');
+				$is_unique = $this->portofolio_model->unique_update($post['name_en'], $id, 'portofolio_name_en');
+				// die($is_unique);
 
-				$this->form_validation->set_rules('name','portofolio name','required'.$is_unique);
 				$this->form_validation->set_rules($rules);
+				$this->form_validation->set_rules('name_en','portofolio name english','required'.$is_unique);
 
 				if ($this->form_validation->run() == FALSE) {
 					$this->session->set_flashdata('error', validation_errors('<li>','</li>'));

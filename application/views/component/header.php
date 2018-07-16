@@ -9,11 +9,16 @@
       <div class="col-md-4"></div>
       <div class="col-md-2 lang-container">
         <div class="form-group text-center select_language">
-          <select class="form-control cursor_pointer" id="select_language">
-            <option value="Indonesia">Indonesia</option>
-            <option value="English">English</option>
+          <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" class="form-control cursor_pointer" id="select_language">
+            <?php $bawa_link = base_url(uri_string()); ?>
+            <option <?=($lang_active == 'indonesia') ? 'selected' : '' ;?> value="<?=site_url('lang/choose/in?link='.hash_link_encode($bawa_link))?>">Indonesia</option>
+            <option <?=($lang_active == 'english') ? 'selected' : '' ;?> value="<?=site_url('lang/choose/en?link='.hash_link_encode($bawa_link))?>">English</option>
           </select>
-          <label for="select_language"><small class="hoverious">Pilih Bahasa Anda</small></label>
+          <?php if ($lang_active == 'indonesia'): ?>
+            <label for="select_language"><small class="hoverious">Pilih Bahasa Anda</small></label>
+          <?php else: ?>
+            <label for="select_language"><small class="hoverious">Choose Your Language</small></label>
+          <?php endif; ?>
         </div>
       </div>
       <div class="col-md-2"></div>
@@ -70,11 +75,15 @@
       <div class="col-md-1 nav-list about"><a href="<?=base_url()?>#about">ABOUT</a></div>
       <div class="col-md-1 nav-list services position-relative menu-has-sub"><a href="<?php echo $at_index; ?>#services">SERVICES</a>
         <ul class="position-absolute sub1">
-          <?php foreach ($cat_all as $categ): ?>
-            <li class="position-relative sub1-has-sub"><?=strtoupper($categ->catservice_name)?> <i class="fas fa-chevron-circle-right"></i>
+          <?php foreach ($cat_all as $categ):
+            $field_categ = cekBahasa('catservice_name');
+          ?>
+            <li class="position-relative sub1-has-sub"><?=strtoupper($categ->$field_categ)?> <i class="fas fa-chevron-circle-right"></i>
               <ul class="position-absolute sub2">
-                <?php foreach ($categ->services as $service): ?>
-                  <li><a href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_name))?>#<?=title_url($service->services_name)?>"><?=$service->services_name?></a></li>
+                <?php foreach ($categ->services as $service):
+                  $field_service = cekBahasa('services_name');
+                ?>
+                  <li><a href="<?php echo base_url(); ?>services/<?=str_replace(' ', '-', strtolower($categ->catservice_link))?>#<?=title_url($service->$field_service)?>"><?=$service->$field_service?></a></li>
                 <?php endforeach; ?>
               </ul>
             </li>
@@ -97,8 +106,8 @@
           <div class="col-md-4"><br><br><br><br><br><br>
             <span class="h1"><strong>Welcome to </strong></span><br>
             <span class="h1 cblue"><strong>Fortuno Website.</strong></span><br><br>
-            <p class="h5"><strong>Tahukah Kamu Pentingnya Sistem mekanikal dan elektrikal (ME) untuk suatu bangunan ?</strong></p>
-            <span class="h5 cblue">Klik <a href="#sistem_utilitas_l"><strong><u>di sini</u></strong></a>  untuk mengetahuinya !</span>
+            <p class="h5"><strong><?=$lang['header_txt']?></strong></p>
+            <span class="h5 cblue"><?=$lang['header_txtLink']?></span>
           </div>
         </div>
       </div>
