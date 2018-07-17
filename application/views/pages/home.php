@@ -2,8 +2,9 @@
   <div class="homepage">
     <div id="sistem_utilitas_l"></div>
     <div id="sistem_utilitas">
-      <p class="h2 text-center title">SISTEM MEKANIKAL DAN ELEKTRIKAL (SISTEM UTILITAS)</p>
-      <p class="content text-justify"><?=$text->text_mecha?></p>
+      <p class="h2 text-center title"><?=$lang['utilitas']?></p>
+      <?php $mecha = cekBahasa('text_mecha') ?>
+      <p class="content text-justify"><?=$text->$mecha?></p>
     </div>
     <div class="row" id="about">
       <div class="col-md-2"></div>
@@ -12,11 +13,13 @@
         <div class="text-center">
           <blockquote class="blockquote text-justify">
             <p class="mb-0">
-              <?=$text->text_quote?>
+              <?php $quote = cekBahasa('text_quote') ?>
+              <?=$text->$quote?>
             </p>
           </blockquote>
           <div class="text-justify about-desc-desktop">
-            <?=$about->about_desc?>
+            <?php $about_desc = cekBahasa('about_desc') ?>
+            <?=$about->$about_desc?>
           </div>
         </div>
       </div>
@@ -28,7 +31,7 @@
       </div>
       <div class="col-md-2">
         <div class="text-justify about-desc-mobile">
-          <?=$about->about_desc?>
+          <?=$about->$about?>
         </div>
       </div>
     </div>
@@ -39,28 +42,33 @@
           <div class="col-md-4 services-left">
             <p class="text-left"><span class="cwhite h1"><strong>Our Company</strong></span> <br> <span class="corange h2"><strong>Great Service</strong></span></p>
             <div class="cwhite text-justify h5">
-              <?=$text->text_service?>
+              <?php $txtservice = cekBahasa('text_service') ?>
+              <?=$text->$txtservice?>
             </div>
           </div>
           <div class="col-md-4 services-right">
             <?php foreach ($category as $categ): ?>
-              <?php $segment_kedua = str_replace(' ', '-',strtolower($categ->catservice_name)); ?>
+              <?php $segment_kedua = $categ->catservice_link;
+              $catfield = cekBahasa('catservice_desc');
+              ?>
               <div class="row">
                 <div class="col-md-2"><i class="fas <?=$categ->catservice_icon?> cwhite h1 services-icon-desktop"></i> </div>
                 <div class="col-md-10 position-relative">
-                  <p class="h3 corange"><strong class="<?=$segment_kedua?>-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name)?>-sub">
+                  <p class="h3 corange"><strong class="<?=$segment_kedua?>-title corange_opa click-sub-services" val="<?=title_url($categ->catservice_name_en)?>-sub">
                     <i class="fas <?=$categ->catservice_icon?> cwhite h1 d-none services-icon-mobile"></i>
                     <?=$categ->catservice_name?>
                   <?php if (!empty($categ->services)): ?>
                     <i class="fas fa-chevron-circle-right"></i>
                   <?php endif; ?> </strong></p>
                   <div class="cwhite text-justify">
-                    <?=$categ->catservice_desc?>
+                    <?=$categ->$catfield?>
                   </div>
-                  <ul class="position-absolute <?=title_url($categ->catservice_name)?>-sub">
+                  <ul class="position-absolute <?=title_url($categ->catservice_name_en)?>-sub">
                     <?php if (!empty($categ->services)): ?>
-                      <?php foreach ($categ->services as $service): ?>
-                        <li><a href="<?=site_url("services/".$segment_kedua."#".title_url($service->services_name))?>"><?=$service->services_name?></a></li>
+                      <?php foreach ($categ->services as $service):
+                        $fieldservice = cekBahasa('services_name');
+                      ?>
+                        <li><a href="<?=site_url("services/".$segment_kedua."#".title_url($service->$fieldservice))?>"><?=$service->$fieldservice?></a></li>
                       <?php endforeach; ?>
                     <?php endif; ?>
                   </ul>
@@ -74,16 +82,20 @@
 
     </div>
     <div id="portfolio">
+      <?php $txtporto = cekBahasa('text_portofolio'); ?>
       <p class="text-center h2"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portofolio</strong></a></p>
-      <p class="text-justify port-desc h6"><?=$text->text_portofolio?> Atau klik <a class="cblue_opa" href="<?=site_url("portfolio/");?>"><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.</p><br><br>
+      <p class="text-justify port-desc h6"><?=$text->$txtporto?> <?=$lang['txtPortofolio']?></p><br><br>
       <div class="row">
-        <?php foreach ($portofolio as $port): ?>
+        <?php foreach ($portofolio as $port):
+          $port_name = cekBahasa('portofolio_name');
+          $port_desc = cekBahasa('portofolio_desc');
+        ?>
           <div class="col-md-4 position-relative port_img_link">
             <div class="modal-color position-absolute text-center">
               <br><br><br><br>
-              <p class="h4"><a href="#"><strong class="port_title"><?=$port->portofolio_name?></strong></a></p>
-              <div class="cwhite port_desc"><?=limitKalimat($port->portofolio_desc, 155)?></div>
-              <a href="<?=site_url("portfolio/".title_url($port->portofolio_name));?>"><button type="button" name="button"><strong>Read More</strong></button></a>
+              <p class="h4"><a href="#"><strong class="port_title"><?=$port->$port_name?></strong></a></p>
+              <div class="cwhite port_desc"><?=limitKalimat($port->$port_desc, 155)?></div>
+              <a href="<?=site_url("portfolio/".$port->portofolio_link);?>"><button type="button" name="button"><strong>Read More</strong></button></a>
             </div>
             <img class="port_img img-fluid" src="<?=site_url("uploads/img/portofolio/$port->image_name")?>" alt="">
           </div>
@@ -100,7 +112,8 @@
               <p class="h1 cwhite"><strong>Get</strong></p>
               <p class="h2 corange"><strong>in Touch</strong></p>
               <p class="cwhite text-footer">
-                <?=$text->text_footer?>
+                <?php $txtfooter = cekBahasa('text_footer'); ?>
+                <?=$text->$txtfooter?>
                 <button class="btn-home-default" type="button" name="button" data-toggle="modal" data-target="#ModalCenter"><strong>Contact Us</strong></button>
               </p>
             </div>
@@ -109,7 +122,7 @@
             <blockquote class="blockquote text-justify">
               <p class="h2">
                 <strong>Fortuno</strong>
-                <p><?=$text->text_quote?></p>
+                <p><?=$text->$quote?></p>
               </p>
             </blockquote>
             <div class="row">
@@ -159,7 +172,7 @@
               <p class="small">
                 Please fill out all the required fields below
               </p>
-              <form class="form-valid" action="" method="post">
+              <form class="form-valid" action="<?=site_url('contact')?>" method="post">
                 <div class="form-group form-w-icon">
                   <i class="fas fa-user icon-placeholder"></i>
                   <input class="form-control fa_icon fa_icon_user" type="text" name="c_name" placeholder="Name">

@@ -164,6 +164,39 @@ class Frontend_Controller extends MY_Controller
 		$categories = $this->catservices_model->get_by(array('catservices_pub' => '99'));
 		$this->data['cat_all'] = $this->catservices_model->olahData($categories, FALSE);
 
+		$porto = site_url('portfolio');
+		$in = array(
+			'header_txt' => 'Tahukah kamu pentingnya sistem mekanikal dan elektrikal (ME) untuk suatu bangunan ?',
+			'header_txtLink' => 'Klik <a href="#sistem_utilitas_l"><strong><u>di sini</u></strong></a>  untuk mengetahuinya !',
+			'utilitas' => 'SISTEM MEKANIKAL DAN ELEKTRIKAL (SISTEM UTILITAS)',
+			'txtPortofolio' => "Atau klik <a class='cblue_opa' href='$porto'><strong>di sini</strong></a> untuk melihat semua proyek ME yang telah kami kerjakan.",
+			'txtporto_view' => 'Di bawah ini merupakan <em>project-project</em> yang sudah kami kerjakan.',
+			'portoviewdetail' => 'Klik di sini untuk melihat semua foto dari',
+			'clickforfull' => 'Klik di sini untuk tampilkan gambar secara penuh',
+			'downloadpdf' => 'Anda bisa mendownload file PDF untuk project ini pada tombol di bawah ini. '
+		);
+		$en = array(
+			'header_txt' => 'Did you know the importance of mechanical and electrical systems (ME) for a building ?',
+			'header_txtLink' => 'Click <a href="#sistem_utilitas_l"><strong><u>here</u></strong></a>  to find out !',
+			'utilitas' => 'MECHANICAL AND ELECTRICAL SYSTEMS (ME)',
+			'txtPortofolio' => "Or click <a class='cblue_opa' href='$porto'><strong>here</strong></a> to see all the ME projects we've worked on.",
+			'txtporto_view' => 'Below are the <em> projects </em> we have been working on.',
+			'portoviewdetail' => 'Click here to see all photos from',
+			'clickforfull' => 'Click here to view the full picture',
+			'downloadpdf' => 'You can download a PDF file for this project on the button below.'
+		);
+		//cek session bahasa
+		$userdata = $this->session->userdata;
+		(isset($userdata['lang'])) ? $lang = $userdata['lang'] : $lang = 'english';
+
+		//cek bahasa
+		if ($lang == 'english') {
+			$this->data['lang'] = $en;
+		}else {
+			$this->data['lang'] = $in;
+		}
+
+		$this->data['lang_active'] = $lang;
 	}
 }
 

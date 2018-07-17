@@ -74,8 +74,10 @@ class Catservices_model extends MY_Model
 	    $category[] = (object)array(
 	      'catservice_name' => $cat->catservices_name,
 	      'catservice_name_en' => $cat->catservices_name_en,
-	      'catservice_desc' => $cat->catservices_desc,
-	      'catservice_icon' => $cat->catservices_icon,
+				'catservice_desc' => $cat->catservices_desc,
+	      'catservice_desc_en' => $cat->catservices_desc_en,
+				'catservice_icon' => $cat->catservices_icon,
+				'catservice_link' => $cat->catservices_link,
 	      'services' => $serpis
 	      );
 
