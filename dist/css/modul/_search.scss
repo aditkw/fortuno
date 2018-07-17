@@ -1,6 +1,17 @@
 .search-content {
-  min-height: 100vh;
+  // min-height: 50vh;
   .desc-search-item {
     line-height: 1.6;
+  }
+  .pagin {
+    ul {
+      list-style: none;
+      li {
+        display: inline-block;
+        a {
+          border-bottom: 1px solid #6c757d;
+        }
+      }
+    }
   }
 }

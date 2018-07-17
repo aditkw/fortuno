@@ -39,6 +39,10 @@ div, .row {
   font-weight: bold;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .cursor_pointer, .hoverious, .link-actived, a:hover, a {
   cursor: pointer;
 }
@@ -127,11 +131,17 @@ blockquote cite:before {
   padding-left: 36px;
 }
 
-.search-content {
-  min-height: 100vh;
-}
 .search-content .desc-search-item {
   line-height: 1.6;
+}
+.search-content .pagin ul {
+  list-style: none;
+}
+.search-content .pagin ul li {
+  display: inline-block;
+}
+.search-content .pagin ul li a {
+  border-bottom: 1px solid #6c757d;
 }
 
 /*# sourceMappingURL=fort.style_search.css.map */

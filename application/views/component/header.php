@@ -85,8 +85,12 @@
       <div class="col-md-1 nav-list contact"><a href="<?=base_url()?>#contact">CONTACT</a></div>
       <div class="col-md-3 text-left search-container">
         <div class="form-group search">
-          <input type="text" class="form-control" placeholder="Search Here...">
-          <button class="btn btn-primary" type="button" name="button"><i class="fas fa-search"></i></button>
+          <form id="search" action="<?=base_url()?>search/<?=($this->uri->segment(2) === 'portfolio') ? 'portfolio' : 'services'?>/0/index.php" method="get">
+            <input type="text" name="s" class="form-control <?=(null !== $this->uri->segment(4)) ? 'underline' : '';?>" placeholder="Search Here..." value="<?=
+              (null !== $this->uri->segment(4)) ? str_replace('%20', ' ', str_replace('-', ' ', $this->uri->segment(4))) : '';
+            ?>">
+            <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+          </form>
         </div>
       </div>
     </nav>

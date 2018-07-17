@@ -39,6 +39,10 @@ div, .row {
   font-weight: bold;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .cursor_pointer, .hoverious, .link-actived, a:hover, a {
   cursor: pointer;
 }
@@ -141,7 +145,6 @@ blockquote cite:before {
   transition: 0.4s;
   background-color: #f0f0f0;
   padding: 20px;
-  overflow: scroll;
 }
 .services-container .aside-container aside ul {
   list-style: none;

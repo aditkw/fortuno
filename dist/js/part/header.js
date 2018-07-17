@@ -73,4 +73,12 @@ let reg = /^\/.+(\/.+)$/gi;
 let arr_uri = reg.exec(location.pathname.substr(0));
 let res;
 res = (!arr_uri) ? 'home' : arr_uri[1];
-console.log(res)
+
+
+// search
+$(document).on("submit", "#search", function(e) {
+  let txtField = $(this).find("input[name='s']").val();
+  if(!txtField) {
+    e.preventDefault();
+  }
+});

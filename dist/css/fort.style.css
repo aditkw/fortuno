@@ -39,6 +39,10 @@ div, .row {
   font-weight: bold;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
 .cursor_pointer, .hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, .link-actived, a:hover, a {
   cursor: pointer;
 }
