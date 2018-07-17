@@ -127,61 +127,11 @@ blockquote cite:before {
   padding-left: 36px;
 }
 
-.services-gap {
-  padding: 20px 0;
-}
-
-.services-container .aside-container, .services-container .article-container {
+.search-content {
   min-height: 100vh;
 }
-.services-container .aside-container {
-  padding: 0;
-}
-.services-container .aside-container aside {
-  transition: 0.4s;
-  background-color: #f0f0f0;
-  padding: 20px;
-  overflow: scroll;
-}
-.services-container .aside-container aside ul {
-  list-style: none;
-  padding-left: 1.4em;
-}
-.services-container .aside-container aside ul li {
-  line-height: 2em;
-}
-.services-container .aside-container aside ul li .title {
-  font-size: 1.4em;
-  text-decoration: underline;
-}
-.services-container .aside-container aside ul li ul {
-  list-style: decimal;
-}
-.services-container .aside-container aside ul li ul li .sub-title {
-  font-size: 1.2em;
-}
-.services-container .aside-container aside ul li ul li ul {
-  list-style: square;
-}
-.services-container .aside-container aside ul li ul li ul li .point {
-  font-size: 1em;
-}
-.services-container .article-container {
-  padding: 50px;
+.search-content .desc-search-item {
+  line-height: 1.6;
 }
 
-.link-dictionary-left {
-  position: fixed;
-  top: 16vh;
-  left: 8.222vw;
-  bottom: 0;
-  right: 65.888vw;
-}
-
-@media only screen and (max-width: 767px) {
-  .services-gap {
-    padding-left: 40px;
-  }
-}
-
-/*# sourceMappingURL=fort.style_services.css.map */
+/*# sourceMappingURL=fort.style_search.css.map */

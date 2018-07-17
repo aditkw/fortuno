@@ -35,11 +35,11 @@ div, .row {
   margin: 0;
 }
 
-.bold, .hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, a:hover, a {
+.bold, .hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, .link-actived, a:hover, a {
   font-weight: bold;
 }
 
-.cursor_pointer, .hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, a:hover, a {
+.cursor_pointer, .hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, .link-actived, a:hover, a {
   cursor: pointer;
 }
 
@@ -47,15 +47,19 @@ div, .row {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, a:hover, a {
+.hoverious, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li, .link-actived, a:hover, a {
   color: #555;
 }
 
-.hoverious:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, a:hover {
+.hoverious:hover, header .header nav.nav-desktop .nav-list ul.sub1 > li:hover, .link-actived:hover, a:hover {
   color: #000;
 }
 
 a:hover {
+  color: #7c82a6;
+}
+
+.link-actived {
   color: #7c82a6;
 }
 

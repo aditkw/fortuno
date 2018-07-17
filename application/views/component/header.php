@@ -66,7 +66,7 @@
     </nav>
     <nav class="row text-center nav-desktop">
       <div class="col-md-2"></div>
-      <div class="col-md-1 nav-list homepage"><a class="active" href="<?=base_url()?>#beranda">HOME</a></div>
+      <div class="col-md-1 nav-list homepage"><a href="<?=base_url()?>#beranda">HOME</a></div>
       <div class="col-md-1 nav-list about"><a href="<?=base_url()?>#about">ABOUT</a></div>
       <div class="col-md-1 nav-list services position-relative menu-has-sub"><a href="<?php echo $at_index; ?>#services">SERVICES</a>
         <ul class="position-absolute sub1">

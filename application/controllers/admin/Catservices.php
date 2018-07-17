@@ -78,7 +78,6 @@ class Catservices extends Backend_Controller
 			case 'update':
 				$array_id = array('catservices_id' => hash_link_decode($post['id']));
 				$files 			= $_FILES[$this->image_input_name]['name'];
-
 				if ($this->form_validation->run() == FALSE) {
 					$this->session->set_flashdata('error', validation_errors('<li>','</li>'));
 					redirect(site_url('admin/catservices'));
@@ -97,7 +96,7 @@ class Catservices extends Backend_Controller
 
 					for ($i=0; $i<1; $i++) {
 						$id_img = array('image_id' => $post['id_image_'.$i]);
-
+            die(print_r($id_img));
 						if (!empty($files[$i])) {
 							$image 	= $this->image_model->get($post['id_image_'.$i]);
 							// hapus gambar lama

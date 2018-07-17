@@ -62,3 +62,15 @@ $(document).on("mouseenter", ".sub1-has-sub", function(e) {
 $(document).on("mouseleave", ".sub1-has-sub", function(e) {
   hoverMenuSub(this, "sub2", "fadeOut");
 });
+
+
+
+
+
+
+// active link
+let reg = /^\/.+(\/.+)$/gi;
+let arr_uri = reg.exec(location.pathname.substr(0));
+let res;
+res = (!arr_uri) ? 'home' : arr_uri[1];
+console.log(res)

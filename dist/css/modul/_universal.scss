@@ -67,6 +67,11 @@ a:hover {
   // text-decoration: none;
   color: $alink;
 }
+.link-actived {
+  @extend .hoverious;
+  // text-decoration: none;
+  color: $alink;
+}
 body {
   font-family: "roboto";
   // font-size: 1.1em;

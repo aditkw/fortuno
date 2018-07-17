@@ -25,6 +25,9 @@
 				case 'portfolio': ?>
 				<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style_portfolio.css">
 				<?php break;
+				case 'search': ?>
+				<link rel="stylesheet" href="<?php echo base_url();?>dist/css/fort.style_search.css">
+				<?php break;
 			}
 			 ?>
 		<?php else: ?>
