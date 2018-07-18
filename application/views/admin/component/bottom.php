@@ -60,16 +60,30 @@
 			// SELECT2
 			$(".select2").select2();
 
-			// DATA TABLE
-			$("#datatable1").DataTable();
-			$('#datatable2').DataTable({
-				"paging": true,
-				"lengthChange": false,
-				"searching": false,
-				"ordering": true,
-				"info": true,
-				"autoWidth": false
+			$('.btn-edit-services').click(function() {
+				var id = $(this).attr('data-id');
+				$.ajax({
+					type: "POST",
+					url: "<?php echo site_url('admin/services/update_load');?>",
+					data: { dataID: id},
+					timeout : 3000,
+					dataType: "JSON",
+					error: function() {
+						alert("ERROR!");
+					},
+					success: function(data) {
+						$("#id").val(data.id);
+						$("#title").val(data.title);
+						$("#title_en").val(data.title_en);
+						CKEDITOR.instances['desc'].setData(data.desc);
+						CKEDITOR.instances['desc_en'].setData(data.desc_en);
+						$("#image").val(data.image);
+						// $("#icon").val(data.icon);
+						$("#update").modal('show');
+					}
+				});
 			});
+
 
 			// AJAX
 			// get user (edit)
@@ -121,29 +135,6 @@
 				});
 			});
 
-			$('.btn-edit-services').click(function() {
-				var id = $(this).attr('data-id');
-				$.ajax({
-					type: "POST",
-					url: "<?php echo site_url('admin/services/update_load');?>",
-					data: { dataID: id},
-					timeout : 3000,
-					dataType: "JSON",
-					error: function() {
-						alert("ERROR!");
-					},
-					success: function(data) {
-						$("#id").val(data.id);
-						$("#title").val(data.title);
-						$("#title_en").val(data.title_en);
-						CKEDITOR.instances['desc'].setData(data.desc);
-						CKEDITOR.instances['desc_en'].setData(data.desc_en);
-						$("#image").val(data.image);
-						// $("#icon").val(data.icon);
-						$("#update").modal('show');
-					}
-				});
-			});
 			// get slide (edit)
 			$('.btn-edit-slide').click(function() {
 				var id = $(this).attr('data-id');
@@ -225,7 +216,6 @@
 				});
 			});
 			// select sub-category
-			$(document).ready(function() {
 				$('#category').change(function() {
 					var id = $(this).val();
 					// alert(id_category);
@@ -238,6 +228,16 @@
 						}
 					});
 				});
+
+			// DATA TABLE
+			$("#datatable1").DataTable();
+			$('#datatable2').DataTable({
+				"paging": true,
+				"lengthChange": false,
+				"searching": false,
+				"ordering": true,
+				"info": true,
+				"autoWidth": false
 			});
 		});
 

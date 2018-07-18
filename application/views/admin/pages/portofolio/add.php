@@ -87,7 +87,7 @@
 						<div class="col-md-5 col-lg-4 col-sm-6 col-xs-10">
 							<div class="form-group">
 								<label for="portofolio">Pdf </label>
-								<input type="file" name="pdf" class="form-control" required>
+								<input type="file" name="pdf" class="form-control">
 							</div>
 						</div>
 				</div>
