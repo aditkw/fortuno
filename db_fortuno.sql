@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jul 17, 2018 at 11:44 PM
+-- Generation Time: Jul 18, 2018 at 09:01 AM
 -- Server version: 10.1.31-MariaDB-cll-lve
 -- PHP Version: 5.6.30
 
@@ -175,7 +175,7 @@ INSERT INTO `fortu_image` (`image_id`, `parent_id`, `image_parent_name`, `image_
 (117, 22, 'services', 'sistem-data-jaringan-komputer-9679.jpg', 0),
 (118, 23, 'services', 'sistem-matv-master-television-3896.jpeg', 0),
 (119, 24, 'services', 'sistem-cctv-close-circuit-television-9216.jpg', 0),
-(120, 25, 'services', 'new-gas-installation.jpeg', 0),
+(120, 25, 'services', 'gas-installation-system-8298.jpeg', 0),
 (124, 4, 'catservices', 'mechanical-4006.jpeg', 0),
 (125, 5, 'catservices', 'electrical-6869.jpeg', 0),
 (126, 6, 'catservices', 'gas-installation-9544.jpeg', 0),
@@ -231,14 +231,14 @@ CREATE TABLE `fortu_seo` (
 INSERT INTO `fortu_seo` (`seo_id`, `seo_page`, `seo_title`, `seo_keyword`, `seo_desc`) VALUES
 (1, 'company', 'Company', 'company keyword', 'company desc'),
 (2, 'product', 'Product', 'product keyword', 'product desc'),
-(3, 'news', 'News', 'berita, news, mitra asia', 'description'),
+(3, 'news', 'News', 'berita, news, fortuno', 'description'),
 (4, 'contact-us', 'Contact Us', 'contact us keyword', 'contact us desc'),
-(5, 'our-distribution', 'Our Distribution', 'Distribution Mitra Asia', 'description'),
-(6, 'brand-history', 'Brand History', 'Brand, mitra asia, history', 'description'),
-(7, 'manufacture', 'Manufacture', 'manufaktur, manufacure, mitra asia', 'description'),
-(8, 'services', 'Services', 'layanan, service, mitra asia', 'description'),
-(9, 'event', 'Event', 'event, acara, mitra asia', 'description'),
-(10, 'video', 'Video', 'video mitra asia', 'description');
+(5, 'our-distribution', 'Our Distribution', 'Distribution fortuno', 'description'),
+(6, 'brand-history', 'Brand History', 'Brand, fortuno, history', 'description'),
+(7, 'manufacture', 'Manufacture', 'manufaktur, manufacure, fortuno', 'description'),
+(8, 'services', 'Services', 'layanan, service, fortuno', 'description'),
+(9, 'event', 'Event', 'event, acara, fortuno', 'description'),
+(10, 'video', 'Video', 'video fortuno', 'description');
 
 -- --------------------------------------------------------
 
@@ -263,17 +263,17 @@ CREATE TABLE `fortu_services` (
 --
 
 INSERT INTO `fortu_services` (`services_id`, `catservices_id`, `services_name`, `services_name_en`, `services_desc`, `services_desc_en`, `services_alt`, `services_pub`, `services_link`) VALUES
-(15, 4, 'Sistem plumbing dan instalasi air', 'Plumbing system and air installation', '<p>Sistem plumbing adalah suatu pekerjaan meliputi sistem pembuangan limbah / air buangan (air kotor dan air bekas) dan system penyediaan air bersih.</p>\r\n', '<p>Plumbing system is a job covering waste disposal system / waste water (dirty water and waste water) and water supply system.</p>\r\n', '', '99', 'plumbing-system-and-air-installation'),
+(15, 4, 'Sistem plumbing dan instalasi air', 'Plumbing system and air installation', '<p>Sistem plumbing adalah suatu pekerjaan yang meliputi sistem pembuangan limbah / air buangan (air kotor dan air bekas) dan system penyediaan air bersih.</p>\r\n', '<p>The plumbing system is a work that includes waste / waste water disposal systems (dirty water and waste water) and water supply system.</p>\r\n', '', '99', 'plumbing-system-and-air-installation'),
 (16, 4, 'Sistem Fire Fighting (System Pemadam kebakaran)', 'Sprinkler System', '<p>Sistem Fire Fighting atau sistem pemadam kebakaran disediakan di gedung sebagai preventif (pencegah) terjadinya kebakaran. Sistem ini terdiri dari sistem sprinkler,sistem hidran dan Fire Extinguisher. Dan pada tempat-tempat tertentu digunakanjuga sistem fire gas. Tetapi pada umumnya sistem yang digunakan terdiri dari system sprinkler, hidran  dan  fire  extinguisher</p>\r\n', '<p>Fire Fighting system or fire extinguishing system is provided in the building as preventive (preventing) the occurrence of fire. This system consists of sprinkler system, hydrant system and Fire Extinguisher. And in certain places used also fire gas system. But in general the system used consists of sprinkler system, hydrant and fire extinguisher</p>\r\n', '', '99', 'sprinkler-system'),
 (17, 4, 'Sistem Tata Udara (AC / Air Conditioning)', 'Air Conditioning System', '<p>Secara umum sistem tata udara berfungsi mempertahankan kondisi udara ruanga baik suhu maupun kelembaban agar udara terasa lebih nyaman.     Kenyamanan dalam suatu ruangan diperkantoran  / fungsi gedung lainnya merupakan kebutuhan psikologis yang mulai banyak diperhatikan di zaman modern ini.</p>\r\n', '<p>In general, the system of air conditioning function to maintain the condition of air space both temperature and humidity to make the air feel more comfortable. Comfort in an office space / other building functions is a psychological need that began to be noticed in modern times.</p>\r\n', '', '99', 'air-conditioning-system'),
-(18, 4, 'Sistem Elektrikal / Arus Kuat (listrik)', 'Electrical System / Power Flow (electric)', '<p>Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah. Dalam rangkaian peralatan yang disediakan meliputi sarana penyesuaian tegangan listrik (trafo/ transformator), sarana penyaluran utama (Kabel feeder)  dan panel hubung utama  atau LVMDP (Low Voltage Main Distribution  Panel) dan panel distribusi utama di tiap gedung (SDP / Sub Distribution Panel) dan terakhir panel-panel di tiap lantai (PP-LP untuk penerangan, Panel Stop Kontak, Panel Stop Kontak UPS, Panel UPS OK dan PVAC utuk power AC).</p>\r\n', '<p>Electrical system is a series of power supply equipment to meet the needs of low voltage electrical power. In the range of equipment provided include voltage adjustment devices (transformer), main feeding means (feeder cable) and main switch or LVMDP (Low Voltage Main Distribution Panel) and the main distribution panel in each building (SDP / Sub Distribution Panel) and last panel on each floor (PP-LP for lighting, Contact Stop Panel, UPS Contact Stop Panel, OK UPS Panel and PVAC for AC power).</p>\r\n', '', '99', 'electrical-system-power-flow-electric'),
-(19, 4, 'Sistem penangkal petir', 'Lightning protection system', '<p>Secara umum sistem ini berfungsi untuk memproteksi gedung dan sekitarnya dari  petir. Pekerjaan penangkal petir menyangkut meliputi pemassangan dan penyediaan instalasi penagkal petir,  grounding dan pembuatan bak kontrol.</p>\r\n', '<p>In general, this system works to protect the building and its surroundings from lightning. Lightning protection work involves the discharge and provision of lightning, grounding and tub-control installations.</p>\r\n', '', '99', 'lightning-protection-system'),
-(20, 4, 'Sistem telepon', 'Sistem telepon', '<p>Sistem telepon berfungsi ssebagai alat komunikasi antar instansi dalam gedung. Sistem ini  menggunakan PABX yang berfungsi sebagai sentral komunikasi telepon di dalam gedung (pelanggan) yang terhubung dengan telkom</p>\r\n', '<p>Telephone system serves as a communication tool between agencies in the building. This system uses PABX which serves as the telephone communications center within the building (customer) connected to the telkom</p>\r\n', '', '99', 'sistem-telepon'),
-(21, 4, 'Sistem tata suara (Sound system)', 'Sistem tata suara (Sound system)', '<p>Sistem  ini berfungsi sebagai publik adress, paging dan pengumuman. Sistem ini  terdiri dari peralatan untuk memenuhi background music dan pengumuman darurat.</p>\r\n', '<p>This system functions as public adress, paging and announcement. This system consists of equipment to meet the background music and emergency announcements.</p>\r\n', '', '99', 'sistem-tata-suara-sound-system'),
-(22, 4, 'Sistem Data / Jaringan Komputer', 'Sistem Data / Jaringan Komputer', '<p>Berfungsi sebagai jaringan komputer terintegrasi dalam gedung.      Sistem kabel data  atau  disebut juga Local Area Network (LAN) merupakan jaringan computer yang menghubungkan computer pc dari workstation untuk memakai bersama sumberdaya(resource, misalnya printer, internet, dan lain-lain) dan saling bertukar informasi.</p>\r\n', '<p>Serves as a computer network integrated in the building. Data cable system or also called Local Area Network (LAN) is a computer network that connects computer pc from workstation to use together resources (resource, for example printer, internet, etc.) and exchange information.</p>\r\n', '', '99', 'sistem-data-jaringan-komputer'),
-(23, 4, 'Sistem MATV (master Television)', 'Sistem MATV (master Television)', '<p>Kebutuhan pengelolaan televisi dalam suatu bangungan menjadi kebutuhan di perkantoran. Sistem ini dinamakan dengan sistem master antena TV (MATV). Sistem MATV terdiri dari beberapa perangkat penerima (receiver), mixer, dan penguat sinyal.</p>\r\n', '<p>The need of television management in a building becomes a necessity in the office. This system is called the master TV antenna system &#40;MATV&#41;. The MATV system consists of several receiver, mixer, and signal booster devices.</p>\r\n', '', '99', 'sistem-matv-master-television'),
-(24, 4, 'Sistem CCTV (Close Circuit Television)', 'Sistem CCTV (Close Circuit Television)', '<p>Sistem CCTV  merupakan bagian dari upaya untuk mempermudah pekerjaan sekuriti sistem, yang terintegrasi untuk  memberikan kemudahan dalam proses pengontrolan dan pemantauan lebih akurat dan otomatis.</p>\r\n', '<p>The CCTV system is part of an effort to simplify integrated system security work to facilitate more accurate and automated control and monitoring processes.</p>\r\n', '', '99', 'sistem-cctv-close-circuit-television'),
-(25, 6, 'Sistem Instalasi Gas', 'Gas Installation System', '<p>Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan). Sistem instalasi gas di Mall ini merupakan sentral instalasi  gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut.</p>\r\n', '<p>Gas installation system in the mall is usually for the allocation of restaurants and Food Court (food center). The gas installation system in Mall is a central gas installation connected with cooking utensils in the restaurant and foodcourt units as a fuel supply function that is related to the use of cooking utensils in the restaurant or food court.</p>\r\n', '', '99', 'sistem-instalasi-gas');
+(18, 5, 'Sistem Elektrikal / Arus Kuat (listrik)', 'Electrical System / Power Flow (electric)', '<p>Sistem elektrikal merupakan suatu rangkaian peralatan penyediaan daya listrik untuk memenuhi kebutuhan daya listrik tegangan rendah. Dalam rangkaian peralatan yang disediakan meliputi sarana penyesuaian tegangan listrik (trafo/ transformator), sarana penyaluran utama (Kabel feeder)  dan panel hubung utama  atau LVMDP (Low Voltage Main Distribution  Panel) dan panel distribusi utama di tiap gedung (SDP / Sub Distribution Panel) dan terakhir panel-panel di tiap lantai (PP-LP untuk penerangan, Panel Stop Kontak, Panel Stop Kontak UPS, Panel UPS OK dan PVAC utuk power AC).</p>\r\n', '<p>Electrical system is a series of power supply equipment to meet the needs of low voltage electrical power. In the range of equipment provided include voltage adjustment devices (transformer), main feeding means (feeder cable) and main switch or LVMDP (Low Voltage Main Distribution Panel) and the main distribution panel in each building (SDP / Sub Distribution Panel) and last panel on each floor (PP-LP for lighting, Contact Stop Panel, UPS Contact Stop Panel, OK UPS Panel and PVAC for AC power).</p>\r\n', '', '99', 'electrical-system-power-flow-electric'),
+(19, 5, 'Sistem penangkal petir', 'Lightning protection system', '<p>Secara umum sistem ini berfungsi untuk memproteksi gedung dan sekitarnya dari  petir. Pekerjaan penangkal petir menyangkut meliputi pemassangan dan penyediaan instalasi penagkal petir,  grounding dan pembuatan bak kontrol.</p>\r\n', '<p>In general, this system works to protect the building and its surroundings from lightning. Lightning protection work involves the discharge and provision of lightning, grounding and tub-control installations.</p>\r\n', '', '99', 'lightning-protection-system'),
+(20, 5, 'Sistem telepon', 'Sistem telepon', '<p>Sistem telepon berfungsi ssebagai alat komunikasi antar instansi dalam gedung. Sistem ini  menggunakan PABX yang berfungsi sebagai sentral komunikasi telepon di dalam gedung (pelanggan) yang terhubung dengan telkom</p>\r\n', '<p>Telephone system serves as a communication tool between agencies in the building. This system uses PABX which serves as the telephone communications center within the building (customer) connected to the telkom</p>\r\n', '', '99', 'sistem-telepon'),
+(21, 5, 'Sistem tata suara (Sound system)', 'Sistem tata suara (Sound system)', '<p>Sistem  ini berfungsi sebagai publik adress, paging dan pengumuman. Sistem ini  terdiri dari peralatan untuk memenuhi background music dan pengumuman darurat.</p>\r\n', '<p>This system functions as public adress, paging and announcement. This system consists of equipment to meet the background music and emergency announcements.</p>\r\n', '', '99', 'sistem-tata-suara-sound-system'),
+(22, 5, 'Sistem Data / Jaringan Komputer', 'Sistem Data / Jaringan Komputer', '<p>Berfungsi sebagai jaringan komputer terintegrasi dalam gedung.      Sistem kabel data  atau  disebut juga Local Area Network (LAN) merupakan jaringan computer yang menghubungkan computer pc dari workstation untuk memakai bersama sumberdaya(resource, misalnya printer, internet, dan lain-lain) dan saling bertukar informasi.</p>\r\n', '<p>Serves as a computer network integrated in the building. Data cable system or also called Local Area Network (LAN) is a computer network that connects computer pc from workstation to use together resources (resource, for example printer, internet, etc.) and exchange information.</p>\r\n', '', '99', 'sistem-data-jaringan-komputer'),
+(23, 5, 'Sistem MATV (master Television)', 'Sistem MATV (master Television)', '<p>Kebutuhan pengelolaan televisi dalam suatu bangungan menjadi kebutuhan di perkantoran. Sistem ini dinamakan dengan sistem master antena TV (MATV). Sistem MATV terdiri dari beberapa perangkat penerima (receiver), mixer, dan penguat sinyal.</p>\r\n', '<p>The need of television management in a building becomes a necessity in the office. This system is called the master TV antenna system &#40;MATV&#41;. The MATV system consists of several receiver, mixer, and signal booster devices.</p>\r\n', '', '99', 'sistem-matv-master-television'),
+(24, 5, 'Sistem CCTV (Close Circuit Television)', 'Sistem CCTV (Close Circuit Television)', '<p>Sistem CCTV  merupakan bagian dari upaya untuk mempermudah pekerjaan sekuriti sistem, yang terintegrasi untuk  memberikan kemudahan dalam proses pengontrolan dan pemantauan lebih akurat dan otomatis.</p>\r\n', '<p>The CCTV system is part of an effort to simplify integrated system security work to facilitate more accurate and automated control and monitoring processes.</p>\r\n', '', '99', 'sistem-cctv-close-circuit-television'),
+(25, 6, 'Sistem Instalasi Gas', 'Gas Installation System', '<p>Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan). Sistem instalasi gas di Mall ini merupakan sentral instalasi  gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut.</p>\r\n', '<p>Gas installation system in the mall is usually for the allocation of restaurants and Food Court (food center). The gas installation system in Mall is a central gas installation connected with cooking utensils in the restaurant and foodcourt units as a fuel supply function that is related to the use of cooking utensils in the restaurant or food court.</p>\r\n', '', '99', 'gas-installation-system');
 
 -- --------------------------------------------------------
 
@@ -297,7 +297,7 @@ CREATE TABLE `fortu_site` (
 --
 
 INSERT INTO `fortu_site` (`site_id`, `site_name`, `site_title`, `site_desc`, `site_keyword`, `site_favicon`, `site_logo`, `site_email`) VALUES
-(1, 'Abubakar Usman', 'Abubakar Usman', 'Abubakar Usman', 'Abubakar Usman', '', '', 'aditlawave@gmail.com');
+(1, 'Fortuno', 'Fortuno', 'Fortuno', 'Fortuno', '', '', 'aditlawave@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -351,7 +351,7 @@ CREATE TABLE `fortu_user` (
 --
 
 INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_email`, `user_level`, `user_status`, `user_image`, `user_session`) VALUES
-(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', 'fa99ae9c1f763f3562c049ae48739daa79920692'),
+(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', '43dea9d01ea6b1b7dd3c94b46b36fe4f45c473fe'),
 (2, 'mainlwd', 'a82d82f5133af2c987010c8e446c35230164a0fe', 'Maintenance LWD', 'lwd@lawavedesign.com', 'admin', 'active', '', 'b6bc5de8c9694006f7c96f34e37c0551c8b13525');
 
 --
@@ -456,13 +456,13 @@ ALTER TABLE `fortu_contact`
 -- AUTO_INCREMENT for table `fortu_image`
 --
 ALTER TABLE `fortu_image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=196;
 
 --
 -- AUTO_INCREMENT for table `fortu_portofolio`
 --
 ALTER TABLE `fortu_portofolio`
-  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `fortu_seo`

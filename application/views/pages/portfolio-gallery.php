@@ -2,14 +2,14 @@
 $port_name = cekBahasa('portofolio_name');
 $port_desc = cekBahasa('portofolio_desc');
 ?>
-<div class="text-center">
+<div class="text-center mt-3">
   <p class="h2"><?=$port->$port_name?></p>
-  <div class="text-center px-5">
-    <div class="px-5">
-      <?=$port->$port_desc?>      
+  <div class="text-center" style="padding-right: 10vw; padding-left: 10vw;">
+    <div class="text-justify">
+      <?=$port->$port_desc?>
     </div>
   </div>
-  <div class="row services-gap text-left">
+  <div class="row services-gap text-left mt-5">
     <div class="col-md-1"></div>
     <div class="col-md-11">
       <!-- Nav Jadul -->
