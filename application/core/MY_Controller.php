@@ -173,7 +173,8 @@ class Frontend_Controller extends MY_Controller
 			'txtporto_view' => 'Di bawah ini merupakan <em>project-project</em> yang sudah kami kerjakan.',
 			'portoviewdetail' => 'Klik di sini untuk melihat semua foto dari',
 			'clickforfull' => 'Klik di sini untuk tampilkan gambar secara penuh',
-			'downloadpdf' => 'Anda bisa mendownload file PDF untuk project ini pada tombol di bawah ini. '
+			'downloadpdf' => 'Anda bisa mendownload file PDF untuk project ini pada tombol di bawah ini. ',
+			'readmore' => 'Baca Selengkapnya'
 		);
 		$en = array(
 			'header_txt' => 'Did you know the importance of mechanical and electrical systems (ME) for a building ?',
@@ -183,7 +184,8 @@ class Frontend_Controller extends MY_Controller
 			'txtporto_view' => 'Below are the <em> projects </em> we have been working on.',
 			'portoviewdetail' => 'Click here to see all photos from',
 			'clickforfull' => 'Click here to view the full picture',
-			'downloadpdf' => 'You can download a PDF file for this project on the button below.'
+			'downloadpdf' => 'You can download a PDF file for this project on the button below.',
+			'readmore' => 'Read More'
 		);
 		//cek session bahasa
 		$userdata = $this->session->userdata;

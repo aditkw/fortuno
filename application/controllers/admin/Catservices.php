@@ -96,7 +96,7 @@ class Catservices extends Backend_Controller
 
 					for ($i=0; $i<1; $i++) {
 						$id_img = array('image_id' => $post['id_image_'.$i]);
-            die(print_r($id_img));
+            
 						if (!empty($files[$i])) {
 							$image 	= $this->image_model->get($post['id_image_'.$i]);
 							// hapus gambar lama

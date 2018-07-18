@@ -4,9 +4,11 @@ $port_desc = cekBahasa('portofolio_desc');
 ?>
 <div class="text-center">
   <p class="h2"><?=$port->$port_name?></p>
-  <p class="text-center px-5">
-    <?=$port->$port_desc?>
-  </p>
+  <div class="text-center px-5">
+    <div class="px-5">
+      <?=$port->$port_desc?>      
+    </div>
+  </div>
   <div class="row services-gap text-left">
     <div class="col-md-1"></div>
     <div class="col-md-11">

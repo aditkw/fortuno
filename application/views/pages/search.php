@@ -29,13 +29,13 @@
         <div class="search-content border border-secondary p-5">
           <?php for ($i = 0; $i < $result['num_rows_offset']; $i++): ?>
             <div class="mb-5">
-              <p class="h2 px-3 mb-3"><?=$result['data'][$i]['name'];?></p>
+              <p class="h2 px-3 mb-3"><?=$result['data'][$i][cekBahasa('name')];?></p>
               <div class="row">
                 <div class="col-md-4">
                   <img class="img img-fluid" src="<?=base_url()?>uploads/img/<?=$searchIn;?>/<?=$result['data'][$i]['image_name'];?>" alt="">
                 </div>
                 <div class="col-md-8 desc-search-item text-justify p-0">
-                  <?=$result['data'][$i]['desc'];?><a href="<?=site_url($result['data'][$i]['linkn'])?>"><u>Baca Selengkapnya</u></a>
+                  <?=$result['data'][$i][cekBahasa('desc')];?><a href="<?=site_url($result['data'][$i]['linkn'])?>"><u><?=$lang['readmore'];?></u></a>
                 </div>
               </div>
             </div>

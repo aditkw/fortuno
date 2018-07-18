@@ -111,9 +111,9 @@
             <div class="modal-color position-absolute">
               <p class="h1 cwhite"><strong>Get</strong></p>
               <p class="h2 corange"><strong>in Touch</strong></p>
-              <p class="cwhite text-footer">
+              <p class="cwhite text-footer text-justify">
                 <?php $txtfooter = cekBahasa('text_footer'); ?>
-                <?=$text->$txtfooter?>
+                <?=$text->$txtfooter?> <br>
                 <button class="btn-home-default" type="button" name="button" data-toggle="modal" data-target="#ModalCenter"><strong>Contact Us</strong></button>
               </p>
             </div>
