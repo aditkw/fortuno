@@ -18,7 +18,7 @@
     }
 
     function gallery($link) {
-      $this->data['portofolio'] = $this->portofolio_model->get_portofolio(array('image_parent_name' => 'portofolio'));
+      $this->data['portofolio'] = $this->portofolio_model->get_portofolio(array('portofolio_link' => $link ,'image_parent_name' => 'portofolio'));
       $this->data['port'] = $this->portofolio_model->get_by(array('portofolio_link' => $link),null,null,true);
       $this->data['content'] = 'pages/portfolio-gallery';
       $this->load->view('index', $this->data);
