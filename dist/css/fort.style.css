@@ -135,7 +135,7 @@ blockquote cite:before {
   position: fixed;
   width: 100%;
   z-index: 1;
-  padding-top: 20px;
+  padding-top: 5px;
   top: 0;
   left: 0;
 }
@@ -211,6 +211,7 @@ header .header nav.nav-desktop .nav-list.contact {
 header .header nav.nav-desktop .search-container .search {
   display: inline-block;
   font-size: 0;
+  margin-bottom: 0;
 }
 header .header nav.nav-desktop .search-container .search input {
   display: inline-block;
@@ -220,7 +221,7 @@ header .header nav.nav-desktop .search-container .search input {
   border: 0;
 }
 header .header nav.nav-desktop .search-container .search button {
-  margin-bottom: 13px;
+  margin-bottom: 7.5px;
   display: inline-block;
   height: 55px;
   width: 55px;
@@ -238,6 +239,12 @@ header .header #sampul {
   background: #cdcdcd;
   background-size: cover;
   background-attachment: fixed;
+}
+header .header #sampul .materi {
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100vh;
+  padding-right: 50px;
+  padding-left: 50px;
 }
 header .header #sampul2 {
   min-height: 45vh;
@@ -260,6 +267,21 @@ header .header #sampul2 .title-sampul2 p:last-child {
   margin-left: 50%;
 }
 
+@media only screen and (max-width: 918px) {
+  header .header #sampul .materi {
+    height: unset;
+  }
+}
+@media only screen and (min-width: 493px) and (max-width: 630px) {
+  header .header #sampul .materi {
+    height: 100vw;
+  }
+}
+@media only screen and (min-width: 508px) and (max-width: 755px) {
+  header .header #sampul .materi {
+    height: 100vw;
+  }
+}
 @media only screen and (min-width: 768px) and (max-width: 1153px) {
   header .header #sampul div.row div.col-md-4 {
     flex: 46.333%;

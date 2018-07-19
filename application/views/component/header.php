@@ -105,13 +105,15 @@
     </nav>
     <?php if (!$at_index): ?>
       <div id="sampul" style="background-image: url('<?php echo base_url(); ?>dist/img/assets/slider1.png');">
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-4"><br><br><br><br><br><br>
+        <div class="row mt-0">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 materi"><br><br><br>
             <span class="h1"><strong>Welcome to </strong></span><br>
             <span class="h1 cblue"><strong>Fortuno Website.</strong></span><br><br>
-            <p class="h5"><strong><?=$lang['header_txt']?></strong></p>
-            <span class="h5 cblue"><?=$lang['header_txtLink']?></span>
+            <p class="h5 mt-4"><strong><?=$lang['header_txt']?></strong></p>
+            <!-- <span class="h5 cblue"><?=$lang['header_txtLink']?></span> -->
+            <?php $mecha = cekBahasa('text_mecha');?>
+            <div class="h5 text-justify mt-4"><?=$text->$mecha;?></div>
           </div>
         </div>
       </div>

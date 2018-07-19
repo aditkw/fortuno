@@ -174,7 +174,8 @@ class Frontend_Controller extends MY_Controller
 			'portoviewdetail' => 'Klik di sini untuk melihat semua foto dari',
 			'clickforfull' => 'Klik di sini untuk tampilkan gambar secara penuh',
 			'downloadpdf' => 'Anda bisa mendownload file PDF untuk project ini pada tombol di bawah ini. ',
-			'readmore' => 'Baca Selengkapnya'
+			'readmore' => 'Baca Selengkapnya',
+			'contact_us' => 'Jika Anda memerlukan informasi lebih lanjut, silakan <span><a href="#cont-contact" class="cblue_opa">hubungi kami</a></span> di bawah ini'
 		);
 		$en = array(
 			'header_txt' => 'Did you know the importance of mechanical and electrical systems (ME) for a building ?',
@@ -185,7 +186,8 @@ class Frontend_Controller extends MY_Controller
 			'portoviewdetail' => 'Click here to see all photos from',
 			'clickforfull' => 'Click here to view the full picture',
 			'downloadpdf' => 'You can download a PDF file for this project on the button below.',
-			'readmore' => 'Read More'
+			'readmore' => 'Read More',
+			'contact_us' => 'if you need more information, please <span><a href="#cont-contact" class="cblue_opa">contact us</a></span> below'
 		);
 		//cek session bahasa
 		$userdata = $this->session->userdata;

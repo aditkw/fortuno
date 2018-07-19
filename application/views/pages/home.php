@@ -1,25 +1,17 @@
 <section>
   <div class="homepage">
-    <div id="sistem_utilitas_l"></div>
-    <div id="sistem_utilitas">
-      <p class="h2 text-center title"><?=$lang['utilitas']?></p>
-      <?php $mecha = cekBahasa('text_mecha') ?>
-      <p class="content text-justify"><?=$text->$mecha?></p>
-    </div>
     <div class="row" id="about">
       <div class="col-md-2"></div>
       <div class="col-md-4 about-left">
         <p class="h2 text-center"><strong><span class="cblue">About</span> <span>Fortuno</span></strong></p>
         <div class="text-center">
-          <blockquote class="blockquote text-justify">
-            <p class="mb-0">
-              <?php $quote = cekBahasa('text_quote') ?>
-              <?=$text->$quote?>
-            </p>
-          </blockquote>
           <div class="text-justify about-desc-desktop">
             <?php $about_desc = cekBahasa('about_desc') ?>
             <?=$about->$about_desc?>
+          </div>
+          <div class="text-justify">
+            <?php $txtservice = cekBahasa('text_service') ?>
+            <?=$text->$txtservice?>
           </div>
         </div>
       </div>
@@ -36,20 +28,22 @@
       </div>
     </div>
     <div id="services">
-      <div class="background-filter-container">
+      <div class="background-filter-container px-5">
         <div class="row">
-          <div class="col-md-2"></div>
+          <div class="col-md-4"></div>
           <div class="col-md-4 services-left">
-            <p class="text-left"><span class="cwhite h1"><strong>Our Company</strong></span> <br> <span class="corange h2"><strong>Great Service</strong></span></p>
-            <div class="cwhite text-justify h5">
-              <?php $txtservice = cekBahasa('text_service') ?>
-              <?=$text->$txtservice?>
-            </div>
+            <p class="text-center"><span class="cwhite h1"><strong>Our Company</strong></span> <br> <span class="corange h2"><strong>Great Service</strong></span></p>
           </div>
-          <div class="col-md-4 services-right">
+          <div class="col-md-4"></div>
+        </div>
+        <br>
+        <div class="row">
+            <?php $i = 0; ?>
             <?php foreach ($category as $categ): ?>
+            <div class="col-md-4 services-right <?= ($i == 1) ? 'px-0': '';?>">
               <?php $segment_kedua = $categ->catservice_link;
               $catfield = cekBahasa('catservice_desc');
+              $i++;
               ?>
               <div class="row">
                 <div class="col-md-2"><i class="fas <?=$categ->catservice_icon?> cwhite h1 services-icon-desktop"></i> </div>
@@ -74,16 +68,15 @@
                   </ul>
                 </div>
               </div>
+            </div>
             <?php endforeach; ?>
-          </div>
-          <div class="col-md-2"></div>
         </div>
       </div>
 
     </div>
     <div id="portfolio">
       <?php $txtporto = cekBahasa('text_portofolio'); ?>
-      <p class="text-center h2"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portofolio</strong></a></p>
+      <p class="text-center h1"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portofolio</strong></a></p>
       <p class="text-justify port-desc h6"><?=$text->$txtporto?> <?=$lang['txtPortofolio']?></p><br><br>
       <div class="row">
         <?php foreach ($portofolio as $port):
@@ -104,7 +97,7 @@
     </div>
     <div id="contact"><br>
       <div class="cont-container">
-        <p class="text-center h2"><strong>You Can Easily <span><a href="#cont-contact" class="cblue_opa">Contact Us</a></span> Below</strong></p><br><br>
+        <p class="text-center h2"><strong><?=ucwords($lang['contact_us']);?></strong></p><br><br>
         <div class="row">
           <div class="col-md-5 position-relative">
             <img class="img-fluid" src="<?php echo base_url(); ?>dist/img/assets/contact.png" alt="">
@@ -122,6 +115,7 @@
             <blockquote class="blockquote text-justify">
               <p class="h2">
                 <strong>Fortuno</strong>
+                <?php $quote = cekBahasa('text_quote'); ?>
                 <p><?=$text->$quote?></p>
               </p>
             </blockquote>

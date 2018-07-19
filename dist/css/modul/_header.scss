@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   z-index: 1;
-  padding-top: 20px;
+  padding-top: 5px;
   top: 0;
   left: 0;
 }
@@ -83,6 +83,7 @@ header {
         .search {
           display: inline-block;
           font-size: 0;
+          margin-bottom: 0;
           input {
             display: inline-block;
             width: 75%;
@@ -91,7 +92,7 @@ header {
             border: 0;
           }
           button {
-            margin-bottom: 13px;
+            margin-bottom: 7.5px;
             display: inline-block;
             height: 55px;
             width: 55px;
@@ -119,6 +120,12 @@ header {
       // background-image: url($base_url+"dist/img/assets/slider1.png");
       background-size: cover;
       background-attachment: fixed;
+      .materi {
+        background-color: rgba(255, 255, 255, 0.5);
+        height: 100vh;
+        padding-right: 50px;
+        padding-left: 50px;
+      }
     }
     // sampul2 = page services
     #sampul2 {
@@ -145,6 +152,22 @@ header {
   }
 }
 
+@media only screen and (max-width: 918px) {
+  header .header #sampul .materi {
+    height: unset;
+  }
+}
+
+@media only screen and (min-width: 493px) and (max-width: 630px) {
+  header .header #sampul .materi {
+    height: 100vw;
+  }
+}
+@media only screen and (min-width: 508px) and (max-width: 755px) {
+  header .header #sampul .materi {
+    height: 100vw;
+  }
+}
 
 @media only screen and (min-width: 768px) and (max-width: 1153px) {
   header {

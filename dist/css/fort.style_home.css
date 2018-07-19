@@ -35,11 +35,15 @@ div, .row {
   margin: 0;
 }
 
-.bold, .hoverious, a:hover, a {
+.bold, .hoverious, .link-actived, a:hover, a {
   font-weight: bold;
 }
 
-.cursor_pointer, .hoverious, a:hover, a {
+.underline {
+  text-decoration: underline;
+}
+
+.cursor_pointer, .hoverious, .link-actived, a:hover, a {
   cursor: pointer;
 }
 
@@ -47,15 +51,19 @@ div, .row {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.hoverious, a:hover, a {
+.hoverious, .link-actived, a:hover, a {
   color: #555;
 }
 
-.hoverious:hover, a:hover {
+.hoverious:hover, .link-actived:hover, a:hover {
   color: #000;
 }
 
 a:hover {
+  color: #7c82a6;
+}
+
+.link-actived {
   color: #7c82a6;
 }
 
@@ -166,10 +174,10 @@ section .homepage #services .background-filter-container {
   min-height: 100vh;
 }
 section .homepage #services .background-filter-container .services-left {
-  padding-top: 12.5%;
+  padding-top: 9%;
 }
 section .homepage #services .background-filter-container .services-right {
-  padding-top: 10%;
+  padding-top: 4%;
 }
 section .homepage #services .background-filter-container .services-right .mechanical-title, section .homepage #services .background-filter-container .services-right .electrical-title, section .homepage #services .background-filter-container .services-right .gas-installation-title {
   cursor: pointer;
