@@ -61,7 +61,8 @@
 					<thead>
 						<tr>
 							<th width="5%">#</th>
-							<th width="15%">Image</th>
+							<th>Image</th>
+							<th>Category</th>
 							<th>Name</th>
 							<th>Description</th>
 							<th width="15%">Action</th>
@@ -74,6 +75,7 @@
 								<td>
 									<img src="<?php echo base_url('uploads/img/portofolio/thumb-'.$portofolio->image_name);?>" class="img img-responsive" alt="">
 								</td>
+								<td><?php echo ucwords($portofolio->catporto_name_en);?></td>
 								<td><?php echo ucwords($portofolio->portofolio_name_en);?></td>
 								<td><?php echo limitKalimat($portofolio->portofolio_desc_en, 155);?></td>
 								<td>
@@ -100,7 +102,8 @@
 					<thead>
 						<tr>
 							<th width="5%">#</th>
-							<th width="15%">Image</th>
+							<th>Image</th>
+							<th>Category</th>
 							<th>Name</th>
 							<th>Description</th>
 							<th width="15%">Action</th>

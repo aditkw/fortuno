@@ -43,6 +43,7 @@ class MY_Controller extends CI_Controller
 				'text_model',
 				'services_model',
 				'catservices_model',
+				'catporto_model',
 				'portofolio_model',
 				'banner_model',
 				'slide_model',
@@ -119,20 +120,12 @@ class Frontend_Controller extends MY_Controller
 			if ($count_seo > 0) {
 				$this->data['metadata_seo'] = $this->seo_model->get_by(array('seo_page' => $this->data['uri_1']), 1, NULL, TRUE);
 
-				$product = array('category', 'detail');
-				if (!empty($this->uri->segment(2)) && $this->uri->segment(1) == 'product' && in_array($this->uri->segment(2), $product)) {
-					if ($this->uri->segment(2) == 'category')
-					{
-						$link = $this->uri->segment(3);
-						$this->data['seo_cat'] = $this->category_model->get_by(array('category_link' => $link), 1, NULL, TRUE);
-					}
-					else
-					{
-						$link = $this->uri->segment(3);
-						$this->data['seo_detail'] = $this->product_model->get_by(array('product_link' => $link), 1, NULL, TRUE);
-					}
+				// $product = array('category', 'detail');
+				if (!empty($this->uri->segment(2)) && $this->uri->segment(1) == 'services') {
+						$link = $this->uri->segment(2);
+						$this->data['seo_catservices'] = $this->catservices_model->get_by(array('catservices_link' => $link), 1, NULL, TRUE);
 				}
-				elseif ($this->uri->segment(1) == 'activity' && !empty($this->uri->segment(3))) {
+				elseif (!empty($this->uri->segment(2)) && $this->uri->segment(1) == 'portofolio') {
 					// die('masuk ndak');
 					$link = $this->uri->segment(3);
 					$this->data['seo_activity'] = $this->activity_model->get_by(array('activity_link' => $link), 1, NULL, TRUE);
@@ -229,6 +222,7 @@ class Backend_Controller extends MY_Controller
 			'news' => array('news', 'event'),
 			'about' => array('firm', 'category', 'services', 'partners', 'clients', 'benefits', 'international'),
 			'services' => array('services', 'catservices'),
+			'porto' => array('portofolio', 'catporto'),
 			'member' => array('member'),
 			'misscellaneous' => array('slide', 'banner'),
 			'seo' => array('seo', 'site')
