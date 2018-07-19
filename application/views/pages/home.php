@@ -31,7 +31,7 @@
       </div>
       <div class="col-md-2">
         <div class="text-justify about-desc-mobile">
-          <?=$about->$about?>
+          <?=$about->$about_desc?>
         </div>
       </div>
     </div>

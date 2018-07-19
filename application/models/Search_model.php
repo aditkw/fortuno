@@ -78,7 +78,7 @@ class Search_model extends MY_Model {
     $this->db->or_like('p.portofolio_desc_en', $like);
     $this->db->group_end();
     $this->db->group_by('i.parent_id');
-    $allData['num_rows'] = $this->db->get('portofolio')->num_rows();
+    $allData['num_rows'] = $this->db->get()->num_rows();
     return $allData;
   }
 
