@@ -38,6 +38,7 @@ class Portofolio_model extends MY_Model
 
 	public function get_portofolio($where = NULL, $limit = NULL, $offset= NULL, $single=FALSE, $select=NULL, $like = NULL, $order = NULL)
 	{
+		$this->db->join('{PRE}'.'catporto', '{PRE}'.'catporto.catporto_id = {PRE}'.$this->_table_name.'.catporto_id');
 		$this->db->join('{PRE}'.'image', '{PRE}'.'image.parent_id = {PRE}'.$this->_table_name.'.portofolio_id');
 		if ($like) {
 			$this->db->like($like);

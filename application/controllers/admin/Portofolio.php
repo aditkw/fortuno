@@ -31,7 +31,8 @@ class Portofolio extends Backend_Controller
 	{
 		$id 		= (!empty($_GET['id'])) ? hash_link_decode($_GET['id']) : NULL;
 		$this->data['path_file']	= $this->img_path.$this->modul_file;
-
+		$this->data['category'] 	= $this->catporto_model->get();
+		
 		switch ($param) {
 
 			/* ---------- HALAMAN TAMBAH DATA ---------- */
@@ -69,6 +70,7 @@ class Portofolio extends Backend_Controller
 		if ($post) {
 			$link 			= title_url($post['name_en']);
 			$array_data['portofolio_name'] 				= $post['name'];
+			$array_data['catporto_id'] 						= $post['category'];
 			$array_data['portofolio_name_en'] 		= $post['name_en'];
 			$array_data['portofolio_desc'] 				= $post['desc'];
 			$array_data['portofolio_desc_en'] 		= $post['desc_en'];

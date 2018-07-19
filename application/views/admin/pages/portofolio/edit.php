@@ -43,16 +43,26 @@
 						</div>
 						<hr>
 						<div class="row">
-							<div class="col-md-12 col-lg-6">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="catservices">Category</label>
+									<select class="form-control" name="category">
+										<?php foreach ($category as $cat): ?>
+											<option <?php echo ($portofolio->catporto_id) == $cat->catporto_id ? 'selected' : '' ; ?> value="<?=$cat->catporto_id?>"><?=$cat->catporto_name_en?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 col-lg-6">
 								<div class="form-group">
 									<label for="portofolio">Name(Indonesia)</label>
 									<input type="text" name="name" class="form-control" value="<?php echo $portofolio->portofolio_name;?>" placeholder="portofolio name" required>
 									<input type="hidden" name="id" value="<?php echo $_GET['id'] ?>">
 								</div>
 							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 col-lg-6">
+							<div class="col-md-6 col-lg-6">
 								<div class="form-group">
 									<label for="portofolio">Name(English)</label>
 									<input type="text" name="name_en" class="form-control" value="<?php echo $portofolio->portofolio_name_en;?>" placeholder="portofolio name english" required>

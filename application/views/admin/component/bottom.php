@@ -135,6 +135,30 @@
 				});
 			});
 
+			// get category (edit)
+			$('.btn-edit-catporto').click(function() {
+				var id = $(this).attr('data-id');
+				$.ajax({
+					type: "POST",
+					url: "<?php echo site_url('admin/catporto/update_load');?>",
+					data: { dataID: id},
+					timeout : 3000,
+					dataType: "JSON",
+					error: function() {
+						alert("ERROR!");
+					},
+					success: function(data) {
+						$("#id").val(data.id);
+						$("#name").val(data.name);
+						$("#name_en").val(data.name_en);
+						CKEDITOR.instances['desc'].setData(data.desc);
+						CKEDITOR.instances['desc_en'].setData(data.desc_en);
+						$("#image").val(data.image);
+						$("#update").modal('show');
+					}
+				});
+			});
+
 			// get slide (edit)
 			$('.btn-edit-slide').click(function() {
 				var id = $(this).attr('data-id');

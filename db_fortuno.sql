@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jul 17, 2018 at 11:44 PM
--- Server version: 10.1.31-MariaDB-cll-lve
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: Jul 19, 2018 at 07:42 AM
+-- Server version: 10.1.28-MariaDB
+-- PHP Version: 5.6.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `jangreoj_db_fortuno`
+-- Database: `db_fortuno`
 --
 
 -- --------------------------------------------------------
@@ -65,6 +65,30 @@ CREATE TABLE `fortu_banner` (
 INSERT INTO `fortu_banner` (`banner_id`, `banner_type`, `banner_link`, `banner_alt`, `banner_pub`) VALUES
 (1, 'slide', '#', '#', '99'),
 (2, 'slide', '#', '#', '99');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fortu_catporto`
+--
+
+CREATE TABLE `fortu_catporto` (
+  `catporto_id` int(11) NOT NULL,
+  `catporto_name` varchar(255) NOT NULL,
+  `catporto_name_en` varchar(255) NOT NULL,
+  `catporto_desc` text NOT NULL,
+  `catporto_desc_en` text NOT NULL,
+  `catporto_pub` enum('88','99') NOT NULL,
+  `catporto_link` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `fortu_catporto`
+--
+
+INSERT INTO `fortu_catporto` (`catporto_id`, `catporto_name`, `catporto_name_en`, `catporto_desc`, `catporto_desc_en`, `catporto_pub`, `catporto_link`) VALUES
+(1, 'Rumah Sakit', 'Hospital', '<p>Lorem ipsum dolor sit amet</p>\r\n', '<p>Lorem ipsum dolor</p>\r\n', '99', 'hospital'),
+(2, 'Restoran', 'Restaurant', '<p>Lorem ipsum dolor weh sit</p>\r\n', '<p>Lorem ipsum dolor sit amet</p>\r\n', '99', 'restaurant');
 
 -- --------------------------------------------------------
 
@@ -175,14 +199,16 @@ INSERT INTO `fortu_image` (`image_id`, `parent_id`, `image_parent_name`, `image_
 (117, 22, 'services', 'sistem-data-jaringan-komputer-9679.jpg', 0),
 (118, 23, 'services', 'sistem-matv-master-television-3896.jpeg', 0),
 (119, 24, 'services', 'sistem-cctv-close-circuit-television-9216.jpg', 0),
-(120, 25, 'services', 'new-gas-installation.jpeg', 0),
+(120, 25, 'services', 'gas-installation-system-2740.jpeg', 0),
 (124, 4, 'catservices', 'mechanical-4006.jpeg', 0),
 (125, 5, 'catservices', 'electrical-6869.jpeg', 0),
 (126, 6, 'catservices', 'gas-installation-9544.jpeg', 0),
 (187, 12, 'portofolio', 'saigon-delight-8103.jpg', 0),
 (188, 12, 'portofolio', 'saigon-delight-8104.jpg', 1),
 (189, 12, 'portofolio', 'saigon-delight-8105.jpg', 2),
-(190, 12, 'portofolio', 'saigon-delight-8106.jpg', 3);
+(190, 12, 'portofolio', 'saigon-delight-8106.jpg', 3),
+(191, 1, 'catporto', 'hospital-9510.jpg', 0),
+(192, 2, 'catporto', 'restaurant-271.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -192,6 +218,7 @@ INSERT INTO `fortu_image` (`image_id`, `parent_id`, `image_parent_name`, `image_
 
 CREATE TABLE `fortu_portofolio` (
   `portofolio_id` int(8) NOT NULL,
+  `catporto_id` int(11) NOT NULL,
   `portofolio_name` varchar(255) NOT NULL,
   `portofolio_name_en` varchar(255) NOT NULL,
   `portofolio_desc` text NOT NULL,
@@ -205,10 +232,10 @@ CREATE TABLE `fortu_portofolio` (
 -- Dumping data for table `fortu_portofolio`
 --
 
-INSERT INTO `fortu_portofolio` (`portofolio_id`, `portofolio_name`, `portofolio_name_en`, `portofolio_desc`, `portofolio_desc_en`, `portofolio_pub`, `portofolio_link`, `portofolio_pdf`) VALUES
-(5, 'BonChon Chicken', 'BonChon Chicken', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'bonchon-chicken', ''),
-(6, 'PT Jerindo Sari Utama (F&B)', 'PT Jerindo Sari Utama (F&B)', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'pt-jerindo-sari-utama-fb', ''),
-(12, 'Saigon Delight', 'Saigon Delight', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'saigon-delight', '-1640.pdf');
+INSERT INTO `fortu_portofolio` (`portofolio_id`, `catporto_id`, `portofolio_name`, `portofolio_name_en`, `portofolio_desc`, `portofolio_desc_en`, `portofolio_pub`, `portofolio_link`, `portofolio_pdf`) VALUES
+(5, 2, 'BonChon Chicken', 'BonChon Chicken', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'bonchon-chicken', ''),
+(6, 2, 'PT Jerindo Sari Utama (F&B)', 'PT Jerindo Sari Utama (F&B)', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'pt-jerindo-sari-utama-fb', ''),
+(12, 2, 'Saigon Delight', 'Saigon Delight', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\r\n', '99', 'saigon-delight', '-1640.pdf');
 
 -- --------------------------------------------------------
 
@@ -229,16 +256,8 @@ CREATE TABLE `fortu_seo` (
 --
 
 INSERT INTO `fortu_seo` (`seo_id`, `seo_page`, `seo_title`, `seo_keyword`, `seo_desc`) VALUES
-(1, 'company', 'Company', 'company keyword', 'company desc'),
-(2, 'product', 'Product', 'product keyword', 'product desc'),
-(3, 'news', 'News', 'berita, news, mitra asia', 'description'),
-(4, 'contact-us', 'Contact Us', 'contact us keyword', 'contact us desc'),
-(5, 'our-distribution', 'Our Distribution', 'Distribution Mitra Asia', 'description'),
-(6, 'brand-history', 'Brand History', 'Brand, mitra asia, history', 'description'),
-(7, 'manufacture', 'Manufacture', 'manufaktur, manufacure, mitra asia', 'description'),
-(8, 'services', 'Services', 'layanan, service, mitra asia', 'description'),
-(9, 'event', 'Event', 'event, acara, mitra asia', 'description'),
-(10, 'video', 'Video', 'video mitra asia', 'description');
+(11, 'services', 'Services', 'services keyword', 'services desc'),
+(12, 'portfolio', 'Portofolio', 'portofolio keyword', 'portofolio desc');
 
 -- --------------------------------------------------------
 
@@ -271,9 +290,9 @@ INSERT INTO `fortu_services` (`services_id`, `catservices_id`, `services_name`, 
 (20, 4, 'Sistem telepon', 'Sistem telepon', '<p>Sistem telepon berfungsi ssebagai alat komunikasi antar instansi dalam gedung. Sistem ini  menggunakan PABX yang berfungsi sebagai sentral komunikasi telepon di dalam gedung (pelanggan) yang terhubung dengan telkom</p>\r\n', '<p>Telephone system serves as a communication tool between agencies in the building. This system uses PABX which serves as the telephone communications center within the building (customer) connected to the telkom</p>\r\n', '', '99', 'sistem-telepon'),
 (21, 4, 'Sistem tata suara (Sound system)', 'Sistem tata suara (Sound system)', '<p>Sistem  ini berfungsi sebagai publik adress, paging dan pengumuman. Sistem ini  terdiri dari peralatan untuk memenuhi background music dan pengumuman darurat.</p>\r\n', '<p>This system functions as public adress, paging and announcement. This system consists of equipment to meet the background music and emergency announcements.</p>\r\n', '', '99', 'sistem-tata-suara-sound-system'),
 (22, 4, 'Sistem Data / Jaringan Komputer', 'Sistem Data / Jaringan Komputer', '<p>Berfungsi sebagai jaringan komputer terintegrasi dalam gedung.      Sistem kabel data  atau  disebut juga Local Area Network (LAN) merupakan jaringan computer yang menghubungkan computer pc dari workstation untuk memakai bersama sumberdaya(resource, misalnya printer, internet, dan lain-lain) dan saling bertukar informasi.</p>\r\n', '<p>Serves as a computer network integrated in the building. Data cable system or also called Local Area Network (LAN) is a computer network that connects computer pc from workstation to use together resources (resource, for example printer, internet, etc.) and exchange information.</p>\r\n', '', '99', 'sistem-data-jaringan-komputer'),
-(23, 4, 'Sistem MATV (master Television)', 'Sistem MATV (master Television)', '<p>Kebutuhan pengelolaan televisi dalam suatu bangungan menjadi kebutuhan di perkantoran. Sistem ini dinamakan dengan sistem master antena TV (MATV). Sistem MATV terdiri dari beberapa perangkat penerima (receiver), mixer, dan penguat sinyal.</p>\r\n', '<p>The need of television management in a building becomes a necessity in the office. This system is called the master TV antenna system &#40;MATV&#41;. The MATV system consists of several receiver, mixer, and signal booster devices.</p>\r\n', '', '99', 'sistem-matv-master-television'),
+(23, 4, 'Sistem MATV (master Television) ', 'Sistem MATV (master Television)', '<p>Kebutuhan pengelolaan televisi dalam suatu bangungan menjadi kebutuhan di perkantoran. Sistem ini dinamakan dengan sistem master antena TV (MATV). Sistem MATV terdiri dari beberapa perangkat penerima (receiver), mixer, dan penguat sinyal.</p>\r\n', '<p>The need of television management in a building becomes a necessity in the office. This system is called the master TV antenna system &#40;MATV&#41;. The MATV system consists of several receiver, mixer, and signal booster devices.</p>\r\n', '', '99', 'sistem-matv-master-television'),
 (24, 4, 'Sistem CCTV (Close Circuit Television)', 'Sistem CCTV (Close Circuit Television)', '<p>Sistem CCTV  merupakan bagian dari upaya untuk mempermudah pekerjaan sekuriti sistem, yang terintegrasi untuk  memberikan kemudahan dalam proses pengontrolan dan pemantauan lebih akurat dan otomatis.</p>\r\n', '<p>The CCTV system is part of an effort to simplify integrated system security work to facilitate more accurate and automated control and monitoring processes.</p>\r\n', '', '99', 'sistem-cctv-close-circuit-television'),
-(25, 6, 'Sistem Instalasi Gas', 'Gas Installation System', '<p>Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan). Sistem instalasi gas di Mall ini merupakan sentral instalasi  gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut.</p>\r\n', '<p>Gas installation system in the mall is usually for the allocation of restaurants and Food Court (food center). The gas installation system in Mall is a central gas installation connected with cooking utensils in the restaurant and foodcourt units as a fuel supply function that is related to the use of cooking utensils in the restaurant or food court.</p>\r\n', '', '99', 'sistem-instalasi-gas');
+(25, 4, 'Sistem Instalasi Gas', 'Gas Installation System', '<p>Sistem instalasi gas di mall biasanya untuk peruntukan restoran dan Food Court (pusat makanan). Sistem instalasi gas di Mall ini merupakan sentral instalasi  gas yang terkoneksi dengan peralatan masak di dalam unit restoran maupun foodcourt sebagai fungsi suply bahan bakar  yang berkaiatan dengan penggunaan alat masak  di restoran atau  food court tersebut.</p>\r\n', '<p>Gas installation system in the mall is usually for the allocation of restaurants and Food Court (food center). The gas installation system in Mall is a central gas installation connected with cooking utensils in the restaurant and foodcourt units as a fuel supply function that is related to the use of cooking utensils in the restaurant or food court.</p>\r\n', '', '99', 'gas-installation-system');
 
 -- --------------------------------------------------------
 
@@ -297,7 +316,7 @@ CREATE TABLE `fortu_site` (
 --
 
 INSERT INTO `fortu_site` (`site_id`, `site_name`, `site_title`, `site_desc`, `site_keyword`, `site_favicon`, `site_logo`, `site_email`) VALUES
-(1, 'Abubakar Usman', 'Abubakar Usman', 'Abubakar Usman', 'Abubakar Usman', '', '', 'aditlawave@gmail.com');
+(1, 'Fortuno', 'Fortuno', 'Fortuno', 'Fortno', '', '', 'aditlawave@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -351,7 +370,7 @@ CREATE TABLE `fortu_user` (
 --
 
 INSERT INTO `fortu_user` (`user_id`, `user_username`, `user_password`, `user_name`, `user_email`, `user_level`, `user_status`, `user_image`, `user_session`) VALUES
-(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', 'fa99ae9c1f763f3562c049ae48739daa79920692'),
+(1, 'admin', '074c0845506eb57dfbc3ef6dfdf3a3d48251871c', 'admin', 'admin@email.com', 'admin', 'active', '', 'f072343c2a5c1ea34bd95b3a60017974c3892863'),
 (2, 'mainlwd', 'a82d82f5133af2c987010c8e446c35230164a0fe', 'Maintenance LWD', 'lwd@lawavedesign.com', 'admin', 'active', '', 'b6bc5de8c9694006f7c96f34e37c0551c8b13525');
 
 --
@@ -369,6 +388,12 @@ ALTER TABLE `fortu_about`
 --
 ALTER TABLE `fortu_banner`
   ADD PRIMARY KEY (`banner_id`);
+
+--
+-- Indexes for table `fortu_catporto`
+--
+ALTER TABLE `fortu_catporto`
+  ADD PRIMARY KEY (`catporto_id`);
 
 --
 -- Indexes for table `fortu_catservices`
@@ -441,6 +466,12 @@ ALTER TABLE `fortu_banner`
   MODIFY `banner_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
+-- AUTO_INCREMENT for table `fortu_catporto`
+--
+ALTER TABLE `fortu_catporto`
+  MODIFY `catporto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `fortu_catservices`
 --
 ALTER TABLE `fortu_catservices`
@@ -456,25 +487,25 @@ ALTER TABLE `fortu_contact`
 -- AUTO_INCREMENT for table `fortu_image`
 --
 ALTER TABLE `fortu_image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=195;
 
 --
 -- AUTO_INCREMENT for table `fortu_portofolio`
 --
 ALTER TABLE `fortu_portofolio`
-  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `fortu_seo`
 --
 ALTER TABLE `fortu_seo`
-  MODIFY `seo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `seo_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `fortu_services`
 --
 ALTER TABLE `fortu_services`
-  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `services_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `fortu_text`

@@ -44,10 +44,20 @@
 								</li>
 							</ul>
 						</li>
-						<li class="treeview <?php echo active_menu($uri_2, 'portofolio') ?>">
-							<a href="<?php echo site_url('admin/portofolio');?>">
+						<li class="treeview <?php echo active_perent($uri_2, $menu['porto']) ?>">
+							<a href="#">
 								<i class="fa fa-newspaper-o"></i> <span> Portofolio</span>
+								<i class="fa fa-angle-left pull-right"></i>
+								
 							</a>
+							<ul class="treeview-menu">
+								<li class="<?php echo active_menu($uri_2, 'catporto') ?>">
+									<a href="<?php echo site_url('admin/catporto');?>"><i class="fa fa-circle-o"></i> Category Portofolio</a>
+								</li>
+								<li class="<?php echo active_menu($uri_2, 'portofolio') ?>">
+									<a href="<?php echo site_url('admin/portofolio');?>"><i class="fa fa-circle-o"></i> List Portofolio </a>
+								</li>
+							</ul>
 						</li>
 						<!-- <li class="treeview <?php echo active_perent($uri_2, $menu['misscellaneous']) ?>">
 							<a href="#">
