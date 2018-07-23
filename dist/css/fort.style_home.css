@@ -3,6 +3,10 @@
   url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
   font-family: "roboto";
 }
+.link-inactived {
+  color: #555 !important;
+}
+
 .cwhite {
   color: #fff;
 }
@@ -220,7 +224,7 @@ section .homepage #services .background-filter-container .services-right ul li:l
 }
 section .homepage #portfolio {
   background-color: #f9f9f9;
-  padding-top: 120px;
+  padding-top: 90px;
 }
 section .homepage #portfolio .port-desc {
   padding-left: 15vw;
@@ -228,6 +232,9 @@ section .homepage #portfolio .port-desc {
 }
 section .homepage #portfolio .row div {
   padding: 0;
+  margin: 0.5%;
+  flex: 32.333%;
+  border: 8px solid #000;
 }
 section .homepage #portfolio .row div img {
   height: 350px;
@@ -235,6 +242,8 @@ section .homepage #portfolio .row div img {
 }
 section .homepage #portfolio .row div div {
   display: none;
+  border: none;
+  margin: 0;
 }
 section .homepage #portfolio .row div div p {
   padding: 0 10%;

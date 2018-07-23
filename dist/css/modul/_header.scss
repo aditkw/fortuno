@@ -4,6 +4,7 @@
   width: 100%;
   z-index: 1;
   padding-top: 5px;
+  padding-bottom: 5px;
   top: 0;
   left: 0;
 }
@@ -15,15 +16,18 @@ header {
     }
     nav.nav-desktop {
       transition-duration: 1s;
-      background-color: $cwhite;
+      // background-color: $cwhite;
+      background-color: #00a9dc;
       z-index: 2;
       .nav-list {
         border: 0;
         transition-duration: 5s;
-        border-right: 1px solid #ccc;
         max-height: 20px;
         line-height: 1;
         margin-top: 20px;
+        > a {
+          color: #fff;
+        }
         a {
           display: inline-block;
           width: 100%;
@@ -90,6 +94,8 @@ header {
             height: 55px;
             border-radius: 0;
             border: 0;
+            position: relative;
+            top: 4.4px;
           }
           button {
             margin-bottom: 7.5px;
@@ -98,6 +104,8 @@ header {
             width: 55px;
             border-radius: 0;
             border: 0;
+            position: relative;
+            top: 1.74px;
           }
         }
       }

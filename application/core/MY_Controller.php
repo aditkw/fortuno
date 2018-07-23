@@ -158,6 +158,10 @@ class Frontend_Controller extends MY_Controller
 		$this->data['cat_all'] = $this->catservices_model->olahData($categories, FALSE);
 
 		$porto = site_url('portfolio');
+
+
+		$this->data['catporto_nav'] = $this->catporto_model->get_category(array('image_parent_name' => 'catporto'), NULL, NULL, NULL, array('catporto_name', 'catporto_name_en', 'catporto_link','image_name'));
+
 		$in = array(
 			'header_txt' => 'Tahukah kamu pentingnya sistem mekanikal dan elektrikal (ME) untuk suatu bangunan ?',
 			'header_txtLink' => 'Klik <a href="#sistem_utilitas_l"><strong><u>di sini</u></strong></a>  untuk mengetahuinya !',
@@ -168,7 +172,9 @@ class Frontend_Controller extends MY_Controller
 			'clickforfull' => 'Klik di sini untuk tampilkan gambar secara penuh',
 			'downloadpdf' => 'Anda bisa mendownload file PDF untuk project ini pada tombol di bawah ini. ',
 			'readmore' => 'Baca Selengkapnya',
-			'contact_us' => 'Jika Anda memerlukan informasi lebih lanjut, silakan <span><a href="#cont-contact" class="cblue_opa">hubungi kami</a></span> di bawah ini'
+			'viewmore' => 'Lihat Selengkapnya',
+			'contact_us' => 'Jika Anda memerlukan informasi lebih lanjut, silakan <span><a href="#cont-contact" class="cblue_opa">hubungi kami</a></span> di bawah ini',
+			'searchhere' => 'Cari Disini'
 		);
 		$en = array(
 			'header_txt' => 'Did you know the importance of mechanical and electrical systems (ME) for a building ?',
@@ -177,10 +183,12 @@ class Frontend_Controller extends MY_Controller
 			'txtPortofolio' => "Or click <a class='cblue_opa' href='$porto'><strong>here</strong></a> to see all the ME projects we've worked on.",
 			'txtporto_view' => 'Below are the <em> projects </em> we have been working on.',
 			'portoviewdetail' => 'Click here to see all photos from',
-			'clickforfull' => 'Click here to view the full picture',
+			'clickforfull' => 'Click here to view full picture',
 			'downloadpdf' => 'You can download a PDF file for this project on the button below.',
 			'readmore' => 'Read More',
-			'contact_us' => 'if you need more information, please <span><a href="#cont-contact" class="cblue_opa">contact us</a></span> below'
+			'viewmore' => 'View More',
+			'contact_us' => 'if you need more information, please <span><a href="#cont-contact" class="cblue_opa">contact us</a></span> below',
+			'searchhere' => 'Search Here'			
 		);
 		//cek session bahasa
 		$userdata = $this->session->userdata;

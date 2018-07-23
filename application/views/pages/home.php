@@ -77,27 +77,27 @@
     <div id="portfolio">
       <?php $txtporto = cekBahasa('text_portofolio'); ?>
       <p class="text-center h1"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portofolio</strong></a></p>
-      <p class="text-justify port-desc h6"><?=$text->$txtporto?> <?=$lang['txtPortofolio']?></p><br><br>
+      <p class="text-justify port-desc h6"><?=$text->$txtporto?> <!-- <?=$lang['txtPortofolio']?> --> </p><br><br>
       <div class="row">
-        <?php foreach ($portofolio as $port):
-          $port_name = cekBahasa('portofolio_name');
-          $port_desc = cekBahasa('portofolio_desc');
+        <?php foreach ($catporto as $catport):
+          $catport_name = cekBahasa('catporto_name');
+          $catport_desc = cekBahasa('catporto_desc');
         ?>
           <div class="col-md-4 position-relative port_img_link">
             <div class="modal-color position-absolute text-center">
               <br><br><br><br>
-              <p class="h4"><a href="#"><strong class="port_title"><?=$port->$port_name?></strong></a></p>
-              <div class="cwhite port_desc"><?=limitKalimat($port->$port_desc, 155)?></div>
-              <a href="<?=site_url("portfolio/".$port->portofolio_link);?>"><button type="button" name="button"><strong>Read More</strong></button></a>
+              <p class="h4"><a href="#"><strong class="port_title"><?=$catport->$catport_name?></strong></a></p>
+              <div class="cwhite port_desc"><?=limitKalimat($catport->$catport_desc, 155)?></div>
+              <a href="<?=site_url("portfolio/".$catport->catporto_link);?>"><button type="button" name="button"><strong><?=$lang['viewmore'];?></strong></button></a>
             </div>
-            <img class="port_img img-fluid" src="<?=site_url("uploads/img/portofolio/$port->image_name")?>" alt="">
+            <img class="port_img img-fluid" src="<?=site_url("uploads/img/catporto/$catport->image_name")?>" alt="">
           </div>
         <?php endforeach; ?>
       </div>
     </div>
     <div id="contact"><br>
       <div class="cont-container">
-        <p class="text-center h2"><strong><?=ucwords($lang['contact_us']);?></strong></p><br><br>
+        <p class="text-center h2"><strong><?=ucwords($lang['contact_us']);?></strong></p><br>
         <div class="row">
           <div class="col-md-5 position-relative">
             <img class="img-fluid" src="<?php echo base_url(); ?>dist/img/assets/contact.png" alt="">

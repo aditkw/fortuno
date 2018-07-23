@@ -2,10 +2,16 @@
     <div class="col-md-1"></div>
     <div class="col-md-11">
       <!-- Nav Jadul -->
+      <?php $count_uri = 0; ?>
       <?php $link_nav_jadul =  substr(base_url(), 0, -1); ?>
       <a href="<?=$link_nav_jadul;?>/">Fortuno</a>
       <?php foreach ($this->uri->segments as  $value) {
-        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"><?=ucwords($value);?></a>  <?php
+        if (!$count_uri++) {
+          $link_nav_jadul .= '/'. $value;
+          ?> > <a class="link-inactived"><?=ucwords($value);?></a>  <?php
+        } else {
+          ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"><?=ucwords($value);?></a>  <?php
+        }
       }  ?>
     </div>
   </div>

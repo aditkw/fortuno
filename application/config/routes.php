@@ -31,5 +31,5 @@ $route['services/(:any)']                     = 'services/category/$1';
 // $route['services/electrical']                 = 'services/electrical';
 // $route['services/gas-installation']           = 'services/gas';
 $route['portfolio']                           = 'portfolio';
-$route['portfolio/(:any)']                    = 'portfolio/gallery/$1';
+$route['portfolio/(:any)']                    = 'portfolio/workArea/$1';
 $route['search(\/(?:services|portfolio)\/[0-9]+/.+)']  = 'search';

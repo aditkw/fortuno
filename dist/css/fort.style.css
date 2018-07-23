@@ -3,6 +3,10 @@
   url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
   font-family: "roboto";
 }
+.link-inactived {
+  color: #555 !important;
+}
+
 .cwhite {
   color: #fff;
 }
@@ -136,6 +140,7 @@ blockquote cite:before {
   width: 100%;
   z-index: 1;
   padding-top: 5px;
+  padding-bottom: 5px;
   top: 0;
   left: 0;
 }
@@ -148,16 +153,18 @@ header .header hr {
 }
 header .header nav.nav-desktop {
   transition-duration: 1s;
-  background-color: #fff;
+  background-color: #00a9dc;
   z-index: 2;
 }
 header .header nav.nav-desktop .nav-list {
   border: 0;
   transition-duration: 5s;
-  border-right: 1px solid #ccc;
   max-height: 20px;
   line-height: 1;
   margin-top: 20px;
+}
+header .header nav.nav-desktop .nav-list > a {
+  color: #fff;
 }
 header .header nav.nav-desktop .nav-list a {
   display: inline-block;
@@ -219,6 +226,8 @@ header .header nav.nav-desktop .search-container .search input {
   height: 55px;
   border-radius: 0;
   border: 0;
+  position: relative;
+  top: 4.4px;
 }
 header .header nav.nav-desktop .search-container .search button {
   margin-bottom: 7.5px;
@@ -227,6 +236,8 @@ header .header nav.nav-desktop .search-container .search button {
   width: 55px;
   border-radius: 0;
   border: 0;
+  position: relative;
+  top: 1.74px;
 }
 header .header nav.nav-mobile {
   margin-bottom: 20px;

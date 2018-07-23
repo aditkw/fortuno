@@ -98,7 +98,7 @@ section {
 
     #portfolio {
       background-color: #f9f9f9;
-      padding-top: 120px;
+      padding-top: 90px;
       .port-desc {
         $space: 15vw;
         padding-left: $space;
@@ -107,12 +107,17 @@ section {
       .row {
         div {
           padding: 0;
+          margin: 0.5%;
+          flex: 32.333%;
+          border: 8px solid #000;
           img {
             height: 350px;
             width: 100%;
           }
           div {
             display: none;
+            border: none;
+            margin: 0;
             p {
               padding: 0 10%;
             }

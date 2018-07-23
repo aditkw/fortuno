@@ -6,7 +6,7 @@
   {
     function __construct() {
       parent::__construct();
-
+      $this->data['catservices_nav'] = $this->catservices_model->get_category(NULL, NULL, NULL, NULL, array('DISTINCT(catservices_id)', 'catservices_name', 'catservices_name_en'), NULL, array('catservices_id', 'ASC'));
       $this->data['content'] = 'pages/services';
       $this->data['top'] = 'services';
       $this->data['header']['services']['title'] = strtoupper('services');

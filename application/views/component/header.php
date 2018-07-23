@@ -1,4 +1,3 @@
-
 <header id="beranda">
   <div class="container-fluid header">
     <div class="row">
@@ -60,11 +59,28 @@
               <?php endforeach; ?>
             </ul>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<?=base_url()?>#portfolio">PORTFOLIO</a>
+          <li class="nav-item dropdown style-dropdown-mobile">
+            <a class="nav-link dropdown-toggle" href="<?=base_url()?>#portfolio" id="navbarPortfolio" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PORTFOLIO</a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarPortfolio">
+              <?php $catport_nav_name = cekBahasa('catporto_name'); ?>
+              <?php foreach ($catporto_nav as $catport_nav): ?>
+                <li class="nav-item"><a class="nav-link" href="<?=base_url().'portfolio/'.$catport_nav->catporto_link;?>"><?=strtoupper($catport_nav->$catport_nav_name);?></a></li>
+              <?php endforeach; ?>
+            </ul>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?=base_url()?>#contact">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <div class="form-group">
+              <form action="<?=base_url()?>search/<?=($this->uri->segment(2) === 'portfolio') ? 'portfolio' : 'services'?>/0/index.php" method="get">
+                <input style="width:80%;display:inline-block;" type="text" name="s" class="form-control <?=(null !== $this->uri->segment(4)) ? 'underline' : '';?>" placeholder="<?=$lang['searchhere']?>..." value="<?=
+                  (null !== $this->uri->segment(4)) ? str_replace('%20', ' ', str_replace('-', ' ', $this->uri->segment(4))) : '';
+                ?>">
+                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+              </form>
+            </div>
           </li>
         </ul>
       </div>
@@ -90,12 +106,19 @@
           <?php endforeach; ?>
         </ul>
       </div>
-      <div class="col-md-1 nav-list portfolio"><a href="<?=base_url()?>#portfolio">PORTFOLIO</a></div>
+      <div class="col-md-1 nav-list portfolio position-relative menu-has-sub"><a href="<?=base_url()?>#portfolio">PORTFOLIO</a>
+        <ul class="position-absolute sub1">
+          <?php $catport_nav_name = cekBahasa('catporto_name'); ?>
+          <?php foreach ($catporto_nav as $catport_nav): ?>
+            <li><a href="<?=base_url().'portfolio/'.$catport_nav->catporto_link;?>"><?=strtoupper($catport_nav->$catport_nav_name);?></a></li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
       <div class="col-md-1 nav-list contact"><a href="<?=base_url()?>#contact">CONTACT</a></div>
       <div class="col-md-3 text-left search-container">
         <div class="form-group search">
           <form id="search" action="<?=base_url()?>search/<?=($this->uri->segment(2) === 'portfolio') ? 'portfolio' : 'services'?>/0/index.php" method="get">
-            <input type="text" name="s" class="form-control <?=(null !== $this->uri->segment(4)) ? 'underline' : '';?>" placeholder="Search Here..." value="<?=
+            <input type="text" name="s" class="form-control <?=(null !== $this->uri->segment(4)) ? 'underline' : '';?>" placeholder="<?=$lang['searchhere']?>..." value="<?=
               (null !== $this->uri->segment(4)) ? str_replace('%20', ' ', str_replace('-', ' ', $this->uri->segment(4))) : '';
             ?>">
             <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>

@@ -36,6 +36,14 @@ header {
           padding: 5px 15px 10px 15px;
           background-color: $cnero;
           color: $cwhite;
+          .strong-hover:hover {
+            color: $cwhite;
+            text-decoration: underline;
+          }
+          .strong-disabled {
+            cursor: not-allowed;
+            text-decoration: none !important;
+          }
         }
         .hover {
           display: none;
@@ -60,28 +68,78 @@ header {
             text-decoration: underline;
           }
         }
+        .hover2 {
+          display: none;
+          overflow: hidden;
+          border: 10px solid #000;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          color: #000;
+          background: #fff;
+          padding: 5% 0;
+          p {
+            color: #000;
+            background-color: unset;
+          }
+        }
       }
 
     }
   }
 }
-.in-gallery {
-  padding: 40px 0;
-  .img-container {
-    padding: 0 !important;
-    margin: 0 !important;
-  }
-  a {
-    img {
-      padding: 0 !important;
-    }
-    p {
-      padding: 0;
-    }
-    .hover {
-      span {
-        padding: 0 20px;
-      }
-    }
-  }
-}
+// .in-gallery {
+//   padding: 40px 0;
+//   div.col-md-10 {
+//     .img-container {
+//       padding: 0 !important;
+//       margin: 0.5% !important;
+//       flex: 31.333%;
+//       border: 10px solid #000;
+//       .btn-container {
+//         top: 0;
+//         bottom: 0;
+//         right: 0;
+//         left: 0;
+//         margin: auto;
+//         height: 50%;
+//         .button {
+//           background-color: $corange;
+//           color: $cwhite_opa;
+//           padding: 8px;
+//           border: none;
+//           border-radius: 10px;
+//           cursor: pointer;
+//           position: relative;
+//         }
+//         .button:hover {
+//           color: $cwhite;
+//           bottom: 2px;
+//           text-decoration: underline;
+//         }
+//       }
+//       .text-ports {
+//         padding-top: 10px;
+//         background-color: $cnero;
+//         color: $cwhite;
+//       }
+//     }
+//   }
+//
+//   a {
+//     img {
+//       padding: 0 !important;
+//     }
+//     p {
+//       padding: 0;
+//     }
+//     .hover {
+//       span {
+//         padding: 0 20px;
+//       }
+//     }
+//   }
+// }

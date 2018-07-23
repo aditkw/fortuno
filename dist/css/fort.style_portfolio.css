@@ -3,6 +3,10 @@
   url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
   font-family: "roboto";
 }
+.link-inactived {
+  color: #555 !important;
+}
+
 .cwhite {
   color: #fff;
 }
@@ -35,11 +39,15 @@ div, .row {
   margin: 0;
 }
 
-.bold, .hoverious, a:hover, a {
+.bold, .hoverious, .link-actived, a:hover, a {
   font-weight: bold;
 }
 
-.cursor_pointer, .hoverious, a:hover, a {
+.underline {
+  text-decoration: underline;
+}
+
+.cursor_pointer, .hoverious, .link-actived, a:hover, a {
   cursor: pointer;
 }
 
@@ -47,15 +55,19 @@ div, .row {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.hoverious, a:hover, a {
+.hoverious, .link-actived, a:hover, a {
   color: #555;
 }
 
-.hoverious:hover, a:hover {
+.hoverious:hover, .link-actived:hover, a:hover {
   color: #000;
 }
 
 a:hover {
+  color: #7c82a6;
+}
+
+.link-actived {
   color: #7c82a6;
 }
 
@@ -94,6 +106,33 @@ blockquote cite {
 
 blockquote cite:before {
   content: "— ";
+}
+
+.valid_err {
+  padding-right: 36px;
+  padding-left: 36px;
+  font-weight: 500;
+}
+
+.form-w-icon {
+  position: relative;
+  margin: 0;
+  margin-top: 1rem;
+}
+.form-w-icon .icon-placeholder, .form-w-icon .icon-placeholder-ta {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  left: 12px;
+  color: #757575;
+}
+.form-w-icon .icon-placeholder-ta {
+  bottom: unset;
+  top: 12px;
+}
+.form-w-icon input[type=text].form-control, .form-w-icon input[type=password].form-control, .form-w-icon textarea {
+  padding-left: 36px;
 }
 
 header #sampul3 {
@@ -136,6 +175,14 @@ header #sampul3 .title-sampul3 p {
   background-color: #212121;
   color: #fff;
 }
+.gallery-portfolio .gallery-portfolio-cover .img-container a p .strong-hover:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.gallery-portfolio .gallery-portfolio-cover .img-container a p .strong-disabled {
+  cursor: not-allowed;
+  text-decoration: none !important;
+}
 .gallery-portfolio .gallery-portfolio-cover .img-container a .hover {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
@@ -159,22 +206,23 @@ header #sampul3 .title-sampul3 p {
   color: #fff;
   text-decoration: underline;
 }
-
-.in-gallery {
-  padding: 40px 0;
+.gallery-portfolio .gallery-portfolio-cover .img-container a .hover2 {
+  display: none;
+  overflow: hidden;
+  border: 10px solid #000;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #000;
+  background: #fff;
+  padding: 5% 0;
 }
-.in-gallery .img-container {
-  padding: 0 !important;
-  margin: 0 !important;
-}
-.in-gallery a img {
-  padding: 0 !important;
-}
-.in-gallery a p {
-  padding: 0;
-}
-.in-gallery a .hover span {
-  padding: 0 20px;
+.gallery-portfolio .gallery-portfolio-cover .img-container a .hover2 p {
+  color: #000;
+  background-color: unset;
 }
 
 /*# sourceMappingURL=fort.style_portfolio.css.map */

@@ -3,6 +3,10 @@
   url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
   font-family: "roboto";
 }
+.link-inactived {
+  color: #555 !important;
+}
+
 .cwhite {
   color: #fff;
 }
@@ -133,6 +137,19 @@ blockquote cite:before {
 
 .services-gap {
   padding: 20px 0;
+}
+.services-gap .nav-uri ul {
+  z-index: 1;
+  padding: 5px;
+  right: -25px;
+  left: -25px;
+  top: 25px;
+}
+.services-gap .nav-uri ul li {
+  text-align: center;
+  background-color: #fff;
+  list-style: none;
+  width: 100%;
 }
 
 .services-container .aside-container, .services-container .article-container {

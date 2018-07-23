@@ -53,8 +53,7 @@ class Catporto_model extends MY_Model
 	function olahData($categories, $wimage=NULL)
 	{
 	  $category = array();
-	  foreach ($categories as $cat) {
-
+	  foreach ($categories as $cat) {			
 			$this->db->where(array('catporto_id' => $cat->catporto_id, 'portofolio_pub' => '99', 'image_parent_name' => 'portofolio', 'image_seq' => 0));
 			$this->db->join('{PRE}'.'image', '{PRE}'.'image.parent_id = {PRE}portofolio.portofolio_id');
 			$portos = $this->db->get('{PRE}portofolio')->result();

@@ -18,6 +18,10 @@ $space: 5vw;
   font-family: "roboto";
 }
 
+.link-inactived {
+  color: $tbh !important;
+  // cursor: not-allowed !important;
+}
 .cwhite {
   color: $cwhite;
 }
