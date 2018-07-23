@@ -131,8 +131,8 @@
         <div class="row mt-0">
           <div class="col-md-3"></div>
           <div class="col-md-6 materi"><br><br><br>
-            <span class="h1"><strong>Welcome to </strong></span><br>
-            <span class="h1 cblue"><strong>Fortuno Website.</strong></span><br><br>
+            <span class="h1"><strong><?=$lang['welcometo1'];?> </strong></span><br>
+            <span class="h1 cblue"><strong><?=$lang['welcometo2'];?>.</strong></span><br><br>
             <p class="h5 mt-4"><strong><?=$lang['header_txt']?></strong></p>
             <!-- <span class="h5 cblue"><?=$lang['header_txtLink']?></span> -->
             <?php $mecha = cekBahasa('text_mecha');?>

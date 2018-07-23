@@ -76,7 +76,7 @@
     </div>
     <div id="portfolio">
       <?php $txtporto = cekBahasa('text_portofolio'); ?>
-      <p class="text-center h1"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portofolio</strong></a></p>
+      <p class="text-center h1"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portfolio</strong></a></p>
       <p class="text-justify port-desc h6"><?=$text->$txtporto?> <!-- <?=$lang['txtPortofolio']?> --> </p><br><br>
       <div class="row">
         <?php foreach ($catporto as $catport):
@@ -107,7 +107,7 @@
               <p class="cwhite text-footer text-justify">
                 <?php $txtfooter = cekBahasa('text_footer'); ?>
                 <?=$text->$txtfooter?> <br>
-                <button class="btn-home-default" type="button" name="button" data-toggle="modal" data-target="#ModalCenter"><strong>Contact Us</strong></button>
+                <button class="btn-home-default" type="button" name="button" data-toggle="modal" data-target="#ModalCenter"><strong><?=$lang['s_contact_us'];?></strong></button>
               </p>
             </div>
           </div>

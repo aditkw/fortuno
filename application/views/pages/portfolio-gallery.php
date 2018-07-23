@@ -11,10 +11,16 @@ $catporto_desc = cekBahasa('catporto_desc');
     <div class="col-md-1"></div>
     <div class="col-md-11">
       <!-- Nav Jadul -->
-      <?php $link_nav_jadul =  substr(base_url(), 0, -1); ?>
+      <?php $link_nav_jadul =  substr(base_url(), 0, -1); $count_p = 0;?>
       <a href="<?=$link_nav_jadul;?>/">Fortuno</a>
       <?php foreach ($this->uri->segments as  $value) {
-        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"> <?=ucwords($value);?></a>  <?php
+        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>">
+          <?php if ($count_p++ && $value = $catporto[0]->catporto_name || $value = $catporto[0]->catporto_name_en): ?>
+            <?=ucwords($catporto[0]->$catporto_name);?></a>
+          <?php else: ?>
+            <?=ucwords($value);?></a>
+          <?php endif; ?>
+        <?php
       }  ?>
     </div>
   </div>
@@ -47,7 +53,7 @@ $catporto_desc = cekBahasa('catporto_desc');
                   onclick="window.location.href='<?=base_url().'uploads/pdf/portofolio/'.$porto->portofolio_pdf?>'"
                 <?php endif; ?> >
                   <i class="fas fa-download"></i> PDF</strong>
-                  
+
                 </span>
               </span>
             </p>

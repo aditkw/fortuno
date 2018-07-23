@@ -173,8 +173,11 @@ class Frontend_Controller extends MY_Controller
 			'downloadpdf' => 'Anda bisa mendownload file PDF untuk project ini pada tombol di bawah ini. ',
 			'readmore' => 'Baca Selengkapnya',
 			'viewmore' => 'Lihat Selengkapnya',
-			'contact_us' => 'Jika Anda memerlukan informasi lebih lanjut, silakan <span><a href="#cont-contact" class="cblue_opa">hubungi kami</a></span> di bawah ini',
-			'searchhere' => 'Cari Disini'
+			'contact_us' => 'Jika Anda memerlukan informasi lebih lanjut, silakan <span><a href="#cont-contact" class="cblue_opa">Hubungi kami</a></span> di bawah ini',
+			's_contact_us' => 'Hubungi Kami',
+			'searchhere' => 'Cari Disini',
+			'welcometo1' => 'Selamat Datang di',
+			'welcometo2' => 'Website Fortuno'
 		);
 		$en = array(
 			'header_txt' => 'Did you know the importance of mechanical and electrical systems (ME) for a building ?',
@@ -187,8 +190,11 @@ class Frontend_Controller extends MY_Controller
 			'downloadpdf' => 'You can download a PDF file for this project on the button below.',
 			'readmore' => 'Read More',
 			'viewmore' => 'View More',
-			'contact_us' => 'if you need more information, please <span><a href="#cont-contact" class="cblue_opa">contact us</a></span> below',
-			'searchhere' => 'Search Here'			
+			'contact_us' => 'if you need more information, please <span><a href="#cont-contact" class="cblue_opa">Contact Us</a></span> below',
+			's_contact_us' => 'Contact Us',
+			'searchhere' => 'Search Here',
+			'welcometo1' => 'Welcome to',
+			'welcometo2' => 'Fortuno Website'
 		);
 		//cek session bahasa
 		$userdata = $this->session->userdata;

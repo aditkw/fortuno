@@ -1,5 +1,6 @@
+<br><br><br>
 <div class="text-center">
-  <p class="h2">Portofolio</p>
+  <p class="h2">Portfolio</p>
   <p class="text-center px-5">
     <?=$lang['txtporto_view']?>
   </p>
@@ -37,3 +38,4 @@
   </div>
   <div class="col-md-1"></div>
 </div>
+<br><br>
