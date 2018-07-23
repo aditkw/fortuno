@@ -44,7 +44,7 @@ $catporto_desc = cekBahasa('catporto_desc');
 
                 </span>
                 <span class="col-md-6">
-                  <strong class="strong-hover float-right desc-more <?php if (trim(strip_tags($porto->$porto_desc)) === "0"): ?>strong-disabled <?php endif; ?>" val="<?php if (trim(strip_tags($porto->$porto_desc)) !== "0"): ?>desc-valid<?php endif; ?>"><i class="fas fa-search"></i> Desc</strong>
+                  <strong class="strong-hover float-right desc-more <?php if (trim(strip_tags($porto->$porto_desc)) === "0"): ?>strong-disabled <?php endif; ?>" val="<?php if (trim(strip_tags($porto->$porto_desc)) !== "0"): ?>desc-valid<?php endif; ?>"> <i class="fab fa-readme"></i> Desc</strong>
                   <strong class="float-right mx-2
                   <?php if (!$porto->portofolio_pdf): ?>strong-disabled
                   <?php else: ?>strong-hover
