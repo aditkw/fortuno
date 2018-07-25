@@ -1,3 +1,4 @@
+
 $base_url: "http://localhost/fortuno/";
 $tbh: #555; //text_before_hover
 $tah: #000; //text_after_hover
@@ -16,6 +17,11 @@ $space: 5vw;
 @font-face {
   url: $base_url+"dist/fonts/Roboto/Roboto-Regular.ttf";
   font-family: "roboto";
+}
+
+@font-face {
+  src: url("Roboto-Regular.ttf") format('truetype');
+  font-family: "roboto2";
 }
 
 .link-inactived {
@@ -80,7 +86,7 @@ a:hover {
   color: $alink;
 }
 body {
-  font-family: "roboto";
+  font-family: "roboto2", "roboto", "sans-serif";
   // font-size: 1.1em;
 }
 // blockquote
@@ -143,4 +149,36 @@ blockquote cite:before {
   input[type='text'].form-control, input[type='password'].form-control, textarea {
     padding-left: 36px;
   }
+}
+
+.menu-has-sub-n {
+  .sub1-n {
+    top: 23px;
+    left: -10px;
+    text-align: left;
+    padding: 0;
+    list-style: none;
+    z-index: 1;
+    display: none;
+    border: 1px solid #999;
+    border-radius: 2px;
+    background-color: #fff;
+    li {
+      background-color: #fff;
+      padding: 5px 20px;
+      border-top: 1px solid #999;
+      display: inline-block;
+      width: 100%;
+    }
+    li:first-child {
+      border-top: none;
+    }
+    li:last-child {
+      // border-bottom: 1px solid #999;
+      border-bottom: none;
+    }
+  }
+}
+.menu-has-sub-n:hover >.sub1-n {
+  display: block;
 }

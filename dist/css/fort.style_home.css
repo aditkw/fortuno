@@ -3,6 +3,10 @@
   url: "http://localhost/fortuno/dist/fonts/Roboto/Roboto-Regular.ttf";
   font-family: "roboto";
 }
+@font-face {
+  src: url("Roboto-Regular.ttf") format("truetype");
+  font-family: "roboto2";
+}
 .link-inactived {
   color: #555 !important;
 }
@@ -72,7 +76,7 @@ a:hover {
 }
 
 body {
-  font-family: "roboto";
+  font-family: "roboto2", "roboto", "sans-serif";
 }
 
 blockquote {
@@ -133,6 +137,36 @@ blockquote cite:before {
 }
 .form-w-icon input[type=text].form-control, .form-w-icon input[type=password].form-control, .form-w-icon textarea {
   padding-left: 36px;
+}
+
+.menu-has-sub-n .sub1-n {
+  top: 23px;
+  left: -10px;
+  text-align: left;
+  padding: 0;
+  list-style: none;
+  z-index: 1;
+  display: none;
+  border: 1px solid #999;
+  border-radius: 2px;
+  background-color: #fff;
+}
+.menu-has-sub-n .sub1-n li {
+  background-color: #fff;
+  padding: 5px 20px;
+  border-top: 1px solid #999;
+  display: inline-block;
+  width: 100%;
+}
+.menu-has-sub-n .sub1-n li:first-child {
+  border-top: none;
+}
+.menu-has-sub-n .sub1-n li:last-child {
+  border-bottom: none;
+}
+
+.menu-has-sub-n:hover > .sub1-n {
+  display: block;
 }
 
 section .homepage #sistem_utilitas, section .homepage #about, section .homepage #services, section .homepage #portfolio, section .homepage #contact {
@@ -235,6 +269,14 @@ section .homepage #portfolio .row div {
   margin: 0.5%;
   flex: 32.333%;
   border: 8px solid #000;
+}
+section .homepage #portfolio .row div .title-port {
+  position: absolute;
+  top: -55px;
+  text-align: center;
+  width: 100%;
+  color: #2a2a2a;
+  font-weight: bold;
 }
 section .homepage #portfolio .row div img {
   height: 350px;

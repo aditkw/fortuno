@@ -14,11 +14,20 @@ $catporto_desc = cekBahasa('catporto_desc');
       <?php $link_nav_jadul =  substr(base_url(), 0, -1); $count_p = 0;?>
       <a href="<?=$link_nav_jadul;?>/">Fortuno</a>
       <?php foreach ($this->uri->segments as  $value) {
-        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>">
-          <?php if ($count_p++ && $value = $catporto[0]->catporto_name || $value = $catporto[0]->catporto_name_en): ?>
-            <?=ucwords($catporto[0]->$catporto_name);?></a>
+        ?>
+          <?php if ($count_p++): ?>
+            >
+            <a href="<?=$link_nav_jadul .= '/'. $value;?>"><?=ucwords($catporto[0]->$catporto_name);?></a>
           <?php else: ?>
-            <?=ucwords($value);?></a>
+            <span class="position-relative menu-has-sub-n d-inline-block">
+              >
+              <a href="<?=$link_nav_jadul .= '/'. $value;?>"><?=ucwords($value);?></a>
+              <ul class="position-absolute sub1-n">
+                <?php foreach ($catporto_nav as $catport): ?>
+                  <li><a href="<?=base_url().'portfolio/'.$catport->catporto_link;?>"><?=$catport->$catporto_name?></a></li>
+                <?php endforeach; ?>
+              </ul>
+            </span>
           <?php endif; ?>
         <?php
       }  ?>

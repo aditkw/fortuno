@@ -1,3 +1,4 @@
+<!-- DROP TABLE fortu_about; DROP TABLE fortu_banner; DROP TABLE fortu_catporto; DROP TABLE fortu_catservices; DROP TABLE fortu_contact; DROP TABLE fortu_image; DROP TABLE fortu_portofolio; DROP TABLE fortu_seo; DROP TABLE fortu_services; DROP TABLE fortu_site; DROP TABLE fortu_text; DROP TABLE fortu_user; -->
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 

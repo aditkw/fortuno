@@ -8,14 +8,24 @@
       <?php foreach ($this->uri->segments as  $value) {
         if (!$count_uri++) {
           $link_nav_jadul .= '/'. $value;
-          ?> > <a class="link-inactived"><?=ucwords($value);?></a>  <?php
+          ?>
+          <span class="position-relative menu-has-sub-n d-inline-block">
+            >
+            <a href="#"><?=ucwords($value);?></a>
+            <ul class="position-absolute sub1-n">
+              <?php $catser_name = cekBahasa('catservice_name'); ?>
+              <?php foreach ($cat_all as $catser): ?>
+                <li><a href="<?=base_url().'services/'.$catser->catservice_link;?>"><?=$catser->$catser_name?></a></li>
+              <?php endforeach; ?>
+            </ul>
+          </span>
+          <?php
         } else {
           ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"><?=ucwords($value);?></a>  <?php
         }
       }  ?>
     </div>
   </div>
-
  <div class="row services-container">
    <div class="col-md-1"></div>
    <div class="col-md-3 aside-container">

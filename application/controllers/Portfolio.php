@@ -28,7 +28,7 @@
 
     function workArea($link) {
       $this->data['content'] = 'pages/portfolio-gallery';
-      $this->data['catporto'] = $this->catporto_model->get_category(array('image_parent_name' => 'catporto', '{PRE}catporto.catporto_link' => $link), NULL, NULL, NULL, array('{PRE}catporto.catporto_id', '{PRE}catporto.catporto_name', '{PRE}catporto.catporto_desc', '{PRE}catporto.catporto_name_en', '{PRE}catporto.catporto_desc_en'));
+      $this->data['catporto'] = $this->catporto_model->get_category(array('image_parent_name' => 'catporto', '{PRE}catporto.catporto_link' => $link), NULL, NULL, NULL, array('{PRE}catporto.catporto_id', '{PRE}catporto.catporto_name', '{PRE}catporto.catporto_desc', '{PRE}catporto.catporto_name_en', '{PRE}catporto.catporto_desc_en', '{PRE}catporto.catporto_link'));
       $catporto_id = $this->data['catporto'][0]->catporto_id;
       $this->data['portofolio'] = $this->portofolio_model->get_portofolio(array('image_parent_name' => 'portofolio', 'portofolio_pub' => '99', '{PRE}catporto.catporto_id' => $catporto_id,'image_seq' => 0));
 

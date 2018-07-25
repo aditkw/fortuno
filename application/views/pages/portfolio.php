@@ -10,8 +10,25 @@
       <!-- Nav Jadul -->
       <?php $link_nav_jadul =  substr(base_url(), 0, -1); ?>
       &nbsp;&nbsp;&nbsp;<a href="<?=$link_nav_jadul;?>/">Fortuno</a>
+      <?php $co = 0;  ?>
       <?php foreach ($this->uri->segments as  $value) {
-        ?> > <a href="<?=$link_nav_jadul .= '/'. $value;?>"> <?=ucwords($value);?></a>  <?php
+        if(!$co++) {
+          ?>
+          >
+          <span class="position-relative menu-has-sub-n d-inline-block">
+            <a href ="<?=$link_nav_jadul .= '/'. $value;?>"><?=ucwords($value);?></a>
+            <ul class="position-absolute sub1-n">
+              <?php $catporto_name = cekBahasa('catporto_name'); ?>
+              <?php foreach ($catporto as $catport): ?>
+                <li><a href="<?=base_url().'portfolio/'.$catport->catporto_link;?>"><?=$catport->$catporto_name?></a></li>
+              <?php endforeach; ?>
+            </ul>
+          </span>
+          <?php
+        } else {
+        ?>
+          > <a href="<?=$link_nav_jadul .= '/'. $value;?>"> <?=ucwords($value);?></a>  <?php
+        }
       }  ?>
     </div>
   </div> <br>

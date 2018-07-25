@@ -77,13 +77,14 @@
     <div id="portfolio">
       <?php $txtporto = cekBahasa('text_portofolio'); ?>
       <p class="text-center h1"><a href="<?=site_url("portfolio")?>"><strong class="cblue">Portfolio</strong></a></p>
-      <p class="text-justify port-desc h6"><?=$text->$txtporto?> <!-- <?=$lang['txtPortofolio']?> --> </p><br><br>
+      <p class="text-justify port-desc h6"><?=$text->$txtporto?> <!-- <?=$lang['txtPortofolio']?> --> </p><br><br><br>
       <div class="row">
         <?php foreach ($catporto as $catport):
           $catport_name = cekBahasa('catporto_name');
           $catport_desc = cekBahasa('catporto_desc');
         ?>
           <div class="col-md-4 position-relative port_img_link">
+            <p class="h2 title-port text-center"><?=$catport->$catport_name?></p>
             <div class="modal-color position-absolute text-center">
               <br><br><br><br>
               <p class="h4"><a href="#"><strong class="port_title"><?=$catport->$catport_name?></strong></a></p>

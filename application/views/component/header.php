@@ -1,5 +1,5 @@
 <header id="beranda">
-  <div class="container-fluid header">
+  <div class="header">
     <div class="row">
       <div class="col-md-2"></div>
       <div class="col-md-2 logo">
