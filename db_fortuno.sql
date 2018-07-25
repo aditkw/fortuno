@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 23, 2018 at 11:05 PM
+-- Generation Time: Jul 25, 2018 at 06:22 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -203,7 +203,7 @@ INSERT INTO `fortu_image` (`image_id`, `parent_id`, `image_parent_name`, `image_
 (120, 25, 'services', 'gas-installation-system-7045.jpeg', 0),
 (124, 4, 'catservices', 'mechanical-4006.jpeg', 0),
 (125, 5, 'catservices', 'electrical-6869.jpeg', 0),
-(126, 6, 'catservices', 'gas-installation-9544.jpeg', 0),
+(126, 6, 'catservices', 'gas-installation-system-7045.jpeg', 0),
 (187, 12, 'portofolio', 'saigon-delight-8103.jpg', 0),
 (188, 12, 'portofolio', 'saigon-delight-8104.jpg', 1),
 (189, 12, 'portofolio', 'saigon-delight-8105.jpg', 2),
@@ -471,7 +471,7 @@ ALTER TABLE `fortu_banner`
 -- AUTO_INCREMENT for table `fortu_catporto`
 --
 ALTER TABLE `fortu_catporto`
-  MODIFY `catporto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `catporto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `fortu_catservices`
@@ -495,7 +495,7 @@ ALTER TABLE `fortu_image`
 -- AUTO_INCREMENT for table `fortu_portofolio`
 --
 ALTER TABLE `fortu_portofolio`
-  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `portofolio_id` int(8) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `fortu_seo`
