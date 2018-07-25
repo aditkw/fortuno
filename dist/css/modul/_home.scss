@@ -289,6 +289,15 @@ section {
       }
       #portfolio {
         padding-top: 40px;
+        .row {
+          div:first-child {
+            margin-top: 0;
+          }
+          div {
+            flex: unset;
+            margin: 50px;
+          }
+        }
       }
     }
   }

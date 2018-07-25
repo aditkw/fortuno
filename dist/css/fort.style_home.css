@@ -413,6 +413,13 @@ section .homepage .gap {
   section .homepage #portfolio {
     padding-top: 40px;
   }
+  section .homepage #portfolio .row div:first-child {
+    margin-top: 0;
+  }
+  section .homepage #portfolio .row div {
+    flex: unset;
+    margin: 50px;
+  }
 }
 
 /*# sourceMappingURL=fort.style_home.css.map */
