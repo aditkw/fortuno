@@ -129,14 +129,14 @@
     <?php if (!$at_index): ?>
       <div id="sampul" style="background-image: url('<?php echo base_url(); ?>dist/img/assets/slider1.png');">
         <div class="row mt-0">
-          <div class="col-md-3"></div>
-          <div class="col-md-6 materi"><br><br><br>
+          <div class="col-md-2"></div>
+          <div class="col-md-5 materi"><br><br><br>
             <span class="h1"><strong><?=$lang['welcometo1'];?> </strong></span><br>
             <span class="h1 cblue"><strong><?=$lang['welcometo2'];?>.</strong></span><br><br>
-            <p class="h5 mt-4"><strong><?=$lang['header_txt']?></strong></p>
+            <p class="h6 mt-4"><strong><?=$lang['header_txt']?></strong></p>
             <!-- <span class="h5 cblue"><?=$lang['header_txtLink']?></span> -->
             <?php $mecha = cekBahasa('text_mecha');?>
-            <div class="h5 text-justify mt-4"><?=$text->$mecha;?></div>
+            <div class="h6 text-justify mt-4"><?=$text->$mecha;?></div>
           </div>
         </div>
       </div>

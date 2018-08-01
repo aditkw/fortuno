@@ -5,11 +5,11 @@
       <div class="col-md-4 about-left">
         <p class="h2 text-center"><strong><span class="cblue">About</span> <span>Fortuno</span></strong></p>
         <div class="text-center">
-          <div class="text-justify about-desc-desktop">
+          <div class="text-justify about-desc-desktop h6">
             <?php $about_desc = cekBahasa('about_desc') ?>
             <?=$about->$about_desc?>
           </div>
-          <div class="text-justify">
+          <div class="text-justify h6">
             <?php $txtservice = cekBahasa('text_service') ?>
             <?=$text->$txtservice?>
           </div>
@@ -21,7 +21,7 @@
           <br><br><br><br>
         </div>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2 h6">
         <div class="text-justify about-desc-mobile">
           <?=$about->$about_desc?>
         </div>
